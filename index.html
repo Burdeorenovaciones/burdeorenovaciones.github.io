@@ -3,54 +3,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Burdeo Renovaciones | Diseño y Remodelación en Puerto Montt y Sur de Chile</title>
-    <meta name="description" content="Especialistas en remodelación de cocinas y espacios integrales. Burdeo Renovaciones combina elegancia y madera nativa.">
+    <title>Burdeo Renovaciones | Diseño de Interiores en Puerto Montt y Sur de Chile</title>
+    <meta name="description" content="Liderado por Yisel Carrasco, Burdeo Renovaciones transforma hogares en el sur de Chile con diseño de autor y madera nativa.">
     
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
     <style>
         :root {
             --burdeo: #800020;
             --negro: #1a1a1a;
-            --gris-claro: #f9f9f9;
+            --gris-fondo: #f4f4f4;
             --blanco: #ffffff;
-            --texto: #333333;
+            --dorado-google: #fbbc04;
         }
 
         * { box-sizing: border-box; margin: 0; padding: 0; }
-
+        
         body {
             font-family: 'Montserrat', sans-serif;
-            color: var(--texto);
+            color: #333;
             line-height: 1.6;
             overflow-x: hidden;
         }
 
-        h1, h2, h3 { font-family: 'Playfair Display', serif; font-weight: 700; }
-
+        h1, h2, h3, h4 { font-family: 'Playfair Display', serif; }
+        
         .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        .text-center { text-align: center; }
+        .section-padding { padding: 80px 0; }
 
-        /* HEADER */
+        /* HEADER MINIMALISTA (Estilo Urban Dén) */
         header {
-            padding: 20px 0;
             background: var(--blanco);
-            border-bottom: 1px solid #eee;
+            padding: 20px 0;
             position: sticky;
             top: 0;
             z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
         }
-
         nav { display: flex; justify-content: space-between; align-items: center; }
-        .logo { font-size: 28px; color: var(--burdeo); text-decoration: none; font-family: 'Playfair Display', serif; font-weight: 700; }
-        
-        .nav-links { display: flex; gap: 25px; list-style: none; }
-        .nav-links a { text-decoration: none; color: var(--negro); font-size: 14px; font-weight: 500; text-transform: uppercase; letter-spacing: 1px; }
+        .logo { font-size: 26px; color: var(--burdeo); font-weight: 700; text-decoration: none; letter-spacing: -0.5px; }
+        .nav-links { display: flex; gap: 30px; list-style: none; }
+        .nav-links a { text-decoration: none; color: var(--negro); font-size: 13px; font-weight: 500; text-transform: uppercase; letter-spacing: 1px; transition: 0.3s; }
+        .nav-links a:hover { color: var(--burdeo); }
 
-        /* HERO SECTION - Usamos una de tus fotos como fondo con filtro oscuro */
+        /* HERO SECTION */
         .hero {
-            height: 80vh;
-            /* Aquí usamos una de tus fotos como portada */
-            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('img/cocina-azul-madera-puerto-montt.jpg');
+            height: 85vh;
+            /* Usamos tu foto de Puerto Montt con un filtro elegante */
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.5)), url('img/cocina-azul-madera-puerto-montt.jpg');
             background-size: cover;
             background-position: center;
             display: flex;
@@ -59,199 +61,281 @@
             text-align: center;
             color: var(--blanco);
         }
-
-        .hero-content h1 { font-size: 3.5rem; margin-bottom: 20px; }
-        .hero-content p { font-size: 1.2rem; margin-bottom: 30px; font-weight: 300; }
-
-        .btn {
+        .hero h1 { font-size: 3.5rem; margin-bottom: 20px; text-shadow: 0 2px 10px rgba(0,0,0,0.3); }
+        .hero p { font-size: 1.3rem; font-weight: 300; margin-bottom: 30px; max-width: 700px; }
+        
+        .btn-primary {
             background: var(--burdeo);
             color: var(--blanco);
-            padding: 15px 35px;
+            padding: 15px 40px;
             text-decoration: none;
-            display: inline-block;
             font-weight: 600;
+            letter-spacing: 1px;
             transition: 0.3s;
-            border-radius: 4px;
+            border: 1px solid var(--burdeo);
         }
-        .btn:hover { background: #600018; transform: translateY(-3px); }
+        .btn-primary:hover { background: transparent; border-color: var(--blanco); }
 
-        /* GALERÍA DE PROYECTOS */
-        .section-padding { padding: 80px 0; }
-        h2.section-title { text-align: center; font-size: 2.5rem; margin-bottom: 50px; }
+        /* SOBRE NOSOTROS (Historia Yisel) */
+        .about-section { background: var(--blanco); }
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+        .about-text h2 { font-size: 2.5rem; margin-bottom: 20px; color: var(--negro); }
+        .about-text h3 { font-size: 1.2rem; color: var(--burdeo); margin-bottom: 15px; font-family: 'Montserrat', sans-serif; text-transform: uppercase; letter-spacing: 2px; }
+        .about-text p { margin-bottom: 20px; color: #555; }
+        
+        .about-images {
+            position: relative;
+            height: 500px;
+        }
+        /* Marcadores de posición para fotos de Yisel y Equipo */
+        .img-founder {
+            width: 80%;
+            height: 85%;
+            object-fit: cover;
+            position: absolute;
+            top: 0;
+            right: 0;
+            border-radius: 2px;
+            background-color: #ddd; /* Color temporal hasta que subas la foto */
+        }
+        .img-team {
+            width: 50%;
+            height: 40%;
+            object-fit: cover;
+            position: absolute;
+            bottom: 20px;
+            left: 0;
+            border: 5px solid var(--blanco);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            background-color: #ccc; /* Color temporal */
+        }
 
+        /* SERVICIOS (Iconos limpios) */
+        .services { background: var(--gris-fondo); text-align: center; }
+        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; margin-top: 40px; }
+        .service-card { background: var(--blanco); padding: 40px 20px; transition: 0.3s; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
+        .service-card:hover { transform: translateY(-10px); }
+        .service-icon { font-size: 40px; color: var(--burdeo); margin-bottom: 20px; }
+
+        /* GALERÍA (Estilo Dark Kitchens) */
         .gallery-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-            gap: 20px;
+            gap: 15px;
         }
-
-        .gallery-item {
-            position: relative;
-            overflow: hidden;
-            height: 400px;
-            cursor: pointer;
-        }
-
-        .gallery-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: 0.5s ease;
-        }
-
+        .gallery-item { position: relative; height: 400px; overflow: hidden; group: hover; }
+        .gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: 0.5s; }
         .gallery-item:hover img { transform: scale(1.1); }
-
-        .overlay {
-            position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(128, 0, 32, 0.7);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            opacity: 0;
-            transition: 0.3s;
-            color: white;
-            text-align: center;
-            padding: 20px;
+        .gallery-overlay {
+            position: absolute; bottom: 0; left: 0; width: 100%;
+            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+            color: white; padding: 30px; opacity: 0; transition: 0.3s;
         }
+        .gallery-item:hover .gallery-overlay { opacity: 1; }
 
-        .gallery-item:hover .overlay { opacity: 1; }
-
-        /* TESTIMONIOS */
-        .testimonials { background: var(--gris-claro); }
-        .testimonial-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        /* OPINIONES GOOGLE */
+        .reviews-section { background: var(--blanco); text-align: center; }
+        .google-badge {
+            display: inline-flex; align-items: center; gap: 10px;
+            background: #fff; padding: 10px 20px; 
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1); border-radius: 50px; margin-bottom: 40px;
+        }
+        .review-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
         
-        .test-card {
-            background: var(--blanco);
-            padding: 40px;
-            border-left: 4px solid var(--burdeo);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        .google-card {
+            background: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            text-align: left;
+            position: relative;
+            border: 1px solid #eee;
         }
-        .test-card p { font-style: italic; margin-bottom: 15px; }
-        .test-card span { font-weight: 600; color: var(--burdeo); }
-
-        /* BOTÓN WHATSAPP FLOTANTE */
-        .whatsapp-btn {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            background: #25d366;
-            color: white;
-            padding: 15px 25px;
-            border-radius: 50px;
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-            z-index: 9999;
-            font-weight: 600;
-            transition: 0.3s;
+        .reviewer-header { display: flex; align-items: center; gap: 15px; margin-bottom: 15px; }
+        .reviewer-avatar {
+            width: 45px; height: 45px; background: #800020; color: white;
+            border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold;
         }
-        .whatsapp-btn:hover { transform: scale(1.05); background: #128c7e; }
+        .stars { color: var(--dorado-google); font-size: 14px; margin-top: 5px; }
+        .google-logo-small { position: absolute; top: 30px; right: 30px; width: 20px; }
 
         /* FOOTER */
-        footer { background: var(--negro); color: white; padding: 40px 0; text-align: center; }
+        footer { background: var(--negro); color: #aaa; padding: 60px 0; font-size: 0.9rem; }
+        .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; }
+        .footer-col h4 { color: var(--blanco); margin-bottom: 20px; font-size: 1.2rem; }
+        .footer-col ul { list-style: none; }
+        .footer-col ul li { margin-bottom: 10px; }
+        .footer-col a { color: #aaa; text-decoration: none; }
+        
+        /* WHATSAPP */
+        .whatsapp-float {
+            position: fixed; bottom: 30px; right: 30px;
+            background: #25d366; color: white; width: 60px; height: 60px;
+            border-radius: 50%; display: flex; align-items: center; justify-content: center;
+            font-size: 30px; box-shadow: 0 5px 15px rgba(0,0,0,0.2); z-index: 9999;
+            transition: 0.3s;
+        }
+        .whatsapp-float:hover { transform: scale(1.1); }
 
-        /* RESPONSIVE */
+        /* MOBILE */
         @media (max-width: 768px) {
-            .hero-content h1 { font-size: 2.2rem; }
-            .nav-links { display: none; } 
-            .gallery-grid { grid-template-columns: 1fr; }
-            .whatsapp-btn span { display: none; } 
-            .whatsapp-btn { padding: 15px; border-radius: 50%; }
+            .nav-links { display: none; }
+            .about-grid { grid-template-columns: 1fr; }
+            .about-images { height: 350px; margin-top: 30px; }
+            .hero h1 { font-size: 2.5rem; }
         }
     </style>
 </head>
 <body>
 
     <header>
-        <div class="container nav">
-            <a href="#" class="logo">BURDEO</a>
-            <ul class="nav-links">
-                <li><a href="#proyectos">Proyectos</a></li>
-                <li><a href="#testimonios">Testimonios</a></li>
-                <li><a href="#contacto">Contacto</a></li>
-            </ul>
+        <div class="container">
+            <nav>
+                <a href="#" class="logo">BURDEO</a>
+                <ul class="nav-links">
+                    <li><a href="#about">Nosotros</a></li>
+                    <li><a href="#portfolio">Proyectos</a></li>
+                    <li><a href="#reviews">Opiniones</a></li>
+                    <li><a href="#contact">Contacto</a></li>
+                </ul>
+            </nav>
         </div>
     </header>
 
     <section class="hero">
-        <div class="hero-content">
-            <h1>Elegancia en cada rincón.</h1>
-            <p>Renovaciones exclusivas que transforman tu forma de vivir.</p>
-            <a href="#proyectos" class="btn">Explorar Proyectos</a>
+        <div class="container">
+            <h1>Diseñamos espacios,<br>construimos sueños.</h1>
+            <p>Remodelaciones integrales en Puerto Montt y el sur de Chile. <br>Donde la elegancia se encuentra con la calidez de la madera nativa.</p>
+            <a href="https://wa.me/56912345678" class="btn-primary">Cotizar mi Proyecto</a>
         </div>
     </section>
 
-    <section id="proyectos" class="section-padding container">
-        <h2 class="section-title">Nuestros Proyectos</h2>
-        <div class="gallery-grid">
-            
-            <div class="gallery-item">
-                <img src="img/cocina_katya.jpeg" alt="Remodelación Cocina Katya">
-                <div class="overlay">
-                    <div>
+    <section id="about" class="section-padding about-section">
+        <div class="container about-grid">
+            <div class="about-text">
+                <h3>Nuestra Historia</h3>
+                <h2>Pasión por el detalle</h2>
+                <p><strong>Fundada por Yisel Carrasco</strong>, Burdeo Renovaciones nació de la convicción de que cada hogar en el sur tiene una historia que contar. Con años de experiencia en el rubro, Yisel lidera un equipo multidisciplinario enfocado en la excelencia.</p>
+                <p>"No solo renovamos cocinas o baños; reinterpretamos la forma en que vives tus espacios. Nos involucramos desde el primer boceto hasta la entrega de llaves, asegurando que ese toque de 'diseño de autor' se sienta en cada rincón".</p>
+                <p>Nuestro equipo trabaja con proveedores locales y materiales nobles, fusionando las tendencias modernas con la identidad sureña.</p>
+            </div>
+            <div class="about-images">
+                <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=600&q=80" alt="Yisel Carrasco Fundadora" class="img-founder">
+                <img src="https://images.unsplash.com/photo-1581094794329-cdac82aadbcc?auto=format&fit=crop&w=600&q=80" alt="Equipo Burdeo Trabajando" class="img-team">
+            </div>
+        </div>
+    </section>
+
+    <section id="portfolio" class="section-padding">
+        <div class="container">
+            <h2 class="text-center" style="margin-bottom: 50px;">Nuestros Proyectos</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="img/cocina_katya.jpeg" alt="Proyecto Cocina Katya">
+                    <div class="gallery-overlay">
                         <h3>Proyecto Katya</h3>
-                        <p>Diseño funcional y luminosidad.</p>
+                        <p>Luminosidad y Espacio</p>
                     </div>
                 </div>
-            </div>
-
-            <div class="gallery-item">
-                <img src="img/cocina_frutillar.jpeg" alt="Cocina en Frutillar">
-                <div class="overlay">
-                    <div>
-                        <h3>Estilo Frutillar</h3>
-                        <p>Calidez sureña y terminaciones modernas.</p>
+                <div class="gallery-item">
+                    <img src="img/cocina_frutillar.jpeg" alt="Proyecto Frutillar">
+                    <div class="gallery-overlay">
+                        <h3>Casa Frutillar</h3>
+                        <p>Madera Nativa y Tradición</p>
                     </div>
                 </div>
-            </div>
-
-            <div class="gallery-item">
-                <img src="img/cocina-azul-madera-puerto-montt.jpg" alt="Cocina Azul y Madera Puerto Montt">
-                <div class="overlay">
-                    <div>
-                        <h3>Azul & Madera Nativa</h3>
-                        <p>Carácter único en Puerto Montt.</p>
+                <div class="gallery-item">
+                    <img src="img/cocina-azul-madera-puerto-montt.jpg" alt="Cocina Azul Puerto Montt">
+                    <div class="gallery-overlay">
+                        <h3>Estilo Puerto Montt</h3>
+                        <p>Modernidad y Color</p>
                     </div>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-    <section id="testimonios" class="section-padding testimonials">
-        <div class="container">
-            <h2 class="section-title">Lo que dicen nuestros clientes</h2>
-            <div class="testimonial-grid">
-                <div class="test-card">
-                    <p>“El equipo fue puntual, detallista y superó nuestras expectativas. Lograron captar exactamente lo que queríamos.”</p>
-                    <span>— Claudia L.</span>
-                </div>
-                <div class="test-card">
-                    <p>“Una cocina preciosa y funcional. El proceso de obra fue muy ordenado, algo difícil de encontrar hoy en día.”</p>
-                    <span>— Felipe G.</span>
-                </div>
-                <div class="test-card">
-                    <p>“Excelente atención de principio a fin. Los materiales son de primera y la asesoría en diseño fue clave.”</p>
-                    <span>— María José T.</span>
                 </div>
             </div>
         </div>
     </section>
 
-    <a href="https://wa.me/56912345678" class="whatsapp-btn" target="_blank">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.588-5.946 0-6.556 5.332-11.891 11.893-11.891 3.181 0 6.167 1.24 8.407 3.481s3.48 5.232 3.48 8.412c0 6.556-5.332 11.89-11.891 11.89-2.015 0-3.991-.511-5.741-1.478l-6.248 1.695zm6.426-3.132c1.481.878 3.043 1.343 4.651 1.343 5.01 0 9.086-4.077 9.086-9.088 0-2.431-.946-4.713-2.664-6.432s-4.001-2.664-6.422-2.664c-5.01 0-9.086 4.077-9.086 9.088 0 1.77.51 3.488 1.474 4.965l-1.01 3.693 3.791-.984zm11.052-6.333c-.33-.164-1.954-.964-2.251-1.074s-.513-.164-.729.164-.836.964-1.023 1.174-.375.233-.705.07c-.33-.164-1.391-.512-2.648-1.633-.98-.874-1.641-1.953-1.833-2.282s-.02-.507.145-.671c.148-.147.33-.384.495-.576.164-.191.22-.328.33-.547s.055-.41-.027-.574-.729-1.756-1.001-2.408c-.265-.633-.533-.547-.729-.557l-.621-.011c-.216 0-.568.082-.864.41-.295.328-1.129 1.103-1.129 2.689s1.154 3.121 1.314 3.34c.16.218 2.27 3.464 5.498 4.854.768.331 1.367.529 1.835.678.77.244 1.47.21 2.024.128.619-.092 1.954-.799 2.229-1.57s.276-1.432.193-1.569-.304-.218-.634-.382z"/></svg>
-        <span>Contáctanos por WhatsApp</span>
-    </a>
-
-    <footer id="contacto">
+    <section id="reviews" class="section-padding reviews-section">
         <div class="container">
-            <p>&copy; 2025 Burdeo Renovaciones - Puerto Montt, Chile</p>
-            <p style="font-size: 12px; margin-top: 10px; opacity: 0.6;">Diseño y Arquitectura de Interiores</p>
+            <h2 style="margin-bottom: 10px;">Lo que dicen nuestros clientes</h2>
+            <div class="google-badge">
+                <i class="fab fa-google" style="color: #4285F4;"></i>
+                <span>Excelencia en servicio al cliente</span>
+            </div>
+
+            <div class="review-grid">
+                <div class="google-card">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg" class="google-logo-small" alt="G">
+                    <div class="reviewer-header">
+                        <div class="reviewer-avatar">M</div>
+                        <div>
+                            <strong>Mariela Solari</strong>
+                            <div class="stars">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p>"Fuimos con una idea y la mejoraron, tuvieron en cuenta los más mínimos detalles. Son responsables, eficientes y muy prolijos. ¡Recomendados!"</p>
+                </div>
+
+                <div class="google-card">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg" class="google-logo-small" alt="G">
+                    <div class="reviewer-header">
+                        <div class="reviewer-avatar" style="background: #333;">J</div>
+                        <div>
+                            <strong>Jorge M.</strong>
+                            <div class="stars">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p>"Excelente trabajo en la renovación de nuestra cocina en Puerto Varas. El equipo de Yisel cumplió con los plazos y el resultado es hermoso."</p>
+                </div>
+
+                <div class="google-card" style="background: #f9f9f9; border: 2px dashed #ccc; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center;">
+                    <i class="fas fa-comment-dots" style="font-size: 30px; color: #ccc; margin-bottom: 15px;"></i>
+                    <p>¿Ya trabajaste con nosotros?</p>
+                    <a href="#" style="color: var(--burdeo); font-weight: bold; text-decoration: none;">Déjanos tu opinión en Google</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact">
+        <div class="container footer-grid">
+            <div class="footer-col">
+                <a href="#" class="logo" style="color: white;">BURDEO</a>
+                <p style="margin-top: 20px;">Transformando el sur de Chile, un espacio a la vez.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Contacto</h4>
+                <ul>
+                    <li><i class="fas fa-map-marker-alt"></i> Puerto Montt, Chile</li>
+                    <li><i class="fas fa-phone"></i> +56 9 1234 5678</li>
+                    <li><i class="fas fa-envelope"></i> contacto@burdeorenovaciones.cl</li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Síguenos</h4>
+                <div style="display: flex; gap: 15px; font-size: 20px;">
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="text-center" style="margin-top: 50px; opacity: 0.5;">
+            &copy; 2025 Burdeo Renovaciones. Todos los derechos reservados.
         </div>
     </footer>
+
+    <a href="https://wa.me/56912345678" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
 
 </body>
 </html>
