@@ -155,4 +155,225 @@
         }
         .gallery-item { position: relative; height: 400px; overflow: hidden; group: hover; }
         .gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: 0.5s; }
-        .gallery-item:hover img { transform: scale
+        .gallery-item:hover img { transform: scale(1.1); }
+        .gallery-overlay {
+            position: absolute; bottom: 0; left: 0; width: 100%;
+            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+            color: white; padding: 30px; opacity: 0; transition: 0.3s;
+        }
+        .gallery-item:hover .gallery-overlay { opacity: 1; }
+
+        /* OPINIONES GOOGLE */
+        .reviews-section { background: var(--blanco); text-align: center; }
+        .google-badge {
+            display: inline-flex; align-items: center; gap: 10px;
+            background: #fff; padding: 10px 20px; 
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1); border-radius: 50px; margin-bottom: 40px;
+        }
+        .review-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        
+        .google-card {
+            background: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            text-align: left;
+            position: relative;
+            border: 1px solid #eee;
+        }
+        .reviewer-header { display: flex; align-items: center; gap: 15px; margin-bottom: 15px; }
+        .reviewer-avatar {
+            width: 45px; height: 45px; background: #800020; color: white;
+            border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold;
+        }
+        .stars { color: var(--dorado-google); font-size: 14px; margin-top: 5px; }
+        .google-logo-small { position: absolute; top: 30px; right: 30px; width: 20px; }
+
+        /* FOOTER */
+        footer { background: var(--negro); color: #aaa; padding: 60px 0; font-size: 0.9rem; }
+        .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; }
+        .footer-col h4 { color: var(--blanco); margin-bottom: 20px; font-size: 1.2rem; }
+        .footer-col ul { list-style: none; }
+        .footer-col ul li { margin-bottom: 10px; }
+        .footer-col a { color: #aaa; text-decoration: none; transition: 0.3s; }
+        .footer-col a:hover { color: var(--burdeo); }
+        
+        .social-icons { display: flex; gap: 15px; font-size: 20px; margin-top: 10px; }
+        .social-icons a { color: #fff; text-decoration: none; transition: 0.3s; }
+        .social-icons a:hover { color: var(--burdeo); transform: scale(1.1); }
+
+        /* WHATSAPP */
+        .whatsapp-float {
+            position: fixed; bottom: 30px; right: 30px;
+            background: #25d366; color: white; width: 60px; height: 60px;
+            border-radius: 50%; display: flex; align-items: center; justify-content: center;
+            font-size: 30px; box-shadow: 0 5px 15px rgba(0,0,0,0.2); z-index: 9999;
+            transition: 0.3s;
+        }
+        .whatsapp-float:hover { transform: scale(1.1); }
+
+        /* MOBILE */
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .about-grid { grid-template-columns: 1fr; }
+            .about-images { height: 350px; margin-top: 30px; }
+            .hero h1 { font-size: 2.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <nav>
+                <a href="#" class="logo">BURDEO</a>
+                <ul class="nav-links">
+                    <li><a href="#about">Nosotros</a></li>
+                    <li><a href="#portfolio">Proyectos</a></li>
+                    <li><a href="#reviews">Opiniones</a></li>
+                    <li><a href="#contact">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>Diseñamos espacios,<br>construimos sueños.</h1>
+            <p>Remodelaciones integrales en Puerto Montt y el sur de Chile. <br>Donde la elegancia se encuentra con la calidez de la madera nativa.</p>
+            <a href="https://wa.me/56967797864" target="_blank" class="btn-primary">Cotizar mi Proyecto</a>
+        </div>
+    </section>
+
+    <section id="about" class="section-padding about-section">
+        <div class="container about-grid">
+            <div class="about-text">
+                <h3>Nuestra Historia</h3>
+                <h2>Pasión por el detalle</h2>
+                <p><strong>Fundada por Yisel Carrasco</strong>, Burdeo Renovaciones nació de la convicción de que cada hogar en el sur tiene una historia que contar. Con años de experiencia en el rubro, Yisel lidera un equipo multidisciplinario enfocado en la excelencia.</p>
+                <p>"No solo renovamos cocinas o baños; reinterpretamos la forma en que vives tus espacios. Nos involucramos desde el primer boceto hasta la entrega de llaves, asegurando que ese toque de 'diseño de autor' se sienta en cada rincón".</p>
+                <p>Nuestro equipo trabaja con proveedores locales y materiales nobles, fusionando las tendencias modernas con la identidad sureña.</p>
+            </div>
+            <div class="about-images">
+                <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=600&q=80" alt="Yisel Carrasco Fundadora" class="img-founder">
+                <img src="https://images.unsplash.com/photo-1581094794329-cdac82aadbcc?auto=format&fit=crop&w=600&q=80" alt="Equipo Burdeo Trabajando" class="img-team">
+            </div>
+        </div>
+    </section>
+
+    <section id="portfolio" class="section-padding">
+        <div class="container">
+            <h2 class="text-center" style="margin-bottom: 50px;">Nuestros Proyectos</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="img/cocina_katya.jpeg" alt="Proyecto Cocina Katya">
+                    <div class="gallery-overlay">
+                        <h3>Proyecto Katya</h3>
+                        <p>Luminosidad y Espacio</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="img/cocina_frutillar.jpeg" alt="Proyecto Frutillar">
+                    <div class="gallery-overlay">
+                        <h3>Casa Frutillar</h3>
+                        <p>Madera Nativa y Tradición</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="img/cocina-azul-madera-puerto-montt.jpg" alt="Cocina Azul Puerto Montt">
+                    <div class="gallery-overlay">
+                        <h3>Estilo Puerto Montt</h3>
+                        <p>Modernidad y Color</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="reviews" class="section-padding reviews-section">
+        <div class="container">
+            <h2 style="margin-bottom: 10px;">Lo que dicen nuestros clientes</h2>
+            <div class="google-badge">
+                <i class="fab fa-google" style="color: #4285F4;"></i>
+                <span>Excelencia en servicio al cliente</span>
+            </div>
+
+            <div class="review-grid">
+                <div class="google-card">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg" class="google-logo-small" alt="G">
+                    <div class="reviewer-header">
+                        <div class="reviewer-avatar">M</div>
+                        <div>
+                            <strong>Mariela Solari</strong>
+                            <div class="stars">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p>"Fuimos con una idea y la mejoraron, tuvieron en cuenta los más mínimos detalles. Son responsables, eficientes y muy prolijos. ¡Recomendados!"</p>
+                </div>
+
+                <div class="google-card">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg" class="google-logo-small" alt="G">
+                    <div class="reviewer-header">
+                        <div class="reviewer-avatar" style="background: #333;">J</div>
+                        <div>
+                            <strong>Jorge M.</strong>
+                            <div class="stars">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p>"Excelente trabajo en la renovación de nuestra cocina en Puerto Varas. El equipo de Yisel cumplió con los plazos y el resultado es hermoso."</p>
+                </div>
+
+                <div class="google-card" style="background: #f9f9f9; border: 2px dashed #ccc; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center;">
+                    <i class="fas fa-comment-dots" style="font-size: 30px; color: #ccc; margin-bottom: 15px;"></i>
+                    <p>¿Ya trabajaste con nosotros?</p>
+                    <a href="https://share.google/bnlRzMr2lj7M7mQ1v" target="_blank" style="color: var(--burdeo); font-weight: bold; text-decoration: none;">Déjanos tu opinión en Google</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact">
+        <div class="container footer-grid">
+            <div class="footer-col">
+                <a href="#" class="logo" style="color: white;">BURDEO</a>
+                <p style="margin-top: 20px;">Transformando el sur de Chile, un espacio a la vez.</p>
+                
+                <div class="social-icons">
+                    <a href="https://www.instagram.com/burdeorenovaciones/" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.facebook.com/burdeorenueva/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.tiktok.com/@burdeorenovaciones" target="_blank"><i class="fab fa-tiktok"></i></a>
+                    <a href="https://www.youtube.com/@BurdeoRenovaciones" target="_blank"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Contacto</h4>
+                <ul>
+                    <li><i class="fas fa-map-marker-alt"></i> Puerto Montt, Chile</li>
+                    <li><i class="fab fa-whatsapp"></i> <a href="https://wa.me/56967797864" target="_blank" style="color:#aaa;">+56 9 6779 7864</a></li>
+                    <li><i class="fas fa-envelope"></i> <a href="mailto:hola@burdeorenovaciones.cl" style="color:#aaa;">hola@burdeorenovaciones.cl</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Enlaces</h4>
+                <ul>
+                    <li><a href="#about">Sobre Nosotros</a></li>
+                    <li><a href="#portfolio">Proyectos</a></li>
+                    <li><a href="#reviews">Testimonios</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="text-center" style="margin-top: 50px; opacity: 0.5;">
+            &copy; 2025 Burdeo Renovaciones. Todos los derechos reservados.
+        </div>
+    </footer>
+
+    <a href="https://wa.me/56967797864" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+</body>
+</html>
