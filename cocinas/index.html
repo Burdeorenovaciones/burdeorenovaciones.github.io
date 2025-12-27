@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cocinas a Medida | Burdeo Renovaciones</title>
+    <meta name="description" content="Diseño y remodelación de cocinas en Puerto Montt, Puerto Varas y Frutillar.">
+    
+    <link rel="icon" type="image/png" href="../img/favicon.png">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root { --burdeo: #800020; --negro: #1a1a1a; --blanco: #ffffff; }
+        body { font-family: 'Montserrat', sans-serif; margin: 0; color: #333; line-height: 1.6; }
+        h1, h2, h3 { font-family: 'Playfair Display', serif; }
+        a { text-decoration: none; color: inherit; transition: 0.3s; }
+        
+        header { padding: 20px 0; border-bottom: 1px solid #eee; position: sticky; top: 0; background: var(--blanco); z-index: 100; }
+        .container { max-width: 1200px; margin: auto; padding: 0 20px; }
+        .nav-flex { display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-size: 24px; font-weight: 700; color: var(--burdeo); }
+        .breadcrumb { font-size: 0.9rem; color: #666; }
+        
+        .category-hero { text-align: center; padding: 60px 20px; background-color: #f9f9f9; margin-bottom: 40px; }
+        
+        .projects-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: 40px; padding-bottom: 80px; }
+        .project-card { background: var(--blanco); border-radius: 4px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); overflow: hidden; }
+        .img-wrapper { height: 280px; overflow: hidden; }
+        .img-wrapper img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s; }
+        .project-card:hover .img-wrapper img { transform: scale(1.05); }
+        
+        .card-info { padding: 25px; }
+        .location { font-size: 0.85rem; text-transform: uppercase; color: var(--burdeo); font-weight: 600; display: block; margin-bottom: 10px; }
+        .btn-details { display: inline-block; border: 1px solid #ddd; padding: 8px 20px; border-radius: 50px; font-size: 0.9rem; margin-top: 15px; }
+        .btn-details:hover { background: var(--burdeo); color: white; border-color: var(--burdeo); }
+        
+        /* Ajuste móvil */
+        @media (max-width: 768px) { .projects-grid { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-flex">
+            <a href="../index.html" class="logo">BURDEO</a>
+            <nav class="breadcrumb">
+                <a href="../index.html">Inicio</a> / 
+                <a href="../proyectos.html">Proyectos</a> / 
+                <span>Cocinas</span>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="category-hero">
+            <h1>Cocinas a Medida</h1>
+            <p>Espacios diseñados para compartir, resistentes a la humedad del sur y con maderas nativas.</p>
+        </section>
+
+        <section class="container projects-grid">
+
+            <article class="project-card">
+                <a href="#">
+                    <div class="img-wrapper">
+                        <img src="../img/cocinas/alerce/FT/portada-cocina-ft.jpg" alt="Cocina en Alerce">
+                    </div>
+                    <div class="card-info">
+                        <span class="location">Alerce</span>
+                        <h3>Proyecto FT</h3>
+                        <p>Renovación integral priorizando almacenamiento vertical.</p>
+                        <span class="btn-details">Ver más &rarr;</span>
+                    </div>
+                </a>
+            </article>
+
+            <article class="project-card">
+                <a href="#">
+                    <div class="img-wrapper">
+                        <img src="../img/cocinas/frutillar/cocina-frutillar-portada.jpg" alt="Cocina Frutillar">
+                    </div>
+                    <div class="card-info">
+                        <span class="location">Frutillar</span>
+                        <h3>Casa del Lago</h3>
+                        <p>Inspiración clásica con tonos blancos y madera de mañío.</p>
+                        <span class="btn-details">Ver más &rarr;</span>
+                    </div>
+                </a>
+            </article>
+
+             <article class="project-card">
+                <a href="#">
+                    <div class="img-wrapper">
+                        <img src="../img/cocinas/muermos/chacana/portada-cocina-chacana-muermos.jpg" alt="Cocina Los Muermos">
+                    </div>
+                    <div class="card-info">
+                        <span class="location">Los Muermos</span>
+                        <h3>Proyecto Chacana</h3>
+                        <p>Diseño rústico moderno adaptado al entorno campestre.</p>
+                        <span class="btn-details">Ver más &rarr;</span>
+                    </div>
+                </a>
+            </article>
+
+        </section>
+    </main>
+</body>
+</html>
