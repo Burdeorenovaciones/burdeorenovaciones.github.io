@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Cocinas a Medida en Puerto Montt y Sur de Chile | Burdeo Renovaciones</title>
+    <meta name="description" content="Diseño y remodelación de cocinas en Puerto Montt, Puerto Varas y Frutillar. Muebles a medida, cubiertas de cuarzo y madera nativa.">
+    <meta name="robots" content="index, follow">
+
+    <link rel="icon" type="image/png" href="../img/favicon.png">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* ESTILOS GENERALES (Heredados del sitio principal) */
+        :root {
+            --burdeo: #800020;
+            --negro: #1a1a1a;
+            --blanco: #ffffff;
+            --gris-claro: #f9f9f9;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        h1, h2, h3 { font-family: 'Playfair Display', serif; }
+        a { text-decoration: none; color: inherit; transition: 0.3s; }
+
+        /* HEADER */
+        header {
+            padding: 20px 0;
+            border-bottom: 1px solid #eee;
+            position: sticky;
+            top: 0;
+            background: var(--blanco);
+            z-index: 100;
+        }
+        .container { max-width: 1200px; margin: auto; padding: 0 20px; }
+        
+        .nav-flex {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--burdeo);
+        }
+        .breadcrumb {
+            font-size: 0.9rem;
+            color: #666;
+        }
+        .breadcrumb a:hover { color: var(--burdeo); }
+
+        /* HERO DE CATEGORÍA */
+        .category-hero {
+            text-align: center;
+            padding: 60px 20px;
+            background-color: var(--gris-claro);
+            margin-bottom: 40px;
+        }
+        .category-hero h1 { font-size: 2.5rem; color: var(--negro); margin-bottom: 15px; }
+        .category-hero p { max-width: 700px; margin: auto; color: #555; }
+
+        /* GRILLA DE PROYECTOS */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 40px;
+            padding-bottom: 80px;
+        }
+
+        .project-card {
+            background: var(--blanco);
+            border-radius: 4px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+        }
+        .project-card:hover { transform: translateY(-5px); }
+
+        .img-wrapper {
+            height: 280px;
+            overflow: hidden;
+            position: relative;
+        }
+        .img-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        .project-card:hover .img-wrapper img { transform: scale(1.05); }
+
+        .card-info { padding: 25px; }
+        .card-info h3 { margin: 0 0 10px 0; color: var(--negro); font-size: 1.4rem; }
+        .card-info .location {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--burdeo);
+            font-weight: 600;
+            display: block;
+            margin-bottom: 10px;
+        }
+        .card-info p { font-size: 0.95rem; color: #666; margin-bottom: 20px; }
+        
+        .btn-details {
+            display: inline-block;
+            border: 1px solid #ddd;
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+        .btn-details:hover {
+            background: var(--burdeo);
+            color: white;
+            border-color: var(--burdeo);
+        }
+
+        /* CTA FINAL */
+        .cta-box {
+            background: var(--burdeo);
+            color: white;
+            text-align: center;
+            padding: 60px 20px;
+        }
+        .cta-box h2 { color: white; margin-bottom: 20px; }
+        .btn-wsp {
+            background: white;
+            color: var(--burdeo);
+            padding: 15px 30px;
+            border-radius: 4px;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        /* FOOTER SIMPLE */
+        footer {
+            background: var(--negro);
+            color: #888;
+            text-align: center;
+            padding: 40px 0;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .projects-grid { grid-template-columns: 1fr; }
+            .img-wrapper { height: 220px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-flex">
+            <a href="../index.html" class="logo">BURDEO</a>
+            <nav class="breadcrumb">
+                <a href="../index.html">Inicio</a> / 
+                <a href="../proyectos.html">Proyectos</a> / 
+                <span>Cocinas</span>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="category-hero">
+            <h1>Cocinas a Medida</h1>
+            <p>
+                Espacios diseñados para compartir. En Burdeo Renovaciones entendemos la cocina como el corazón de la casa sureña. 
+                Utilizamos materiales resistentes a la humedad de la zona, maderas nativas y herrajes de cierre suave.
+            </p>
+        </section>
+
+        <section class="container projects-grid">
+
+            <article class="project-card">
+                <a href="proyecto-ft.html">
+                    <div class="img-wrapper">
+                        <img src="../img/cocinas/alerce/ft/portada-cocina-ft.jpg" 
+                             alt="Cocina en Alerce, muebles modernos y funcionales">
+                    </div>
+                    <div class="card-info">
+                        <span class="location">Alerce, Puerto Montt</span>
+                        <h3>Proyecto Cocina FT</h3>
+                        <p>Una renovación completa priorizando el almacenamiento vertical y la iluminación bajo gabinetes.</p>
+                        <span class="btn-details">Ver detalles &rarr;</span>
+                    </div>
+                </a>
+            </article>
+
+            <article class="project-card">
+                <a href="proyecto-frutillar.html">
+                    <div class="img-wrapper">
+                        <img src="../img/cocinas/frutillar/cocina-frutillar-portada.jpg" 
+                             alt="Cocina estilo sureño en Frutillar frente al lago">
+                    </div>
+                    <div class="card-info">
+                        <span class="location">Frutillar</span>
+                        <h3>Casa del Lago</h3>
+                        <p>Inspiración clásica con tonos blancos y madera de mañío. Un espacio luminoso y acogedor.</p>
+                        <span class="btn-details">Ver detalles &rarr;</span>
+                    </div>
+                </a>
+            </article>
+
+            <article class="project-card">
+                <a href="proyecto-katya.html">
+                    <div class="img-wrapper">
+                        <img src="../img/cocinas/puerto-varas/portada-cocina-casa-katya.jpg" 
+                             alt="Cocina moderna con isla en Puerto Varas">
+                    </div>
+                    <div class="card-info">
+                        <span class="location">Puerto Varas</span>
+                        <h3>Residencia Katya</h3>
+                        <p>Diseño de concepto abierto, integrando la cocina al comedor con una isla central protagonista.</p>
+                        <span class="btn-details">Ver detalles &rarr;</span>
+                    </div>
+                </a>
+            </article>
+
+        </section>
+
+        <section class="cta-box">
+            <h2>¿Quieres remodelar tu cocina?</h2>
+            <p>Cuéntanos tus ideas y diseñemos juntos el espacio que tu familia merece.</p>
+            <a href="https://wa.me/56967797864" target="_blank" class="btn-wsp">
+                <i class="fab fa-whatsapp"></i> Cotizar por WhatsApp
+            </a>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Burdeo Renovaciones - Puerto Montt, Chile.</p>
+            <a href="../index.html" style="color: #666; font-size: 0.8rem;">Volver al Inicio</a>
+        </div>
+    </footer>
+
+</body>
+</html>
