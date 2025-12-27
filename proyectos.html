@@ -1,295 +1,146 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>Proyectos de Renovación | Cocinas, Closets y Quinchos en Puerto Montt</title>
-  <meta name="description" content="Galería de proyectos de Burdeo Renovaciones. Inspírate con nuestras cocinas a medida, quinchos, closets y ampliaciones en Puerto Montt, Puerto Varas y la Región de Los Lagos.">
-  <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://burdeorenovaciones.github.io/proyectos.html">
-
-  <link rel="icon" type="image/png" href="img/favicon.png">
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
-
-  <style>
-    /* VARIABLES Y GENERALES */
-    :root {
-      --burdeo: #800020;
-      --negro: #1a1a1a;
-      --gris-claro: #f9f9f9;
-      --blanco: #ffffff;
-      --whatsapp: #25D366;
-    }
-
-    body {
-      font-family: 'Montserrat', sans-serif;
-      margin: 0;
-      color: #333;
-      background-color: var(--blanco);
-      line-height: 1.6;
-    }
-
-    h1, h2, h3 {
-      font-family: 'Playfair Display', serif;
-    }
-
-    /* HEADER */
-    header {
-      padding: 20px 0;
-      border-bottom: 1px solid #eee;
-      background: var(--blanco);
-      position: sticky;
-      top: 0;
-      z-index: 100;
-    }
-
-    .header-container {
-      max-width: 1200px;
-      margin: auto;
-      padding: 0 20px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .logo {
-      font-size: 26px;
-      color: var(--burdeo);
-      font-weight: 700;
-      text-decoration: none;
-      letter-spacing: -0.5px;
-    }
-
-    .nav-link {
-      text-decoration: none;
-      color: #555;
-      font-size: 14px;
-      font-weight: 500;
-    }
+<section id="cocinas" style="padding: 60px 20px; max-width: 1200px; margin: 0 auto;">
     
-    .nav-link:hover {
-      color: var(--burdeo);
-    }
+    <div style="text-align: center; margin-bottom: 50px;">
+        <h2 style="font-family: 'Playfair Display', serif; font-size: 2.5rem; color: #1a1a1a; margin-bottom: 15px;">
+            Cocinas a Medida
+        </h2>
+        <p style="font-family: 'Montserrat', sans-serif; color: #555; max-width: 700px; margin: 0 auto; line-height: 1.6;">
+            Diseñamos el corazón de tu hogar. Proyectos personalizados en Puerto Montt, Puerto Varas y Frutillar, fusionando funcionalidad moderna con la calidez del sur.
+        </p>
+    </div>
 
-    /* CONTENEDOR PRINCIPAL */
-    .container {
-      max-width: 1200px;
-      margin: auto;
-      padding: 60px 20px;
-    }
+    <div class="projects-grid">
+        
+        <article class="project-card">
+            <a href="cocinas/proyecto-ft.html" class="card-link" aria-label="Ver detalles de Cocina FT en Alerce">
+                <div class="img-container">
+                    <img src="img/cocinas/alerce/ft/portada-cocina-ft.jpg" 
+                         alt="Remodelación de cocina en Alerce, muebles a medida y optimización de espacio" 
+                         loading="lazy">
+                </div>
+                <div class="card-content">
+                    <h3>Cocina FT - Alerce</h3>
+                    <p>Renovación integral con enfoque en maximizar el almacenamiento y la iluminación en espacios compactos.</p>
+                    <span class="view-more">Ver proyecto &rarr;</span>
+                </div>
+            </a>
+        </article>
 
-    /* INTRODUCCIÓN */
-    .intro {
-      text-align: center;
-      max-width: 800px;
-      margin: 0 auto 60px auto;
-    }
+        <article class="project-card">
+            <a href="cocinas/proyecto-frutillar.html" class="card-link" aria-label="Ver detalles de Cocina en Frutillar">
+                <div class="img-container">
+                    <img src="img/cocinas/frutillar/cocina-frutillar-portada.jpg" 
+                         alt="Diseño de cocina estilo sureño en Frutillar, combinación de madera nativa y blanco" 
+                         loading="lazy">
+                </div>
+                <div class="card-content">
+                    <h3>Casa Frutillar</h3>
+                    <p>Estilo clásico sureño con toques contemporáneos. Maderas nativas y texturas cálidas frente al lago.</p>
+                    <span class="view-more">Ver proyecto &rarr;</span>
+                </div>
+            </a>
+        </article>
 
-    .intro h1 {
-      font-size: 2.5rem;
-      color: var(--negro);
-      margin-bottom: 20px;
-    }
+        <article class="project-card">
+            <a href="cocinas/proyecto-katya.html" class="card-link" aria-label="Ver detalles de Cocina Casa Katya en Puerto Varas">
+                <div class="img-container">
+                    <img src="img/cocinas/puerto-varas/portada-cocina-casa-katya.jpg" 
+                         alt="Cocina moderna con isla central en Puerto Varas, Casa Katya" 
+                         loading="lazy">
+                </div>
+                <div class="card-content">
+                    <h3>Casa Katya - Puerto Varas</h3>
+                    <p>Diseño de concepto abierto con isla central. Elegancia minimalista y alta funcionalidad para la vida familiar.</p>
+                    <span class="view-more">Ver proyecto &rarr;</span>
+                </div>
+            </a>
+        </article>
 
-    .intro p {
-      font-size: 1.1rem;
-      color: #666;
-      font-weight: 300;
-    }
+    </div>
 
-    /* GRILLA DE CATEGORÍAS */
-    .categories {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 30px;
-    }
+    <style>
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
 
-    .category-card {
-      background: var(--blanco);
-      border: 1px solid #eee;
-      padding: 40px 30px;
-      text-decoration: none;
-      color: inherit;
-      transition: all 0.3s ease;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      min-height: 200px;
-      border-radius: 4px;
-      position: relative;
-    }
+        .project-card {
+            background: #fff;
+            border: 1px solid #eee;
+            border-radius: 4px;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
 
-    /* UX: Feedback al pasar el mouse */
-    .category-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 10px 20px rgba(0,0,0,0.08);
-      border-color: var(--burdeo);
-    }
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+            border-color: #800020; /* Color Burdeo al hover */
+        }
 
-    .category-card h2 {
-      color: var(--burdeo);
-      font-size: 1.5rem;
-      margin-top: 0;
-      margin-bottom: 15px;
-    }
+        .card-link {
+            text-decoration: none;
+            color: inherit;
+            display: block;
+            height: 100%;
+        }
 
-    .category-card p {
-      font-size: 0.95rem;
-      color: #555;
-      margin-bottom: 25px;
-      flex-grow: 1;
-    }
+        .img-container {
+            height: 250px;
+            overflow: hidden;
+            position: relative;
+        }
 
-    /* UX: Enlace visual dentro de la tarjeta */
-    .card-link-text {
-      font-weight: 600;
-      color: var(--negro);
-      font-size: 0.9rem;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
+        .img-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Asegura que la imagen llene el espacio sin deformarse */
+            transition: transform 0.5s ease;
+        }
 
-    .category-card:hover .card-link-text {
-      color: var(--burdeo);
-    }
+        .project-card:hover .img-container img {
+            transform: scale(1.05); /* Zoom suave al pasar el mouse */
+        }
 
-    /* SECCIÓN CTA (Conversión) */
-    .cta-section {
-      text-align: center;
-      margin-top: 100px;
-      padding: 60px 20px;
-      background-color: var(--gris-claro);
-      border-radius: 8px;
-    }
+        .card-content {
+            padding: 25px;
+            display: flex;
+            flex-direction: column;
+        }
 
-    .cta-section h3 {
-      margin-top: 0;
-      font-size: 2rem;
-      color: var(--negro);
-    }
+        .card-content h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            margin-top: 0;
+            margin-bottom: 10px;
+            color: #1a1a1a;
+        }
 
-    .cta-section p {
-      margin-bottom: 30px;
-      color: #555;
-    }
+        .card-content p {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.95rem;
+            color: #666;
+            margin-bottom: 20px;
+            line-height: 1.5;
+        }
 
-    .btn-whatsapp {
-      background: var(--whatsapp);
-      color: white;
-      padding: 18px 40px;
-      text-decoration: none;
-      font-weight: 600;
-      border-radius: 50px;
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      transition: background 0.3s;
-      box-shadow: 0 4px 10px rgba(37, 211, 102, 0.3);
-    }
+        .view-more {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            color: #800020; /* Color Burdeo */
+            font-size: 0.9rem;
+            margin-top: auto;
+        }
 
-    .btn-whatsapp:hover {
-      background: #1ebc57;
-      transform: scale(1.02);
-    }
-
-    /* SVG ICONOS */
-    .icon-svg {
-      width: 20px;
-      height: 20px;
-      fill: currentColor;
-    }
-
-    /* RESPONSIVE */
-    @media (max-width: 768px) {
-      .intro h1 { font-size: 2rem; }
-      .container { padding: 40px 20px; }
-      .category-card { padding: 30px 20px; }
-    }
-  </style>
-</head>
-
-<body>
-
-<header>
-  <div class="header-container">
-    <a href="index.html" class="logo">BURDEO</a>
-    <a href="index.html" class="nav-link">Inicio</a>
-  </div>
-</header>
-
-<main class="container">
-
-  <section class="intro">
-    <h1>Nuestros Proyectos en Puerto Montt y Sur de Chile</h1>
-    <p>
-      Explora nuestras categorías de renovación. Desde cocinas que invitan a compartir hasta ampliaciones que transforman tu hogar. 
-      Diseño de autor con materiales nativos y ejecución impecable.
-    </p>
-  </section>
-
-  <nav class="categories" aria-label="Categorías de proyectos">
-
-    <a href="cocinas/index.html" class="category-card">
-      <div>
-        <h2>Cocinas a Medida</h2>
-        <p>Muebles de cocina personalizados, islas funcionales y cubiertas de alta gama para el corazón de tu hogar.</p>
-      </div>
-      <span class="card-link-text">
-        Ver galería de cocinas 
-        <span>&rarr;</span>
-      </span>
-    </a>
-
-    <a href="quinchos/index.html" class="category-card">
-      <div>
-        <h2>Quinchos y Terrazas</h2>
-        <p>Espacios cálidos diseñados para el clima del sur. Parrillas, barras y zonas de estar para disfrutar todo el año.</p>
-      </div>
-      <span class="card-link-text">
-        Ver galería de quinchos
-        <span>&rarr;</span>
-      </span>
-    </a>
-
-    <a href="closets/index.html" class="category-card">
-      <div>
-        <h2>Closets y Walking Closet</h2>
-        <p>Sistemas de organización inteligente. Vestidores a medida que maximizan cada centímetro de tu espacio.</p>
-      </div>
-      <span class="card-link-text">
-        Ver galería de closets
-        <span>&rarr;</span>
-      </span>
-    </a>
-
-    <a href="ampliaciones/index.html" class="category-card">
-      <div>
-        <h2>Ampliaciones y Remodelación</h2>
-        <p>Proyectos integrales de arquitectura interior. Renueva tu living, comedor o añade nuevos metros cuadrados.</p>
-      </div>
-      <span class="card-link-text">
-        Ver proyectos de ampliación
-        <span>&rarr;</span>
-      </span>
-    </a>
-
-  </nav>
-
-  <section class="cta-section">
-    <h3>¿Te inspiraste con alguna idea?</h3>
-    <p>Cuéntanos qué tienes en mente y te ayudamos a hacerlo realidad en la Región de Los Lagos.</p>
-    
-    <a href="https://wa.me/56967797864?text=Hola,%20vi%20sus%20proyectos%20en%20la%20web%20y%20me%20gustaría%20cotizar..." target="_blank" class="btn-whatsapp">
-      <svg class="icon-svg" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
-      </svg>
-      Cotizar por WhatsApp
-    </a>
-  </section>
-
-</main>
-
-</body>
-</html>
+        /* Responsive ajuste para móviles */
+        @media (max-width: 768px) {
+            .projects-grid {
+                grid-template-columns: 1fr; /* Una columna en celular */
+            }
+            .img-container {
+                height: 220px;
+            }
+        }
+    </style>
+</section>
