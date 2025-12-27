@@ -1,146 +1,138 @@
-<section id="cocinas" style="padding: 60px 20px; max-width: 1200px; margin: 0 auto;">
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyectos | Burdeo Renovaciones</title>
+    <meta name="description" content="Explora nuestros proyectos de renovación en el sur de Chile: Cocinas, Quinchos, Closets y Ampliaciones.">
     
-    <div style="text-align: center; margin-bottom: 50px;">
-        <h2 style="font-family: 'Playfair Display', serif; font-size: 2.5rem; color: #1a1a1a; margin-bottom: 15px;">
-            Cocinas a Medida
-        </h2>
-        <p style="font-family: 'Montserrat', sans-serif; color: #555; max-width: 700px; margin: 0 auto; line-height: 1.6;">
-            Diseñamos el corazón de tu hogar. Proyectos personalizados en Puerto Montt, Puerto Varas y Frutillar, fusionando funcionalidad moderna con la calidez del sur.
-        </p>
-    </div>
-
-    <div class="projects-grid">
-        
-        <article class="project-card">
-            <a href="cocinas/proyecto-ft.html" class="card-link" aria-label="Ver detalles de Cocina FT en Alerce">
-                <div class="img-container">
-                    <img src="img/cocinas/alerce/ft/portada-cocina-ft.jpg" 
-                         alt="Remodelación de cocina en Alerce, muebles a medida y optimización de espacio" 
-                         loading="lazy">
-                </div>
-                <div class="card-content">
-                    <h3>Cocina FT - Alerce</h3>
-                    <p>Renovación integral con enfoque en maximizar el almacenamiento y la iluminación en espacios compactos.</p>
-                    <span class="view-more">Ver proyecto &rarr;</span>
-                </div>
-            </a>
-        </article>
-
-        <article class="project-card">
-            <a href="cocinas/proyecto-frutillar.html" class="card-link" aria-label="Ver detalles de Cocina en Frutillar">
-                <div class="img-container">
-                    <img src="img/cocinas/frutillar/cocina-frutillar-portada.jpg" 
-                         alt="Diseño de cocina estilo sureño en Frutillar, combinación de madera nativa y blanco" 
-                         loading="lazy">
-                </div>
-                <div class="card-content">
-                    <h3>Casa Frutillar</h3>
-                    <p>Estilo clásico sureño con toques contemporáneos. Maderas nativas y texturas cálidas frente al lago.</p>
-                    <span class="view-more">Ver proyecto &rarr;</span>
-                </div>
-            </a>
-        </article>
-
-        <article class="project-card">
-            <a href="cocinas/proyecto-katya.html" class="card-link" aria-label="Ver detalles de Cocina Casa Katya en Puerto Varas">
-                <div class="img-container">
-                    <img src="img/cocinas/puerto-varas/portada-cocina-casa-katya.jpg" 
-                         alt="Cocina moderna con isla central en Puerto Varas, Casa Katya" 
-                         loading="lazy">
-                </div>
-                <div class="card-content">
-                    <h3>Casa Katya - Puerto Varas</h3>
-                    <p>Diseño de concepto abierto con isla central. Elegancia minimalista y alta funcionalidad para la vida familiar.</p>
-                    <span class="view-more">Ver proyecto &rarr;</span>
-                </div>
-            </a>
-        </article>
-
-    </div>
-
+    <link rel="icon" type="image/png" href="img/favicon.png">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    
     <style>
-        .projects-grid {
+        :root { --burdeo: #800020; --negro: #1a1a1a; --gris: #f4f4f4; }
+        body { font-family: 'Montserrat', sans-serif; margin: 0; color: #333; }
+        
+        /* HEADER */
+        header { padding: 20px 0; border-bottom: 1px solid #eee; position: sticky; top: 0; background: white; z-index: 100; }
+        .container { max-width: 1200px; margin: auto; padding: 0 20px; }
+        .nav-flex { display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-size: 24px; font-weight: 700; color: var(--burdeo); text-decoration: none; }
+        .nav-links a { margin-left: 20px; text-decoration: none; color: #333; font-size: 0.9rem; }
+        .nav-links a:hover { color: var(--burdeo); }
+
+        /* INTRO */
+        .intro { text-align: center; padding: 60px 20px; max-width: 800px; margin: auto; }
+        h1 { font-family: 'Playfair Display', serif; font-size: 2.5rem; color: var(--negro); margin-bottom: 10px; }
+        p { color: #666; line-height: 1.6; }
+
+        /* GRID CATEGORÍAS */
+        .categories-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 30px;
+            padding-bottom: 80px;
         }
 
-        .project-card {
-            background: #fff;
-            border: 1px solid #eee;
+        .category-card {
+            position: relative;
+            height: 350px;
+            text-decoration: none;
             border-radius: 4px;
             overflow: hidden;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            background-color: #eee; /* Fondo por defecto si no hay imagen */
+            transition: transform 0.3s ease;
         }
+        
+        .category-card:hover { transform: translateY(-5px); }
 
-        .project-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.08);
-            border-color: #800020; /* Color Burdeo al hover */
-        }
-
-        .card-link {
-            text-decoration: none;
-            color: inherit;
-            display: block;
-            height: 100%;
-        }
-
-        .img-container {
-            height: 250px;
-            overflow: hidden;
-            position: relative;
-        }
-
-        .img-container img {
+        /* Imagen de fondo para la tarjeta */
+        .cat-bg {
             width: 100%;
             height: 100%;
-            object-fit: cover; /* Asegura que la imagen llene el espacio sin deformarse */
-            transition: transform 0.5s ease;
+            object-fit: cover;
+            transition: transform 0.5s;
+            opacity: 0.9;
         }
+        .category-card:hover .cat-bg { transform: scale(1.05); opacity: 1; }
 
-        .project-card:hover .img-container img {
-            transform: scale(1.05); /* Zoom suave al pasar el mouse */
+        /* Texto sobre la tarjeta */
+        .cat-overlay {
+            position: absolute;
+            bottom: 0; left: 0; right: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+            padding: 30px;
+            color: white;
         }
+        
+        .cat-overlay h2 { font-family: 'Playfair Display', serif; margin: 0 0 5px 0; font-size: 1.8rem; }
+        .cat-overlay span { font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; font-weight: 500; }
+        .arrow { margin-left: 10px; transition: margin-left 0.3s; }
+        .category-card:hover .arrow { margin-left: 15px; }
 
-        .card-content {
-            padding: 25px;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .card-content h3 {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.4rem;
-            margin-top: 0;
-            margin-bottom: 10px;
-            color: #1a1a1a;
-        }
-
-        .card-content p {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 0.95rem;
-            color: #666;
-            margin-bottom: 20px;
-            line-height: 1.5;
-        }
-
-        .view-more {
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 600;
-            color: #800020; /* Color Burdeo */
-            font-size: 0.9rem;
-            margin-top: auto;
-        }
-
-        /* Responsive ajuste para móviles */
-        @media (max-width: 768px) {
-            .projects-grid {
-                grid-template-columns: 1fr; /* Una columna en celular */
-            }
-            .img-container {
-                height: 220px;
-            }
-        }
     </style>
-</section>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-flex">
+            <a href="index.html" class="logo">BURDEO</a>
+            <nav class="nav-links">
+                <a href="index.html">Inicio</a>
+                <a href="proyectos.html" style="color: var(--burdeo); font-weight: 600;">Proyectos</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="intro">
+            <h1>Nuestros Proyectos</h1>
+            <p>Descubre cómo transformamos espacios en el sur de Chile. Selecciona una categoría para ver nuestra galería de trabajos realizados.</p>
+        </section>
+
+        <section class="categories-grid">
+
+            <a href="cocinas/index.html" class="category-card">
+                <img src="img/cocinas/frutillar/cocina-frutillar-portada.jpg" alt="Cocinas a Medida" class="cat-bg">
+                <div class="cat-overlay">
+                    <h2>Cocinas</h2>
+                    <span>Ver proyectos <span class="arrow">&rarr;</span></span>
+                </div>
+            </a>
+
+            <a href="#" class="category-card" style="background: #2c3e50;">
+                <div style="width:100%; height:100%; display:flex; align-items:center; justify-content:center; background:#4a5568;">
+                    <i class="fas fa-fire" style="color:rgba(255,255,255,0.1); font-size:80px;"></i>
+                </div>
+                <div class="cat-overlay">
+                    <h2>Quinchos</h2>
+                    <span>Próximamente <span class="arrow">&rarr;</span></span>
+                </div>
+            </a>
+
+            <a href="#" class="category-card" style="background: #5d4037;">
+                <div style="width:100%; height:100%; display:flex; align-items:center; justify-content:center; background:#8d6e63;">
+                    <i class="fas fa-door-closed" style="color:rgba(255,255,255,0.1); font-size:80px;"></i>
+                </div>
+                <div class="cat-overlay">
+                    <h2>Closets</h2>
+                    <span>Próximamente <span class="arrow">&rarr;</span></span>
+                </div>
+            </a>
+
+            <a href="#" class="category-card" style="background: #455a64;">
+                <div style="width:100%; height:100%; display:flex; align-items:center; justify-content:center; background:#607d8b;">
+                    <i class="fas fa-home" style="color:rgba(255,255,255,0.1); font-size:80px;"></i>
+                </div>
+                <div class="cat-overlay">
+                    <h2>Ampliaciones</h2>
+                    <span>Próximamente <span class="arrow">&rarr;</span></span>
+                </div>
+            </a>
+
+        </section>
+    </main>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</body>
+</html>
