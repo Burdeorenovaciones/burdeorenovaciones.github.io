@@ -62,6 +62,7 @@
       text-decoration:none;
       background:#ccc;
       transition:transform .3s;
+      display: block; /* Asegura que el enlace ocupe todo el espacio */
     }
 
     .category-card:hover { transform:translateY(-5px); }
@@ -101,6 +102,7 @@
     .disabled {
       cursor:default;
       opacity:.7;
+      pointer-events: none; /* Evita clics en secciones no listas */
     }
   </style>
 </head>
@@ -129,8 +131,7 @@
 
   <section class="categories-grid">
 
-    <!-- COCINAS -->
-    <a href="cocinas.html" class="category-card">
+    <a href="cocinas/index.html" class="category-card">
       <img src="img/cocinas/frutillar/cocina-frutillar-portada.jpg"
            alt="Cocinas a medida en el sur de Chile"
            class="cat-bg">
@@ -140,7 +141,6 @@
       </div>
     </a>
 
-    <!-- QUINCHOS -->
     <div class="category-card disabled">
       <div class="cat-overlay">
         <h2>Quinchos</h2>
@@ -148,7 +148,6 @@
       </div>
     </div>
 
-    <!-- CLOSETS -->
     <div class="category-card disabled">
       <div class="cat-overlay">
         <h2>Closets</h2>
@@ -156,7 +155,6 @@
       </div>
     </div>
 
-    <!-- AMPLIACIONES -->
     <div class="category-card disabled">
       <div class="cat-overlay">
         <h2>Ampliaciones</h2>
