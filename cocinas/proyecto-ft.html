@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyecto FT | Burdeo Renovaciones</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root { --burdeo: #800020; --negro: #1a1a1a; --blanco: #ffffff; }
+        body { font-family: 'Montserrat', sans-serif; margin: 0; color: #333; line-height: 1.6; }
+        h1, h2, h3 { font-family: 'Playfair Display', serif; }
+        a { text-decoration: none; color: inherit; transition: 0.3s; }
+        
+        header { padding: 20px 0; border-bottom: 1px solid #eee; background: var(--blanco); }
+        .container { max-width: 1200px; margin: auto; padding: 0 20px; }
+        .nav-flex { display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-size: 24px; font-weight: 700; color: var(--burdeo); }
+        .breadcrumb { font-size: 0.9rem; color: #666; }
+        
+        /* ESTILOS ESPECÍFICOS DEL PROYECTO */
+        .project-header { text-align: center; padding: 40px 20px; }
+        .project-header h1 { margin-bottom: 10px; color: var(--burdeo); }
+        .project-details { display: flex; justify-content: center; gap: 30px; font-size: 0.9rem; color: #666; margin-bottom: 30px; }
+        .project-description { max-width: 800px; margin: 0 auto 50px auto; text-align: center; }
+
+        /* GALERÍA DE FOTOS */
+        .gallery-grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+            gap: 20px; 
+            margin-bottom: 60px; 
+        }
+        .gallery-item { border-radius: 8px; overflow: hidden; height: 300px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+        .gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s; }
+        .gallery-item:hover img { transform: scale(1.03); cursor: pointer; }
+
+        /* BOTÓN VOLVER */
+        .back-section { text-align: center; margin-bottom: 60px; }
+        .btn-back { background-color: var(--burdeo); color: white; padding: 12px 30px; border-radius: 50px; font-weight: 500; }
+        .btn-back:hover { background-color: #5c0016; }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-flex">
+            <a href="../index.html" class="logo">BURDEO</a>
+            <nav class="breadcrumb">
+                <a href="../index.html">Inicio</a> / 
+                <a href="index.html">Cocinas</a> / 
+                <span>Proyecto FT</span>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        
+        <section class="project-header">
+            <h1>Proyecto FT</h1>
+            <div class="project-details">
+                <span><i class="fas fa-map-marker-alt"></i> Alerce, Puerto Montt</span>
+                <span><i class="fas fa-hammer"></i> Renovación Integral</span>
+            </div>
+            <div class="project-description">
+                <p>Renovación integral priorizando almacenamiento vertical. Diseñamos esta cocina pensando en la funcionalidad máxima, utilizando herrajes modernos y aprovechando la altura del techo para gabinetes superiores.</p>
+            </div>
+        </section>
+
+        <section class="gallery-grid">
+            
+            <div class="gallery-item">
+                <img src="../img/cocinas/alerce/FT/portada-cocina-ft.jpg" alt="Vista general cocina FT">
+            </div>
+
+            <div class="gallery-item">
+                <img src="../img/cocinas/alerce/FT/foto2.jpg" alt="Detalle cajones">
+            </div>
+
+            <div class="gallery-item">
+                <img src="../img/cocinas/alerce/FT/foto3.jpg" alt="Zona de lavado">
+            </div>
+
+            <div class="gallery-item">
+                <img src="../img/cocinas/alerce/FT/foto4.jpg" alt="Almacenamiento vertical">
+            </div>
+
+            <div class="gallery-item">
+                <img src="../img/cocinas/alerce/FT/foto5.jpg" alt="Terminaciones madera">
+            </div>
+            
+            <div class="gallery-item">
+                <img src="../img/cocinas/alerce/FT/foto6.jpg" alt="Vista lateral">
+            </div>
+
+        </section>
+
+        <div class="back-section">
+            <a href="index.html" class="btn-back">&larr; Volver a Cocinas</a>
+        </div>
+
+    </main>
+
+</body>
+</html>
