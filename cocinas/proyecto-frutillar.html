@@ -127,8 +127,9 @@
             
             <div class="gallery-item"><img src="../img/cocinas/frutillar/PROCESO_1_FRUTILLAR.jpg" alt="Proceso Constructivo 1"></div>
             <div class="gallery-item"><img src="../img/cocinas/frutillar/PROCESO_2_FRUTILLAR.jpg" alt="Proceso Constructivo 2"></div>
-            <div class="gallery-item"><img src="../img/cocinas/frutillar/PROCESO_3_FRUTILLAR.jpg" alt="Proceso Constructivo 3"></div>
-            <div class="gallery-item"><img src="../img/cocinas/frutillar/PROCESO_4_FRUTILLAR.jpg" alt="Proceso Constructivo 4"></div>
+            
+            <div class="gallery-item"><img src="../img/cocinas/frutillar/PROCESO_3_FRUTILLAR.jpeg" alt="Proceso Constructivo 3"></div>
+            <div class="gallery-item"><img src="../img/cocinas/frutillar/PROCESO_4_FRUTILLAR.jpeg" alt="Proceso Constructivo 4"></div>
         </section>
 
         <div class="back-section">
@@ -143,33 +144,24 @@
     </div>
 
     <script>
-        // Obtenemos el modal
         var modal = document.getElementById("imageModal");
-
-        // Obtenemos la imagen dentro del modal y el elemento para poner el texto alt
         var modalImg = document.getElementById("img01");
-        
-        // Obtenemos todas las imágenes de la galería
         var images = document.querySelectorAll('.gallery-item img');
 
-        // Recorremos cada imagen y le agregamos el evento "click"
         images.forEach(function(img) {
             img.onclick = function(){
-                modal.style.display = "block"; // Muestra el modal
-                modalImg.src = this.src; // Pone la misma foto que clickeaste dentro del modal
-                modalImg.alt = this.alt; // Usa el mismo texto alternativo
+                modal.style.display = "block"; 
+                modalImg.src = this.src; 
+                modalImg.alt = this.alt; 
             }
         });
 
-        // Obtenemos el elemento <span> que cierra el modal (la "x")
         var span = document.getElementsByClassName("close")[0];
 
-        // Cuando se hace clic en la "x", se cierra el modal
         span.onclick = function() { 
             modal.style.display = "none";
         }
 
-        // Cierra el modal si se hace clic fuera de la imagen (en el fondo negro)
         window.onclick = function(event) {
             if (event.target == modal) {
                 modal.style.display = "none";
