@@ -68,7 +68,7 @@
         /* HEADER MINIMALISTA */
         header {
             background: var(--blanco);
-            padding: 15px 0; /* Reducido ligeramente el padding */
+            padding: 10px 0; /* Ajusté un poco el padding para equilibrar el logo más grande */
             position: sticky;
             top: 0;
             z-index: 1000;
@@ -76,16 +76,20 @@
         }
         nav { display: flex; justify-content: space-between; align-items: center; }
         
-        /* --- NUEVO ESTILO PARA EL LOGO (IMAGEN) --- */
+        /* --- ESTILO DEL LOGO ACTUALIZADO --- */
         .logo-img {
             display: flex;
             align-items: center;
         }
         .logo-img img {
-            height: 60px; /* Ajusta este valor si quieres el logo más grande o pequeño */
+            height: 100px; /* Aumentado de 60px a 100px */
             width: auto;
+            transition: transform 0.3s ease;
         }
-        /* ------------------------------------------ */
+        .logo-img img:hover {
+            transform: scale(1.05); /* Un pequeño efecto al pasar el mouse */
+        }
+        /* ----------------------------------- */
 
         .nav-links { display: flex; gap: 30px; list-style: none; }
         .nav-links a { text-decoration: none; color: var(--negro); font-size: 13px; font-weight: 500; text-transform: uppercase; letter-spacing: 1px; transition: 0.3s; }
@@ -383,7 +387,7 @@
         <div class="container footer-grid">
             <div class="footer-col">
                 <a href="#" class="logo-img">
-                    <img src="img/LOGO BURDEO.png" alt="Burdeo Renovaciones Logo" style="height: 50px;">
+                    <img src="img/LOGO BURDEO.png" alt="Burdeo Renovaciones Logo" style="height: 70px;">
                 </a>
                 <p style="margin-top: 20px;">Transformando el sur de Chile, un espacio a la vez.</p>
                 
