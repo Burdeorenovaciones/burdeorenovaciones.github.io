@@ -173,17 +173,25 @@
             background-color: #ddd; 
         }
 
+        /* --- CAMBIOS EN LA IMAGEN DEL EQUIPO --- */
         .img-team {
-            width: 50%;
-            height: 40%;
+            width: 55%; /* Un poco más ancha */
+            height: 32%; /* Más baja para que sea rectangular (landscape) y encaje la foto */
             object-fit: cover;
+            object-position: center; /* Centrar la imagen */
             position: absolute;
             bottom: 20px;
             left: 0;
             border: 5px solid var(--blanco);
             box-shadow: 0 10px 30px rgba(0,0,0,0.1);
             background-color: #ccc; 
+            cursor: pointer; /* Icono de mano para indicar que se puede hacer clic */
+            transition: transform 0.3s ease;
         }
+        .img-team:hover {
+            transform: scale(1.02); /* Pequeño efecto al pasar el mouse */
+        }
+        /* --------------------------------------- */
 
         /* GALERÍA */
         .gallery-grid {
@@ -250,6 +258,48 @@
         }
         .whatsapp-float:hover { transform: scale(1.1); }
 
+        /* --- ESTILOS PARA EL MODAL (AMPLIAR IMAGEN) --- */
+        .modal {
+            display: none; /* Oculto por defecto */
+            position: fixed; 
+            z-index: 2000; /* Encima de todo */
+            padding-top: 50px; 
+            left: 0;
+            top: 0;
+            width: 100%; 
+            height: 100%; 
+            overflow: auto; 
+            background-color: rgba(0,0,0,0.9); /* Fondo negro transparente */
+        }
+        .modal-content {
+            margin: auto;
+            display: block;
+            width: 80%;
+            max-width: 900px;
+            max-height: 90vh;
+            object-fit: contain;
+        }
+        .close {
+            position: absolute;
+            top: 25px;
+            right: 45px;
+            color: #f1f1f1;
+            font-size: 40px;
+            font-weight: bold;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+        .close:hover, .close:focus {
+            color: #bbb;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        @media only screen and (max-width: 700px){
+            .modal-content { width: 95%; }
+            .close { top: 15px; right: 25px; }
+        }
+        /* ---------------------------------------------- */
+
         /* MOBILE */
         @media (max-width: 768px) {
             .nav-links { display: none; }
@@ -257,6 +307,7 @@
             .about-images { height: 350px; margin-top: 30px; }
             .hero h1 { font-size: 2.5rem; }
             .hero-buttons { flex-direction: column; gap: 10px; }
+            .img-team { width: 70%; height: auto; aspect-ratio: 16/9; bottom: -20px; } /* Ajuste móvil */
         }
     </style>
 </head>
@@ -302,7 +353,7 @@
             <div class="about-images">
                 <img src="img/equipo/Yisel.png" alt="Yisel Carrasco Fundadora" class="img-founder">
                 
-                <img src="img/equipo/Trabajando.png" alt="Equipo Burdeo Trabajando" class="img-team">
+                <img src="img/equipo/Trabajando.png" alt="Equipo Burdeo Trabajando" class="img-team" id="teamImageTrigger">
                 
             </div>
         </div>
@@ -425,6 +476,37 @@
     <a href="https://wa.me/56967797864" class="whatsapp-float" target="_blank">
         <i class="fab fa-whatsapp"></i>
     </a>
+
+    <div id="imageModal" class="modal">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="img01">
+    </div>
+
+    <script>
+        // Obtener elementos
+        var modal = document.getElementById("imageModal");
+        var imgTrigger = document.getElementById("teamImageTrigger");
+        var modalImg = document.getElementById("img01");
+        var span = document.getElementsByClassName("close")[0];
+
+        // Al hacer clic en la imagen pequeña
+        imgTrigger.onclick = function(){
+          modal.style.display = "block";
+          modalImg.src = this.src;
+        }
+
+        // Al hacer clic en la X
+        span.onclick = function() { 
+          modal.style.display = "none";
+        }
+
+        // Al hacer clic fuera de la imagen
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
 
 </body>
 </html>
