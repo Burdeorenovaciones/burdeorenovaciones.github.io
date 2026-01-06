@@ -145,17 +145,22 @@
             position: relative;
             height: 500px;
         }
-        /* Placeholder styling */
+        
+        /* --- AQUÍ ESTÁ EL CAMBIO --- */
         .img-founder {
             width: 80%;
             height: 85%;
             object-fit: cover;
+            /* Esta línea centra la imagen en la parte superior para que se vea la cara */
+            object-position: top center; 
             position: absolute;
             top: 0;
             right: 0;
             border-radius: 2px;
             background-color: #ddd; 
         }
+        /* --------------------------- */
+
         .img-team {
             width: 50%;
             height: 40%;
