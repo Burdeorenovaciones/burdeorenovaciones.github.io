@@ -43,7 +43,7 @@
 
         /* HEADER */
         header {
-            padding: 10px 0; /* Un poco menos de padding vertical para equilibrar el logo grande */
+            padding: 10px 0;
             border-bottom: 1px solid #eee;
             background: white;
             position: sticky;
@@ -63,16 +63,14 @@
             align-items: center;
         }
 
-        /* --- CAMBIO: LOGO MÁS GRANDE --- */
+        /* LOGO GRANDE */
         .logo-img {
-            height: 110px; /* Aumentado de 50px a 110px para mayor visibilidad */
+            height: 110px;
             width: auto;
             display: block;
             transition: transform 0.3s;
         }
-        .logo-img:hover {
-            transform: scale(1.02);
-        }
+        .logo-img:hover { transform: scale(1.02); }
 
         .breadcrumb {
             font-size: 0.9rem;
@@ -113,20 +111,20 @@
             font-size: 1.1rem;
         }
 
-        /* --- CAMBIO: VISOR 3D MÁS PEQUEÑO --- */
+        /* VISOR 3D PEQUEÑO (VISTA PREVIA) */
         .viewer-wrapper {
-            max-width: 700px; /* Reducido de 1000px a 700px */
+            max-width: 700px;
             margin: 0 auto 20px;
             border-radius: 12px;
             overflow: hidden;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.08); /* Sombra más suave */
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
             background: #f9f9f9;
             border: 1px solid #eee;
         }
 
         model-viewer {
             width: 100%;
-            height: 350px; /* Reducido de 500px a 350px */
+            height: 350px;
             background: #f4f4f4;
             --poster-color: transparent;
         }
@@ -135,7 +133,7 @@
             background: var(--burdeo);
             color: white;
             border: none;
-            padding: 10px 25px; /* Botón un poco más compacto */
+            padding: 10px 25px;
             border-radius: 50px;
             cursor: pointer;
             font-size: 0.9rem;
@@ -261,7 +259,6 @@
             box-shadow: 0 0 20px rgba(0,0,0,0.5);
         }
 
-        /* FLECHAS DE NAVEGACIÓN */
         .modal-nav {
             position: absolute;
             top: 50%;
@@ -291,20 +288,38 @@
         }
         .close:hover { color: var(--burdeo); }
 
-        /* MODAL 3D */
-        #modal3D { z-index: 4000; }
-        #modal3D model-viewer { width: 100%; height: 100%; }
+        /* --- CORRECCIÓN MODAL 3D FULLSCREEN --- */
+        .modal-3d-overlay {
+            display: none; 
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.95);
+            z-index: 9999 !important; /* Capa superior absoluta */
+        }
+
+        .close-3d {
+            position: absolute;
+            top: 20px;
+            right: 40px;
+            color: white;
+            font-size: 50px;
+            font-weight: bold;
+            cursor: pointer;
+            z-index: 10000;
+            transition: 0.3s;
+        }
+        .close-3d:hover { color: var(--burdeo); }
 
         /* Responsive */
         @media (max-width: 768px) {
             .project-header h1 { font-size: 2rem; }
-            model-viewer { height: 300px; } /* Aún más pequeño en móvil */
+            model-viewer { height: 300px; }
             .gallery-grid { grid-template-columns: 1fr; }
             .whatsapp-project { bottom: 20px; right: 20px; font-size: 0.9rem; padding: 10px 20px; }
-            
-            /* Ajuste logo móvil */
             .logo-img { height: 60px; } 
-            
             .modal-nav { font-size: 30px; padding: 10px; }
         }
     </style>
@@ -403,14 +418,15 @@
     <img id="modalImg" alt="Vista ampliada proyecto">
 </div>
 
-<div id="modal3D">
-    <span id="close3D" class="close">&times;</span>
+<div id="modal3D" class="modal-3d-overlay">
+    <span id="close3D" class="close-3d">&times;</span>
     <model-viewer 
         src="../3d/cocinas/Casa%20Toledo/FT%20COCINA.glb" 
         alt="Modelo 3D Cocina Proyecto FT Fullscreen"
         auto-rotate 
         camera-controls 
-        shadow-intensity="1">
+        shadow-intensity="1"
+        style="width: 100%; height: 100%;">
     </model-viewer>
 </div>
 
@@ -422,11 +438,9 @@
     const prevBtn = document.querySelector(".modal-prev");
     const nextBtn = document.querySelector(".modal-next");
     
-    // Obtener todas las imágenes de la galería como un array
     const galleryImages = Array.from(document.querySelectorAll(".gallery-grid img"));
     let currentIndex = 0;
 
-    // Función para mostrar una imagen específica
     function showImage(index) {
         if (index < 0) index = galleryImages.length - 1;
         if (index >= galleryImages.length) index = 0;
@@ -436,30 +450,39 @@
         modal.style.display = "flex";
     }
 
-    // Evento al hacer clic en cualquier imagen de la galería
     galleryImages.forEach((img, index) => {
         img.onclick = function() {
             showImage(index);
         }
     });
 
-    // Navegación con flechas
     prevBtn.onclick = function() { showImage(currentIndex - 1); }
     nextBtn.onclick = function() { showImage(currentIndex + 1); }
 
-    // Cerrar modal
     closeImg.onclick = function() { modal.style.display = "none"; }
     modal.onclick = function(e) {
         if (e.target === modal) { modal.style.display = "none"; }
     }
 
-    // --- Lógica del Modal 3D ---
+    // --- Lógica del Modal 3D (CORREGIDA CON ADDEVENTLISTENER) ---
     const modal3D = document.getElementById("modal3D");
     const open3DBtn = document.getElementById("open3D");
     const close3DBtn = document.getElementById("close3D");
 
-    open3DBtn.onclick = function() { modal3D.style.display = "block"; }
-    close3DBtn.onclick = function() { modal3D.style.display = "none"; }
+    open3DBtn.addEventListener('click', function() {
+        modal3D.style.display = "block";
+    });
+
+    close3DBtn.addEventListener('click', function() {
+        modal3D.style.display = "none";
+    });
+
+    // Cerrar al hacer click fuera del modelo
+    window.addEventListener('click', function(e) {
+        if (e.target === modal3D) {
+            modal3D.style.display = "none";
+        }
+    });
 </script>
 
 </body>
