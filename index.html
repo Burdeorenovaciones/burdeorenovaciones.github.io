@@ -168,17 +168,17 @@
             height: 500px;
         }
         
-        /* --- IMÁGENES CENTRADAS --- */
+        /* --- IMÁGENES RESTAURADAS Y CONTENIDO CENTRADO --- */
         .img-founder {
             width: 80%;
             height: 85%;
             object-fit: cover;
-            object-position: top center; 
+            /* Centra el contenido de la foto en el cuadro */
+            object-position: center; 
             position: absolute;
             top: 0;
-            /* Centrado horizontal */
-            left: 50%;
-            transform: translateX(-50%);
+            /* Posición del cuadro a la derecha */
+            right: 0;
             border-radius: 2px;
             background-color: #ddd; 
         }
@@ -187,13 +187,12 @@
             width: 55%; 
             height: 32%; 
             object-fit: cover;
+            /* Centra el contenido de la foto en el cuadro */
             object-position: center; 
             position: absolute;
             bottom: 20px;
-            /* Centrado horizontal */
-            left: 50%;
-            /* Se aplica el centrado inicial */
-            transform: translateX(-50%);
+            /* Posición del cuadro a la izquierda */
+            left: 0;
             border: 5px solid var(--blanco);
             box-shadow: 0 10px 30px rgba(0,0,0,0.1);
             background-color: #ccc; 
@@ -201,8 +200,7 @@
             transition: transform 0.3s ease;
         }
         .img-team:hover {
-            /* Se mantiene el centrado y se añade la escala */
-            transform: translateX(-50%) scale(1.02); 
+            transform: scale(1.02); 
         }
         /* --------------------------------------- */
 
