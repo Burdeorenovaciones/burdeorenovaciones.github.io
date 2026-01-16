@@ -16,10 +16,14 @@
         h1, h2, h3 { font-family: 'Playfair Display', serif; }
         a { text-decoration: none; color: inherit; transition: 0.3s; }
         
-        header { padding: 20px 0; border-bottom: 1px solid #eee; position: sticky; top: 0; background: var(--blanco); z-index: 100; }
+        header { padding: 10px 0; border-bottom: 1px solid #eee; position: sticky; top: 0; background: var(--blanco); z-index: 100; }
         .container { max-width: 1200px; margin: auto; padding: 0 20px; }
         .nav-flex { display: flex; justify-content: space-between; align-items: center; }
-        .logo { font-size: 24px; font-weight: 700; color: var(--burdeo); }
+        
+        /* LOGO IMAGEN (Nuevo estilo) */
+        .logo-img img { height: 60px; width: auto; transition: transform 0.3s; display: block; }
+        .logo-img:hover img { transform: scale(1.05); }
+
         .breadcrumb { font-size: 0.9rem; color: #666; }
         
         .category-hero { text-align: center; padding: 60px 20px; background-color: #f9f9f9; margin-bottom: 40px; }
@@ -43,7 +47,10 @@
 
     <header>
         <div class="container nav-flex">
-            <a href="../index.html" class="logo">BURDEO</a>
+            <a href="../index.html" class="logo-img">
+                <img src="../img/LOGO BURDEO.png" alt="Burdeo Renovaciones">
+            </a>
+            
             <nav class="breadcrumb">
                 <a href="../index.html">Inicio</a> / 
                 <a href="../proyectos.html">Proyectos</a> / 
@@ -125,6 +132,20 @@
                         <span class="location">Puerta Sur</span>
                         <h3>Proyecto Luigi</h3>
                         <p>Renovación funcional con optimización de espacios y estética moderna.</p>
+                        <span class="btn-details">Ver más &rarr;</span>
+                    </div>
+                </a>
+            </article>
+
+            <article class="project-card">
+                <a href="proyecto-william.html">
+                    <div class="img-wrapper">
+                        <img src="../img/cocinas/william-puertasur/portada.png" alt="Cocina William Puerta Sur">
+                    </div>
+                    <div class="card-info">
+                        <span class="location">Puerta Sur</span>
+                        <h3>Proyecto William</h3>
+                        <p>Diseño moderno con línea Infinity y acabados de alta gama.</p>
                         <span class="btn-details">Ver más &rarr;</span>
                     </div>
                 </a>
