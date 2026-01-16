@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Cocina a Medida en Puerto Montt | Proyecto William – Burdeo Renovaciones</title>
+    
+    <meta name="description" content="Diseño y fabricación de cocina en Puerta Sur, Puerto Montt. Incorporamos línea Infinity y optimización de espacios. Cotiza muebles de cocina en la Región de Los Lagos.">
+    <meta name="robots" content="index, follow">
+    
+    <meta property="og:title" content="Proyecto William | Cocina en Puerta Sur">
+    <meta property="og:description" content="Mira la transformación de esta cocina en Puerto Montt con la línea Infinity.">
+    <meta property="og:image" content="../img/cocinas/william-puertasur/portada.png">
+    <meta property="og:type" content="article">
+
+    <link rel="icon" type="image/png" href="../img/favicon.png">
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+
+    <style>
+        :root {
+            --burdeo: #800020;
+            --negro: #1a1a1a;
+            --blanco: #ffffff;
+            --whatsapp: #25D366;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Montserrat', sans-serif;
+            color: #333;
+            line-height: 1.6;
+            background-color: var(--blanco);
+        }
+
+        h1, h2, h3 { font-family: 'Playfair Display', serif; }
+        a { text-decoration: none; color: inherit; transition: 0.3s; }
+        a:hover { color: var(--burdeo); }
+
+        /* HEADER */
+        header {
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+            background: white;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 0 20px;
+        }
+
+        .nav-flex {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-img {
+            height: 110px;
+            width: auto;
+            display: block;
+            transition: transform 0.3s;
+        }
+        .logo-img:hover { transform: scale(1.02); }
+
+        .breadcrumb { font-size: 0.9rem; color: #666; }
+
+        /* HEADER DEL PROYECTO */
+        .project-header {
+            text-align: center;
+            padding: 40px 20px 20px;
+        }
+
+        .project-header h1 {
+            color: var(--burdeo);
+            margin-bottom: 10px;
+            font-size: 2.5rem;
+        }
+
+        .project-details {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            font-size: 0.95rem;
+            color: #666;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+        
+        .project-details span i {
+            color: var(--burdeo);
+            margin-right: 5px;
+        }
+
+        .project-description {
+            max-width: 800px;
+            margin: 0 auto 40px;
+            text-align: center;
+            font-size: 1.1rem;
+        }
+
+        /* --- ESTILO PARA EL VIDEO DE INSTAGRAM --- */
+        .video-container {
+            display: flex;
+            justify-content: center;
+            margin: 40px 0 60px;
+        }
+        
+        .instagram-media {
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1) !important;
+            max-width: 100%;
+        }
+        /* ---------------------------------------- */
+
+        /* VISOR 3D (OCULTO) */
+        .container-3d-hidden { display: none; }
+
+        /* GALERÍA */
+        .gallery-title {
+            text-align: center;
+            margin: 40px 0 30px;
+        }
+        .gallery-title h3 {
+            color: var(--burdeo);
+            font-size: 1.8rem;
+            margin-bottom: 5px;
+        }
+        
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-bottom: 80px;
+        }
+
+        .gallery-item {
+            height: 300px;
+            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            background: #eee;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            cursor: pointer;
+            transition: transform 0.4s ease;
+        }
+
+        .gallery-item:hover img { transform: scale(1.05); }
+
+        /* BOTÓN VOLVER */
+        .back-section {
+            text-align: center;
+            margin-bottom: 80px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+        }
+
+        .btn-back {
+            display: inline-block;
+            margin-top: 30px;
+            background: transparent;
+            color: var(--burdeo);
+            padding: 10px 25px;
+            border: 2px solid var(--burdeo);
+            border-radius: 50px;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+        
+        .btn-back:hover {
+            background: var(--burdeo);
+            color: white;
+        }
+
+        /* BOTÓN WHATSAPP */
+        .whatsapp-project {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: var(--whatsapp);
+            color: white;
+            padding: 12px 25px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            z-index: 2000;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: transform 0.3s;
+        }
+        .whatsapp-project:hover {
+            transform: scale(1.05);
+            background: #1ebc57;
+            color: white;
+        }
+
+        /* MODAL IMÁGENES */
+        .modal {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.95);
+            z-index: 3000;
+            backdrop-filter: blur(5px);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal img {
+            display: block;
+            max-width: 90%;
+            max-height: 85vh;
+            border-radius: 4px;
+        }
+
+        .modal-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            color: white;
+            font-size: 40px;
+            cursor: pointer;
+            padding: 15px;
+            background: rgba(0,0,0,0.3);
+            border-radius: 50%;
+            transition: 0.3s;
+            z-index: 3002;
+        }
+        .modal-nav:hover { background: rgba(128, 0, 32, 0.8); }
+        .modal-prev { left: 20px; }
+        .modal-next { right: 20px; }
+
+        .close {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            color: white;
+            font-size: 40px;
+            cursor: pointer;
+            z-index: 3003;
+        }
+        .close:hover { color: var(--burdeo); }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .project-header h1 { font-size: 2rem; }
+            .gallery-grid { grid-template-columns: 1fr; }
+            .whatsapp-project { bottom: 20px; right: 20px; font-size: 0.9rem; padding: 10px 20px; }
+            .logo-img { height: 60px; } 
+            .video-container { margin: 20px 0; }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <div class="container nav-flex">
+        <a href="../index.html">
+            <img src="../img/LOGO BURDEO.png" alt="Logo Burdeo Renovaciones" class="logo-img">
+        </a>
+        <div class="breadcrumb">
+            <a href="../index.html">Inicio</a> /
+            <a href="index.html">Cocinas</a> /
+            <span>Proyecto William</span>
+        </div>
+    </div>
+</header>
+
+<main class="container">
+
+    <section class="project-header">
+        <h1>Proyecto William: Cocina en Puerta Sur</h1>
+        
+        <div class="project-details">
+            <span><i class="fas fa-map-marker-alt"></i> Puerto Montt</span>
+            <span><i class="fas fa-hammer"></i> Línea Infinity</span>
+            <span><i class="fas fa-check-circle"></i> Diseño a Medida</span>
+        </div>
+
+        <div class="project-description">
+            <p>
+                Ubicada en el sector de <strong>Puerta Sur, Puerto Montt</strong>, esta cocina destaca por su optimización 
+                del espacio y acabados de alta gama. Incorporamos la <strong>línea Infinity de Teka</strong>, logrando una 
+                combinación perfecta entre diseño, funcionalidad y tecnología.
+            </p>
+        </div>
+    </section>
+
+    <div class="video-container">
+        <iframe 
+            src="https://www.instagram.com/reel/DTQ2UTDEs1k/embed" 
+            width="400" 
+            height="710" 
+            frameborder="0" 
+            scrolling="no" 
+            allowtransparency="true"
+            style="border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.15);">
+        </iframe>
+    </div>
+
+    <div class="gallery-title">
+        <h3>Detalles de la Fabricación</h3>
+        <p>Calidad en cada terminación en la Región de Los Lagos.</p>
+    </div>
+
+    <section class="gallery-grid">
+        <div class="gallery-item">
+            <img src="../img/cocinas/william-puertasur/portada.png" alt="Cocina moderna gris en Puerta Sur Puerto Montt" loading="lazy">
+        </div>
+        
+        <div class="gallery-item">
+            <img src="../img/cocinas/william-puertasur/puerta-sur-1.png" alt="Muebles de cocina a medida diseño interior" loading="lazy">
+        </div>
+        <div class="gallery-item">
+            <img src="../img/cocinas/william-puertasur/puerta-sur-2.png" alt="Instalación de cocina equipada en Los Lagos" loading="lazy">
+        </div>
+        <div class="gallery-item">
+            <img src="../img/cocinas/william-puertasur/puerta-sur-3.png" alt="Detalle cajones cierre suave cocina" loading="lazy">
+        </div>
+        <div class="gallery-item">
+            <img src="../img/cocinas/william-puertasur/puerta-sur-4.png" alt="Cubierta de cocina resistente Puerto Montt" loading="lazy">
+        </div>
+        <div class="gallery-item">
+            <img src="../img/cocinas/william-puertasur/puerta-sur-5.png" alt="Renovación cocina completa Puerta Sur" loading="lazy">
+        </div>
+    </section>
+
+    <div class="container-3d-hidden">
+        <model-viewer src=""></model-viewer>
+    </div>
+
+    <div class="back-section">
+        <h3>¿Quieres una cocina como esta en Puerto Montt?</h3>
+        <p>Hacemos realidad tu proyecto en toda la Región de Los Lagos.</p>
+        <a href="index.html" class="btn-back">&larr; Ver más cocinas</a>
+    </div>
+
+</main>
+
+<a href="https://wa.me/56967797864?text=Hola,%20vi%20el%20Proyecto%20William%20en%20Instagram%20y%20me%20gustaría%20cotizar." 
+   class="whatsapp-project" target="_blank">
+   <i class="fab fa-whatsapp" style="font-size: 20px;"></i> 
+   <span>Cotizar mi cocina</span>
+</a>
+
+<div id="imageModal" class="modal">
+    <span class="close">&times;</span>
+    <span class="modal-nav modal-prev"><i class="fas fa-chevron-left"></i></span>
+    <span class="modal-nav modal-next"><i class="fas fa-chevron-right"></i></span>
+    <img id="modalImg" alt="Vista ampliada proyecto">
+</div>
+
+<script>
+    // --- Lógica del Carrusel de Imágenes ---
+    const modal = document.getElementById("imageModal");
+    const modalImg = document.getElementById("modalImg");
+    const closeImg = document.querySelector("#imageModal .close");
+    const prevBtn = document.querySelector(".modal-prev");
+    const nextBtn = document.querySelector(".modal-next");
+    
+    const galleryImages = Array.from(document.querySelectorAll(".gallery-grid img"));
+    let currentIndex = 0;
+
+    function showImage(index) {
+        if (index < 0) index = galleryImages.length - 1;
+        if (index >= galleryImages.length) index = 0;
+        currentIndex = index;
+        modalImg.src = galleryImages[currentIndex].src;
+        modal.style.display = "flex";
+    }
+
+    galleryImages.forEach((img, index) => {
+        img.onclick = function() {
+            showImage(index);
+        }
+    });
+
+    prevBtn.onclick = function() { showImage(currentIndex - 1); }
+    nextBtn.onclick = function() { showImage(currentIndex + 1); }
+
+    closeImg.onclick = function() { modal.style.display = "none"; }
+    modal.onclick = function(e) {
+        if (e.target === modal) { modal.style.display = "none"; }
+    }
+</script>
+
+</body>
+</html>
