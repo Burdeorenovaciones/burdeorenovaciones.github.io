@@ -9,6 +9,10 @@
     <meta name="robots" content="index, follow">
     <meta name="author" content="Burdeo Renovaciones">
 
+    <meta property="og:image" content="img/cocinas/muermos/chacana/portada-cocina-chacana-muermos.jpg">
+    <meta property="og:title" content="Burdeo Renovaciones | Diseño y Remodelación en el Sur">
+    <meta property="og:description" content="Transformamos espacios con madera nativa y diseño de autor.">
+
     <link rel="icon" type="image/png" href="img/favicon.png">
     
     <script type="application/ld+json">
@@ -16,10 +20,9 @@
       "@context": "https://schema.org",
       "@type": "LocalBusiness",
       "name": "Burdeo Renovaciones",
-      "image": "https://burdeorenovaciones.github.io/img/cocina-azul-madera-puerto-montt.jpg",
+      "image": "img/cocinas/muermos/chacana/portada-cocina-chacana-muermos.jpg",
       "description": "Diseño de interiores y renovación de espacios en el sur de Chile. Cocinas, baños y más.",
-      "@id": "https://burdeorenovaciones.github.io/",
-      "url": "https://burdeorenovaciones.github.io/",
+      "url": "https://burdeorenovaciones.cl/",
       "telephone": "+56 9 6779 7864",
       "email": "hola@burdeorenovaciones.cl",
       "address": {
@@ -95,12 +98,16 @@
         .nav-links a { text-decoration: none; color: var(--negro); font-size: 13px; font-weight: 500; text-transform: uppercase; letter-spacing: 1px; transition: 0.3s; }
         .nav-links a:hover { color: var(--burdeo); }
 
-        /* HERO SECTION */
+        /* HERO SECTION (PORTADA ACTUALIZADA) */
         .hero {
             height: 85vh;
-            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.5)), url('img/cocina-azul-madera-puerto-montt.jpg');
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+                              url('img/cocinas/muermos/chacana/portada-cocina-chacana-muermos.jpg');
             background-size: cover;
             background-position: center;
+            background-repeat: no-repeat;
+            background-color: #333; /* Color de respaldo */
+            
             display: flex;
             align-items: center;
             justify-content: center;
@@ -130,7 +137,7 @@
         }
         .btn-primary:hover { background: transparent; border-color: var(--blanco); }
 
-        /* NUEVO ESTILO: Botón secundario para "Ver proyectos" */
+        /* Botón secundario */
         .btn-outline {
             background: transparent;
             color: var(--blanco);
@@ -161,6 +168,7 @@
             height: 500px;
         }
         
+        /* --- IMÁGENES CENTRADAS --- */
         .img-founder {
             width: 80%;
             height: 85%;
@@ -168,28 +176,33 @@
             object-position: top center; 
             position: absolute;
             top: 0;
-            right: 0;
+            /* Centrado horizontal */
+            left: 50%;
+            transform: translateX(-50%);
             border-radius: 2px;
             background-color: #ddd; 
         }
 
-        /* --- CAMBIOS EN LA IMAGEN DEL EQUIPO --- */
         .img-team {
-            width: 55%; /* Un poco más ancha */
-            height: 32%; /* Más baja para que sea rectangular (landscape) y encaje la foto */
+            width: 55%; 
+            height: 32%; 
             object-fit: cover;
-            object-position: center; /* Centrar la imagen */
+            object-position: center; 
             position: absolute;
             bottom: 20px;
-            left: 0;
+            /* Centrado horizontal */
+            left: 50%;
+            /* Se aplica el centrado inicial */
+            transform: translateX(-50%);
             border: 5px solid var(--blanco);
             box-shadow: 0 10px 30px rgba(0,0,0,0.1);
             background-color: #ccc; 
-            cursor: pointer; /* Icono de mano para indicar que se puede hacer clic */
+            cursor: pointer; 
             transition: transform 0.3s ease;
         }
         .img-team:hover {
-            transform: scale(1.02); /* Pequeño efecto al pasar el mouse */
+            /* Se mantiene el centrado y se añade la escala */
+            transform: translateX(-50%) scale(1.02); 
         }
         /* --------------------------------------- */
 
@@ -307,7 +320,7 @@
             .about-images { height: 350px; margin-top: 30px; }
             .hero h1 { font-size: 2.5rem; }
             .hero-buttons { flex-direction: column; gap: 10px; }
-            .img-team { width: 70%; height: auto; aspect-ratio: 16/9; bottom: -20px; } /* Ajuste móvil */
+            .img-team { width: 70%; height: auto; aspect-ratio: 16/9; bottom: -20px; } 
         }
     </style>
 </head>
