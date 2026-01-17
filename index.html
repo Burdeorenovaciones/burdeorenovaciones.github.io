@@ -44,6 +44,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
     <style>
         :root {
             --burdeo: #800020;
@@ -79,7 +81,7 @@
         }
         nav { display: flex; justify-content: space-between; align-items: center; }
         
-        /* --- ESTILO DEL LOGO ACTUALIZADO --- */
+        /* --- ESTILO DEL LOGO --- */
         .logo-img {
             display: flex;
             align-items: center;
@@ -92,13 +94,12 @@
         .logo-img img:hover {
             transform: scale(1.05);
         }
-        /* ----------------------------------- */
 
         .nav-links { display: flex; gap: 30px; list-style: none; }
         .nav-links a { text-decoration: none; color: var(--negro); font-size: 13px; font-weight: 500; text-transform: uppercase; letter-spacing: 1px; transition: 0.3s; }
         .nav-links a:hover { color: var(--burdeo); }
 
-        /* HERO SECTION (PORTADA ACTUALIZADA) */
+        /* HERO SECTION */
         .hero {
             height: 85vh;
             background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
@@ -106,7 +107,7 @@
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
-            background-color: #333; /* Color de respaldo */
+            background-color: #333;
             
             display: flex;
             align-items: center;
@@ -137,7 +138,6 @@
         }
         .btn-primary:hover { background: transparent; border-color: var(--blanco); }
 
-        /* Botón secundario */
         .btn-outline {
             background: transparent;
             color: var(--blanco);
@@ -151,7 +151,7 @@
         }
         .btn-outline:hover { background: var(--blanco); color: var(--burdeo); }
 
-        /* SOBRE NOSOTROS (Historia Yisel) */
+        /* SOBRE NOSOTROS */
         .about-section { background: var(--blanco); }
         .about-grid {
             display: grid;
@@ -168,16 +168,13 @@
             height: 500px;
         }
         
-        /* --- IMÁGENES RESTAURADAS Y CONTENIDO CENTRADO --- */
         .img-founder {
             width: 80%;
             height: 85%;
             object-fit: cover;
-            /* Centra el contenido de la foto en el cuadro */
             object-position: center; 
             position: absolute;
             top: 0;
-            /* Posición del cuadro a la derecha */
             right: 0;
             border-radius: 2px;
             background-color: #ddd; 
@@ -187,11 +184,9 @@
             width: 55%; 
             height: 32%; 
             object-fit: cover;
-            /* Centra el contenido de la foto en el cuadro */
             object-position: center; 
             position: absolute;
             bottom: 20px;
-            /* Posición del cuadro a la izquierda */
             left: 0;
             border: 5px solid var(--blanco);
             box-shadow: 0 10px 30px rgba(0,0,0,0.1);
@@ -199,26 +194,73 @@
             cursor: pointer; 
             transition: transform 0.3s ease;
         }
-        .img-team:hover {
-            transform: scale(1.02); 
-        }
-        /* --------------------------------------- */
+        .img-team:hover { transform: scale(1.02); }
 
-        /* GALERÍA */
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-            gap: 15px;
+        /* --- ESTILOS DEL CARRUSEL (NUEVO) --- */
+        .swiper {
+            width: 100%;
+            padding-bottom: 50px; /* Espacio para los puntitos */
         }
-        .gallery-item { position: relative; height: 400px; overflow: hidden; group: hover; }
-        .gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: 0.5s; }
-        .gallery-item:hover img { transform: scale(1.1); }
-        .gallery-overlay {
-            position: absolute; bottom: 0; left: 0; width: 100%;
-            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
-            color: white; padding: 30px; opacity: 0; transition: 0.3s;
+
+        .swiper-slide {
+            background-position: center;
+            background-size: cover;
+            height: 450px; /* Altura de las tarjetas */
+            border-radius: 8px;
+            overflow: hidden;
+            position: relative;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
         }
-        .gallery-item:hover .gallery-overlay { opacity: 1; }
+
+        .project-slide {
+            display: block;
+            width: 100%;
+            height: 100%;
+            position: relative;
+        }
+
+        .project-slide img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .project-slide:hover img {
+            transform: scale(1.1); /* Efecto Zoom */
+        }
+
+        .slide-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);
+            color: white;
+            padding: 30px 20px;
+            text-align: left;
+        }
+
+        .slide-overlay h3 {
+            margin: 0;
+            font-size: 1.4rem;
+            font-family: 'Playfair Display', serif;
+            color: white;
+        }
+
+        .slide-overlay p {
+            margin: 5px 0 0;
+            font-size: 0.9rem;
+            color: #ddd;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .swiper-pagination-bullet-active {
+            background-color: var(--burdeo) !important;
+        }
+        /* ------------------------------------ */
 
         /* OPINIONES GOOGLE */
         .reviews-section { background: var(--blanco); text-align: center; }
@@ -269,48 +311,20 @@
         }
         .whatsapp-float:hover { transform: scale(1.1); }
 
-        /* --- ESTILOS PARA EL MODAL (AMPLIAR IMAGEN) --- */
+        /* MODAL */
         .modal {
-            display: none; /* Oculto por defecto */
-            position: fixed; 
-            z-index: 2000; /* Encima de todo */
-            padding-top: 50px; 
-            left: 0;
-            top: 0;
-            width: 100%; 
-            height: 100%; 
-            overflow: auto; 
-            background-color: rgba(0,0,0,0.9); /* Fondo negro transparente */
+            display: none; position: fixed; z-index: 2000; padding-top: 50px; 
+            left: 0; top: 0; width: 100%; height: 100%; overflow: auto; 
+            background-color: rgba(0,0,0,0.9);
         }
         .modal-content {
-            margin: auto;
-            display: block;
-            width: 80%;
-            max-width: 900px;
-            max-height: 90vh;
-            object-fit: contain;
+            margin: auto; display: block; width: 80%; max-width: 900px; max-height: 90vh; object-fit: contain;
         }
         .close {
-            position: absolute;
-            top: 25px;
-            right: 45px;
-            color: #f1f1f1;
-            font-size: 40px;
-            font-weight: bold;
-            transition: 0.3s;
-            cursor: pointer;
+            position: absolute; top: 25px; right: 45px; color: #f1f1f1; font-size: 40px; font-weight: bold; transition: 0.3s; cursor: pointer;
         }
-        .close:hover, .close:focus {
-            color: #bbb;
-            text-decoration: none;
-            cursor: pointer;
-        }
-        @media only screen and (max-width: 700px){
-            .modal-content { width: 95%; }
-            .close { top: 15px; right: 25px; }
-        }
-        /* ---------------------------------------------- */
-
+        .close:hover, .close:focus { color: #bbb; text-decoration: none; cursor: pointer; }
+        
         /* MOBILE */
         @media (max-width: 768px) {
             .nav-links { display: none; }
@@ -318,7 +332,9 @@
             .about-images { height: 350px; margin-top: 30px; }
             .hero h1 { font-size: 2.5rem; }
             .hero-buttons { flex-direction: column; gap: 10px; }
-            .img-team { width: 70%; height: auto; aspect-ratio: 16/9; bottom: -20px; } 
+            .img-team { width: 70%; height: auto; aspect-ratio: 16/9; bottom: -20px; }
+            .modal-content { width: 95%; }
+            .close { top: 15px; right: 25px; }
         }
     </style>
 </head>
@@ -363,40 +379,89 @@
             </div>
             <div class="about-images">
                 <img src="img/equipo/Yisel.png" alt="Yisel Carrasco Fundadora" class="img-founder">
-                
                 <img src="img/equipo/Trabajando.png" alt="Equipo Burdeo Trabajando" class="img-team" id="teamImageTrigger">
-                
             </div>
         </div>
     </section>
 
-    <section id="portfolio" class="section-padding">
+    <section id="portfolio" class="section-padding" style="background-color: #fafafa;">
         <div class="container">
-            <h2 class="text-center" style="margin-bottom: 50px;">
-                <a href="proyectos.html" style="text-decoration:none; color:inherit;">Nuestros Proyectos</a>
-            </h2>
-            <div class="gallery-grid">
-                <div class="gallery-item">
-                    <img src="img/cocina_katya.jpeg" alt="Proyecto Cocina Katya">
-                    <div class="gallery-overlay">
-                        <h3>Proyecto Katya</h3>
-                        <p>Luminosidad y Espacio</p>
+            <div class="text-center" style="margin-bottom: 50px;">
+                <h2 style="margin-bottom: 10px;">
+                    <a href="proyectos.html" style="text-decoration:none; color:inherit;">Nuestros Proyectos</a>
+                </h2>
+                <p style="color: #666;">Desliza para ver más transformaciones</p>
+            </div>
+            
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper">
+                    
+                    <div class="swiper-slide">
+                        <a href="cocinas/proyecto-william.html" class="project-slide">
+                            <img src="img/cocinas/william-puertasur/portada.png" alt="Cocina William">
+                            <div class="slide-overlay">
+                                <h3>Proyecto William</h3>
+                                <p>Puerta Sur</p>
+                            </div>
+                        </a>
                     </div>
-                </div>
-                <div class="gallery-item">
-                    <img src="img/cocina_frutillar.jpeg" alt="Proyecto Frutillar">
-                    <div class="gallery-overlay">
-                        <h3>Casa Frutillar</h3>
-                        <p>Madera Nativa y Tradición</p>
+
+                    <div class="swiper-slide">
+                        <a href="cocinas/proyecto-luigi.html" class="project-slide">
+                            <img src="img/cocinas/puerta-sur/luigui/portada.png" alt="Cocina Luigi">
+                            <div class="slide-overlay">
+                                <h3>Proyecto Luigi</h3>
+                                <p>Puerta Sur</p>
+                            </div>
+                        </a>
                     </div>
-                </div>
-                <div class="gallery-item">
-                    <img src="img/cocina-azul-madera-puerto-montt.jpg" alt="Cocina Azul Puerto Montt">
-                    <div class="gallery-overlay">
-                        <h3>Estilo Puerto Montt</h3>
-                        <p>Modernidad y Color</p>
+
+                    <div class="swiper-slide">
+                        <a href="cocinas/proyecto-katya.html" class="project-slide">
+                            <img src="img/cocinas/puerto-varas/katya1/portada-cocina-casa-katya.jpeg" alt="Casa Katya">
+                            <div class="slide-overlay">
+                                <h3>Casa Katya</h3>
+                                <p>Puerto Varas</p>
+                            </div>
+                        </a>
                     </div>
+
+                    <div class="swiper-slide">
+                        <a href="cocinas/proyecto-frutillar.html" class="project-slide">
+                            <img src="img/cocinas/frutillar/cocina-frutillar-portada.jpg" alt="Casa Frutillar">
+                            <div class="slide-overlay">
+                                <h3>Casa del Lago</h3>
+                                <p>Frutillar</p>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <a href="cocinas/proyecto-chacana.html" class="project-slide">
+                            <img src="img/cocinas/muermos/chacana/portada-cocina-chacana-muermos.jpg" alt="Proyecto Chacana">
+                            <div class="slide-overlay">
+                                <h3>Proyecto Chacana</h3>
+                                <p>Los Muermos</p>
+                            </div>
+                        </a>
+                    </div>
+
+                     <div class="swiper-slide">
+                        <a href="cocinas/proyecto-ft.html" class="project-slide">
+                            <img src="img/cocinas/alerce/FT/portada-cocina-ft.jpg" alt="Proyecto FT">
+                            <div class="slide-overlay">
+                                <h3>Proyecto FT</h3>
+                                <p>Alerce</p>
+                            </div>
+                        </a>
+                    </div>
+
                 </div>
+                <div class="swiper-pagination"></div>
+            </div>
+
+            <div class="text-center" style="margin-top: 30px;">
+                <a href="proyectos.html" class="btn-outline" style="color: #333; border-color: #333;">Ver todos los proyectos</a>
             </div>
         </div>
     </section>
@@ -494,29 +559,57 @@
     </div>
 
     <script>
-        // Obtener elementos
+        // Modal de imágenes
         var modal = document.getElementById("imageModal");
         var imgTrigger = document.getElementById("teamImageTrigger");
         var modalImg = document.getElementById("img01");
         var span = document.getElementsByClassName("close")[0];
 
-        // Al hacer clic en la imagen pequeña
-        imgTrigger.onclick = function(){
-          modal.style.display = "block";
-          modalImg.src = this.src;
+        if(imgTrigger) {
+            imgTrigger.onclick = function(){
+                modal.style.display = "block";
+                modalImg.src = this.src;
+            }
         }
 
-        // Al hacer clic en la X
-        span.onclick = function() { 
-          modal.style.display = "none";
+        if(span) {
+            span.onclick = function() { 
+                modal.style.display = "none";
+            }
         }
 
-        // Al hacer clic fuera de la imagen
         window.onclick = function(event) {
             if (event.target == modal) {
                 modal.style.display = "none";
             }
         }
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+        var swiper = new Swiper(".mySwiper", {
+            slidesPerView: 1,      // 1 foto en celular
+            spaceBetween: 20,
+            loop: true,            // Infinito
+            autoplay: {
+                delay: 2500,       // Se mueve cada 2.5 seg
+                disableOnInteraction: false,
+            },
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+            breakpoints: {
+                640: {
+                    slidesPerView: 2, // 2 fotos en tablet
+                    spaceBetween: 20,
+                },
+                1024: {
+                    slidesPerView: 3, // 3 fotos en PC
+                    spaceBetween: 30,
+                },
+            },
+        });
     </script>
 
 </body>
