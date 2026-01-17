@@ -261,7 +261,7 @@
             background-color: var(--burdeo) !important;
         }
         
-        /* --- NUEVA SECCIÓN: HABLEMOS DE TU PROYECTO (DARK MODE) --- */
+        /* --- SECCIÓN HABLEMOS DE TU PROYECTO (DARK MODE) --- */
         .project-start-section {
             background-color: var(--negro);
             color: white;
@@ -337,22 +337,22 @@
             gap: 30px;
         }
 
-        /* Botones de Selección (Radio Buttons) */
-        .radio-options {
+        /* Botones de Selección Múltiple (Checkboxes) */
+        .selection-options {
             display: flex;
             gap: 15px;
             flex-wrap: wrap;
         }
 
-        .radio-btn {
+        .selection-btn {
             cursor: pointer;
         }
 
-        .radio-btn input {
-            display: none; /* Ocultar el círculo nativo */
+        .selection-btn input {
+            display: none; /* Ocultar el cuadrado feo */
         }
 
-        .radio-btn span {
+        .selection-btn span {
             display: inline-block;
             padding: 10px 20px;
             border: 1px solid #555;
@@ -360,10 +360,11 @@
             font-size: 0.9rem;
             transition: 0.3s;
             color: #aaa;
+            user-select: none;
         }
 
         /* Estado Seleccionado */
-        .radio-btn input:checked + span {
+        .selection-btn input:checked + span {
             background: var(--burdeo);
             border-color: var(--burdeo);
             color: white;
@@ -702,25 +703,29 @@
                     <h2>Hablemos de tu proyecto</h2>
                     <p>Cuéntanos qué estás buscando renovar y te ayudaremos a darle forma, funcionalidad y estilo.</p>
                     
-                    <form action="mailto:hola@burdeorenovaciones.cl" method="POST" enctype="text/plain" class="modern-form">
+                    <form id="whatsappForm" class="modern-form">
                         
                         <div class="form-group">
-                            <label>¿Qué espacio quieres transformar?</label>
-                            <div class="radio-options">
-                                <label class="radio-btn">
-                                    <input type="radio" name="tipo_proyecto" value="Cocina" checked>
+                            <label>¿Qué espacios quieres transformar? (Selecciona varios si deseas)</label>
+                            <div class="selection-options">
+                                <label class="selection-btn">
+                                    <input type="checkbox" name="tipo_proyecto" value="Cocina" checked>
                                     <span>Cocina</span>
                                 </label>
-                                <label class="radio-btn">
-                                    <input type="radio" name="tipo_proyecto" value="Baño">
+                                <label class="selection-btn">
+                                    <input type="checkbox" name="tipo_proyecto" value="Baño">
                                     <span>Baño</span>
                                 </label>
-                                <label class="radio-btn">
-                                    <input type="radio" name="tipo_proyecto" value="Closet/Vestidor">
+                                <label class="selection-btn">
+                                    <input type="checkbox" name="tipo_proyecto" value="Quincho">
+                                    <span>Quincho</span>
+                                </label>
+                                <label class="selection-btn">
+                                    <input type="checkbox" name="tipo_proyecto" value="Closet/Vestidor">
                                     <span>Clóset</span>
                                 </label>
-                                <label class="radio-btn">
-                                    <input type="radio" name="tipo_proyecto" value="Remodelacion Completa">
+                                <label class="selection-btn">
+                                    <input type="checkbox" name="tipo_proyecto" value="Remodelacion Completa">
                                     <span>Completo</span>
                                 </label>
                             </div>
@@ -728,30 +733,30 @@
 
                         <div class="form-row">
                             <div class="form-group">
-                                <input type="text" name="nombre" placeholder="Tu Nombre" required>
+                                <input type="text" id="nombre" placeholder="Tu Nombre" required>
                             </div>
                             <div class="form-group">
-                                <input type="tel" name="telefono" placeholder="Teléfono / WhatsApp" required>
+                                <input type="tel" id="telefono" placeholder="Teléfono / WhatsApp" required>
                             </div>
                         </div>
 
                         <div class="form-group">
-                            <input type="text" name="ubicacion" placeholder="¿Dónde es el proyecto? (Ej: Puerto Varas, Alerce...)" required>
+                            <input type="text" id="ubicacion" placeholder="¿Dónde es el proyecto? (Ej: Puerto Varas...)" required>
                         </div>
 
                         <div class="form-group">
-                            <textarea name="mensaje" rows="3" placeholder="Cuéntanos un poco más: ¿Qué estilo te gusta? ¿Qué necesitas solucionar?"></textarea>
+                            <textarea id="mensaje" rows="3" placeholder="Cuéntanos detalles: medidas aproximadas, estilo, etc."></textarea>
                         </div>
 
                         <button type="submit" class="btn-submit">
-                            Enviar Propuesta <i class="fas fa-paper-plane"></i>
+                            Enviar a WhatsApp <i class="fab fa-whatsapp"></i>
                         </button>
                     </form>
 
                     <div class="direct-contact">
-                        <p>¿Prefieres algo más rápido?</p>
+                        <p>¿Prefieres hablar directo?</p>
                         <a href="https://wa.me/56967797864" target="_blank" class="whatsapp-link">
-                            <i class="fab fa-whatsapp"></i> Hablar directo por WhatsApp
+                            <i class="fab fa-whatsapp"></i> Chat Directo
                         </a>
                     </div>
                 </div>
@@ -772,7 +777,7 @@
         <div class="container footer-grid">
             <div class="footer-col">
                 <a href="#" class="logo-img">
-                    <img src="img/LOGO BURDEO.png" alt="Burdeo Renovaciones Logo" style="height: 70px;">
+                    <img src="img/LOGO BURDEO.png" alt="Burdeo Renovaciones Logo" style="height: 130px; filter: brightness(0) invert(1);">
                 </a>
                 <p style="margin-top: 20px;">Transformando el sur de Chile, un espacio a la vez.</p>
                 
@@ -815,6 +820,39 @@
     </div>
 
     <script>
+        // Lógica para enviar el formulario a WhatsApp con selección múltiple
+        document.getElementById('whatsappForm').addEventListener('submit', function(e) {
+            e.preventDefault(); 
+
+            // Recoger todos los checkboxes marcados
+            var checkboxes = document.querySelectorAll('input[name="tipo_proyecto"]:checked');
+            var tiposSeleccionados = [];
+            checkboxes.forEach((checkbox) => {
+                tiposSeleccionados.push(checkbox.value);
+            });
+            
+            // Si no marcó nada, poner un valor por defecto o avisar (opcional)
+            var tipoFinal = tiposSeleccionados.length > 0 ? tiposSeleccionados.join(', ') : "Consulta General";
+
+            var nombre = document.getElementById('nombre').value;
+            var telefono = document.getElementById('telefono').value;
+            var ubicacion = document.getElementById('ubicacion').value;
+            var mensaje = document.getElementById('mensaje').value;
+
+            var telefonoBurdeo = "56967797864"; 
+
+            var texto = "Hola Burdeo Renovaciones, me gustaría cotizar un proyecto:%0A" +
+                        "--------------------------------%0A" +
+                        "👷‍♂️ *Espacios:* " + tipoFinal + "%0A" +
+                        "👤 *Nombre:* " + nombre + "%0A" +
+                        "📍 *Ubicación:* " + ubicacion + "%0A" +
+                        "📞 *Contacto:* " + telefono + "%0A" +
+                        "📝 *Detalle:* " + mensaje;
+
+            var url = "https://wa.me/" + telefonoBurdeo + "?text=" + texto;
+            window.open(url, '_blank');
+        });
+
         // Modal de imágenes
         var modal = document.getElementById("imageModal");
         var imgTrigger = document.getElementById("teamImageTrigger");
