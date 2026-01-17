@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conecta con Burdeo Renovaciones</title>
+    <meta name="robots" content="noindex"> <link rel="icon" type="image/png" href="img/favicon.png">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root { --burdeo: #800020; --blanco: #ffffff; --gris: #f4f4f4; }
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--gris);
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        .link-container {
+            width: 100%;
+            max-width: 400px; /* Ancho de celular */
+            background: var(--blanco);
+            padding: 40px 20px;
+            text-align: center;
+            box-shadow: 0 0 20px rgba(0,0,0,0.05);
+        }
+
+        .logo {
+            width: 120px;
+            height: auto;
+            margin-bottom: 20px;
+            border-radius: 50%; /* Si quieres que se vea redondo, si no quita esta línea */
+        }
+
+        h1 { font-size: 1.2rem; color: #333; margin-bottom: 10px; }
+        p { color: #666; font-size: 0.9rem; margin-bottom: 30px; }
+
+        .btn-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            background: white;
+            color: #333;
+            text-decoration: none;
+            padding: 15px;
+            margin-bottom: 15px;
+            border: 2px solid #eee;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: 0.3s;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+
+        .btn-link:hover {
+            transform: translateY(-2px);
+            border-color: var(--burdeo);
+            color: var(--burdeo);
+        }
+
+        .btn-link i { font-size: 1.2rem; }
+
+        /* Estilos específicos por color de marca */
+        .btn-whatsapp { border-color: #25D366; color: #25D366; }
+        .btn-whatsapp:hover { background: #25D366; color: white; }
+
+        .btn-instagram { border-color: #E1306C; color: #E1306C; }
+        .btn-instagram:hover { background: #E1306C; color: white; }
+
+        .btn-web { background: var(--burdeo); color: white; border-color: var(--burdeo); }
+        .btn-web:hover { background: #5c0016; color: white; border-color: #5c0016; }
+
+        .footer { margin-top: 40px; font-size: 0.8rem; color: #999; }
+    </style>
+</head>
+<body>
+
+    <div class="link-container">
+        <img src="img/LOGO BURDEO.png" alt="Burdeo Renovaciones" class="logo">
+        
+        <h1>Burdeo Renovaciones</h1>
+        <p>Diseño de Interiores y Cocinas a Medida<br>📍 Puerto Montt y Sur de Chile</p>
+
+        <a href="https://burdeorenovaciones.cl/" class="btn-link btn-web">
+            <i class="fas fa-globe"></i> Visitar Sitio Web
+        </a>
+
+        <a href="https://wa.me/56967797864" class="btn-link btn-whatsapp">
+            <i class="fab fa-whatsapp"></i> WhatsApp Directo
+        </a>
+
+        <a href="https://www.instagram.com/burdeorenovaciones/" class="btn-link btn-instagram">
+            <i class="fab fa-instagram"></i> Instagram
+        </a>
+
+        <a href="https://www.facebook.com/burdeorenueva/" class="btn-link">
+            <i class="fab fa-facebook-f"></i> Facebook
+        </a>
+        
+        <a href="https://www.tiktok.com/@burdeorenovaciones" class="btn-link">
+            <i class="fab fa-tiktok"></i> TikTok
+        </a>
+
+        <a href="mailto:hola@burdeorenovaciones.cl" class="btn-link">
+            <i class="fas fa-envelope"></i> Enviar Correo
+        </a>
+
+        <div class="footer">
+            © 2025 Burdeo Renovaciones
+        </div>
+    </div>
+
+</body>
+</html>
