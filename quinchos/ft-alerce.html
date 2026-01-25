@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nuestros Quinchos | Burdeo Renovaciones</title>
+    <meta name="description" content="Diseño y construcción de quinchos modernos y rústicos en Puerto Montt y el sur de Chile.">
+    
+    <link rel="icon" type="image/png" href="../img/favicon.png">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* Estilos consistentes con tu sitio */
+        :root { --burdeo: #800020; --negro: #1a1a1a; --gris: #f4f4f4; }
+        body { margin: 0; font-family: 'Montserrat', sans-serif; color: #333; background-color: #fafafa; }
+        
+        header { padding: 15px 0; border-bottom: 1px solid #eee; background: white; position: sticky; top: 0; z-index: 100; }
+        .container { max-width: 1200px; margin: auto; padding: 0 20px; }
+        .nav-flex { display: flex; justify-content: space-between; align-items: center; }
+        .logo-img { height: 70px; }
+        .nav-links a { text-decoration: none; color: #333; font-weight: 500; font-size: 0.9rem; }
+        .nav-links a:hover { color: var(--burdeo); }
+
+        .hero-section { text-align: center; padding: 60px 20px; background: white; margin-bottom: 40px; }
+        .hero-section h1 { font-family: 'Playfair Display', serif; font-size: 3rem; color: var(--negro); margin-bottom: 10px; }
+        .hero-section p { color: #666; max-width: 600px; margin: auto; }
+
+        .projects-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: 30px; padding-bottom: 80px; }
+        
+        .project-card { 
+            background: white; 
+            border-radius: 8px; 
+            overflow: hidden; 
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05); 
+            transition: transform 0.3s ease; 
+            text-decoration: none; 
+            color: inherit;
+            display: block;
+        }
+        .project-card:hover { transform: translateY(-5px); box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
+        
+        .card-img-container { height: 350px; overflow: hidden; position: relative; }
+        .card-img-container img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
+        .project-card:hover .card-img-container img { transform: scale(1.05); }
+        
+        .card-body { padding: 25px; text-align: center; }
+        .card-body h3 { margin: 0 0 10px; font-family: 'Playfair Display', serif; color: var(--burdeo); font-size: 1.5rem; }
+        .card-body p { margin: 0; color: #666; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; }
+
+        .btn-back { display: block; text-align: center; margin: 40px 0 80px; color: #666; text-decoration: none; font-weight: 600; }
+        .btn-back:hover { color: var(--burdeo); }
+
+        @media (max-width: 768px) {
+            .hero-section h1 { font-size: 2.2rem; }
+            .card-img-container { height: 250px; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="container nav-flex">
+        <a href="../index.html">
+            <img src="../img/LOGO BURDEO.png" alt="Burdeo Renovaciones" class="logo-img">
+        </a>
+        <nav class="nav-links">
+            <a href="../index.html">Inicio</a>
+            <span>/</span>
+            <a href="../proyectos.html">Proyectos</a>
+        </nav>
+    </div>
+</header>
+
+<div class="hero-section">
+    <h1>Quinchos y Terrazas</h1>
+    <p>Espacios cálidos diseñados para compartir la tradición del sur.</p>
+</div>
+
+<div class="container">
+    <div class="projects-grid">
+        
+        <a href="ft-alerce.html" class="project-card">
+            <div class="card-img-container">
+                <img src="../img/quinchos/FT-Alerce/portada-quincho-ft.webp" alt="Quincho FT Alerce">
+            </div>
+            <div class="card-body">
+                <h3>Quincho FT</h3>
+                <p>Alerce, Puerto Montt</p>
+            </div>
+        </a>
+
+        </div>
+
+    <a href="../proyectos.html" class="btn-back">← Volver a Categorías</a>
+</div>
+
+</body>
+</html>
