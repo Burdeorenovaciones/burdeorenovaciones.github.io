@@ -16,7 +16,7 @@
     body { font-family:'Montserrat',sans-serif; margin:0; color:#333; }
 
     header {
-      padding:20px 0;
+      padding:15px 0;
       border-bottom:1px solid #eee;
       position:sticky;
       top:0;
@@ -27,8 +27,14 @@
     .container { max-width:1200px; margin:auto; padding:0 20px; }
     .nav-flex { display:flex; justify-content:space-between; align-items:center; }
 
-    /* Logo simplificado solo texto por ahora en esta vista, o puedes poner la imagen */
-    .logo { font-size:24px; font-weight:700; color:var(--burdeo); text-decoration:none; }
+    /* NUEVO ESTILO PARA EL LOGO IMAGEN */
+    .logo-img { 
+        height: 60px; 
+        width: auto; 
+        display: block; 
+        transition: transform 0.3s; 
+    }
+    .logo-img:hover { transform: scale(1.05); }
     
     .nav-links a { margin-left:20px; text-decoration:none; color:#333; font-size:.9rem; }
     .nav-links a:hover { color:var(--burdeo); }
@@ -116,7 +122,9 @@
 
 <header>
   <div class="container nav-flex">
-    <a href="index.html" class="logo">BURDEO</a>
+    <a href="index.html">
+        <img src="img/LOGO BURDEO.png" alt="Burdeo Renovaciones" class="logo-img">
+    </a>
     <nav class="nav-links">
       <a href="index.html">Inicio</a>
       <a href="proyectos.html" style="color:var(--burdeo);font-weight:600;">Proyectos</a>
@@ -147,7 +155,7 @@
     </a>
 
     <a href="quinchos/index.html" class="category-card">
-      <img src="img/quinchos/proyecto-1/portada.webp"
+      <img src="img/quinchos/FT-Alerce/portada-quincho-ft.webp"
            alt="Quinchos rústicos y modernos"
            class="cat-bg">
       <div class="cat-overlay">
