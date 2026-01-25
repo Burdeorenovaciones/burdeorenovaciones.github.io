@@ -3,97 +3,459 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nuestros Quinchos | Burdeo Renovaciones</title>
-    <meta name="description" content="Diseño y construcción de quinchos modernos y rústicos en Puerto Montt y el sur de Chile.">
+
+    <title>Quincho en Alerce | Proyecto FT – Burdeo Renovaciones</title>
     
+    <meta name="description" content="Construcción y remodelación de quincho en Alerce, Puerto Montt. Madera tratada y diseño rústico funcional.">
+    <meta name="robots" content="index, follow">
+    
+    <meta property="og:title" content="Proyecto FT | Quincho en Alerce">
+    <meta property="og:description" content="Mira el resultado de esta renovación de quincho en el sur de Chile.">
+    <meta property="og:image" content="../img/quinchos/FT-Alerce/portada-quincho-ft.webp">
+    <meta property="og:type" content="article">
+
     <link rel="icon" type="image/png" href="../img/favicon.png">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+
     <style>
-        /* Estilos consistentes con tu sitio */
-        :root { --burdeo: #800020; --negro: #1a1a1a; --gris: #f4f4f4; }
-        body { margin: 0; font-family: 'Montserrat', sans-serif; color: #333; background-color: #fafafa; }
-        
-        header { padding: 15px 0; border-bottom: 1px solid #eee; background: white; position: sticky; top: 0; z-index: 100; }
-        .container { max-width: 1200px; margin: auto; padding: 0 20px; }
-        .nav-flex { display: flex; justify-content: space-between; align-items: center; }
-        .logo-img { height: 70px; }
-        .nav-links a { text-decoration: none; color: #333; font-weight: 500; font-size: 0.9rem; }
-        .nav-links a:hover { color: var(--burdeo); }
-
-        .hero-section { text-align: center; padding: 60px 20px; background: white; margin-bottom: 40px; }
-        .hero-section h1 { font-family: 'Playfair Display', serif; font-size: 3rem; color: var(--negro); margin-bottom: 10px; }
-        .hero-section p { color: #666; max-width: 600px; margin: auto; }
-
-        .projects-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: 30px; padding-bottom: 80px; }
-        
-        .project-card { 
-            background: white; 
-            border-radius: 8px; 
-            overflow: hidden; 
-            box-shadow: 0 5px 20px rgba(0,0,0,0.05); 
-            transition: transform 0.3s ease; 
-            text-decoration: none; 
-            color: inherit;
-            display: block;
+        :root {
+            --burdeo: #800020;
+            --negro: #1a1a1a;
+            --blanco: #ffffff;
+            --whatsapp: #25D366;
         }
-        .project-card:hover { transform: translateY(-5px); box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
-        
-        .card-img-container { height: 350px; overflow: hidden; position: relative; }
-        .card-img-container img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
-        .project-card:hover .card-img-container img { transform: scale(1.05); }
-        
-        .card-body { padding: 25px; text-align: center; }
-        .card-body h3 { margin: 0 0 10px; font-family: 'Playfair Display', serif; color: var(--burdeo); font-size: 1.5rem; }
-        .card-body p { margin: 0; color: #666; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; }
 
-        .btn-back { display: block; text-align: center; margin: 40px 0 80px; color: #666; text-decoration: none; font-weight: 600; }
-        .btn-back:hover { color: var(--burdeo); }
+        body {
+            margin: 0;
+            font-family: 'Montserrat', sans-serif;
+            color: #333;
+            line-height: 1.6;
+            background-color: var(--blanco);
+        }
 
+        h1, h2, h3 { font-family: 'Playfair Display', serif; }
+        a { text-decoration: none; color: inherit; transition: 0.3s; }
+        a:hover { color: var(--burdeo); }
+
+        /* HEADER */
+        header {
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+            background: white;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 0 20px;
+        }
+
+        .nav-flex {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        /* LOGO GRANDE */
+        .logo-img {
+            height: 110px;
+            width: auto;
+            display: block;
+            transition: transform 0.3s;
+        }
+        .logo-img:hover { transform: scale(1.02); }
+
+        .breadcrumb {
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        /* HEADER DEL PROYECTO */
+        .project-header {
+            text-align: center;
+            padding: 40px 20px 20px;
+        }
+
+        .project-header h1 {
+            color: var(--burdeo);
+            margin-bottom: 10px;
+            font-size: 2.5rem;
+        }
+
+        .project-details {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            font-size: 0.95rem;
+            color: #666;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+        
+        .project-details span i {
+            color: var(--burdeo);
+            margin-right: 5px;
+        }
+
+        .project-description {
+            max-width: 800px;
+            margin: 0 auto 40px;
+            text-align: center;
+            font-size: 1.1rem;
+        }
+
+        /* VISOR 3D */
+        .container-3d {
+            display: none; /* Se activará cuando haya modelo */
+        }
+
+        .viewer-wrapper {
+            max-width: 700px;
+            margin: 0 auto 20px;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            background: #f9f9f9;
+            border: 1px solid #eee;
+        }
+
+        model-viewer {
+            width: 100%;
+            height: 350px;
+            background: #f4f4f4;
+            --poster-color: transparent;
+        }
+
+        .btn-3d {
+            background: var(--burdeo);
+            color: white;
+            border: none;
+            padding: 10px 25px;
+            border-radius: 50px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            font-weight: 600;
+            box-shadow: 0 4px 10px rgba(128, 0, 32, 0.2);
+            transition: 0.3s;
+        }
+
+        .btn-3d:hover {
+            background: #5c0016;
+            transform: translateY(-2px);
+        }
+
+        /* TÍTULO GALERÍA */
+        .gallery-title {
+            text-align: center;
+            margin: 60px 0 30px;
+        }
+        .gallery-title h3 {
+            color: var(--burdeo);
+            font-size: 1.8rem;
+            margin-bottom: 5px;
+        }
+        .gallery-title p {
+            color: #666;
+            font-size: 1.1rem;
+        }
+
+        /* GALERÍA */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-bottom: 80px;
+        }
+
+        .gallery-item {
+            height: 300px;
+            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            background: #eee;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            cursor: pointer;
+            transition: transform 0.4s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+
+        /* BOTÓN VOLVER */
+        .back-section {
+            text-align: center;
+            margin-bottom: 80px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+        }
+
+        .btn-back {
+            display: inline-block;
+            margin-top: 30px;
+            background: transparent;
+            color: var(--burdeo);
+            padding: 10px 25px;
+            border: 2px solid var(--burdeo);
+            border-radius: 50px;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+        
+        .btn-back:hover {
+            background: var(--burdeo);
+            color: white;
+        }
+
+        /* BOTÓN WHATSAPP */
+        .whatsapp-project {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: var(--whatsapp);
+            color: white;
+            padding: 12px 25px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            z-index: 2000;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: transform 0.3s;
+        }
+        .whatsapp-project:hover {
+            transform: scale(1.05);
+            background: #1ebc57;
+            color: white;
+        }
+
+        /* MODAL IMÁGENES (CARRUSEL) */
+        .modal {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.95);
+            z-index: 3000;
+            backdrop-filter: blur(5px);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal img {
+            display: block;
+            max-width: 90%;
+            max-height: 85vh;
+            border-radius: 4px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.5);
+        }
+
+        /* FLECHAS DE NAVEGACIÓN */
+        .modal-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            color: white;
+            font-size: 40px;
+            cursor: pointer;
+            padding: 15px;
+            background: rgba(0,0,0,0.3);
+            border-radius: 50%;
+            transition: 0.3s;
+            z-index: 3002;
+        }
+        .modal-nav:hover { background: rgba(128, 0, 32, 0.8); }
+        .modal-prev { left: 20px; }
+        .modal-next { right: 20px; }
+
+        .close {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            color: white;
+            font-size: 40px;
+            cursor: pointer;
+            z-index: 3003;
+            transition: 0.3s;
+        }
+        .close:hover { color: var(--burdeo); }
+
+        /* MODAL 3D FULLSCREEN */
+        .modal-3d-overlay {
+            display: none; 
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.95);
+            z-index: 9999 !important;
+        }
+
+        .close-3d {
+            position: absolute;
+            top: 20px;
+            right: 40px;
+            color: white;
+            font-size: 50px;
+            font-weight: bold;
+            cursor: pointer;
+            z-index: 10000;
+            transition: 0.3s;
+        }
+        .close-3d:hover { color: var(--burdeo); }
+
+        /* Responsive */
         @media (max-width: 768px) {
-            .hero-section h1 { font-size: 2.2rem; }
-            .card-img-container { height: 250px; }
+            .project-header h1 { font-size: 2rem; }
+            model-viewer { height: 300px; }
+            .gallery-grid { grid-template-columns: 1fr; }
+            .whatsapp-project { bottom: 20px; right: 20px; font-size: 0.9rem; padding: 10px 20px; }
+            .logo-img { height: 60px; } 
+            .modal-nav { font-size: 30px; padding: 10px; }
         }
     </style>
 </head>
+
 <body>
 
 <header>
     <div class="container nav-flex">
         <a href="../index.html">
-            <img src="../img/LOGO BURDEO.png" alt="Burdeo Renovaciones" class="logo-img">
+            <img src="../img/LOGO BURDEO.png" alt="Logo Burdeo Renovaciones" class="logo-img">
         </a>
-        <nav class="nav-links">
-            <a href="../index.html">Inicio</a>
-            <span>/</span>
-            <a href="../proyectos.html">Proyectos</a>
-        </nav>
+        <div class="breadcrumb">
+            <a href="../index.html">Inicio</a> /
+            <a href="index.html">Quinchos</a> /
+            <span>Quincho FT</span>
+        </div>
     </div>
 </header>
 
-<div class="hero-section">
-    <h1>Quinchos y Terrazas</h1>
-    <p>Espacios cálidos diseñados para compartir la tradición del sur.</p>
-</div>
+<main class="container">
 
-<div class="container">
-    <div class="projects-grid">
-        
-        <a href="ft-alerce.html" class="project-card">
-            <div class="card-img-container">
-                <img src="../img/quinchos/FT-Alerce/portada-quincho-ft.webp" alt="Quincho FT Alerce">
-            </div>
-            <div class="card-body">
-                <h3>Quincho FT</h3>
-                <p>Alerce, Puerto Montt</p>
-            </div>
-        </a>
+    <section class="project-header">
+        <h1>Quincho FT</h1>
+        <h2 style="display:none;">Construcción de Quincho en Alerce</h2>
 
+        <div class="project-details">
+            <span><i class="fas fa-map-marker-alt"></i> Alerce</span>
+            <span><i class="fas fa-tree"></i> Madera y Piedra</span>
+            <span><i class="fas fa-hammer"></i> Obra Nueva</span>
         </div>
 
-    <a href="../proyectos.html" class="btn-back">← Volver a Categorías</a>
+        <div class="project-description">
+            <p>
+                Ubicado en Alerce, este proyecto transforma el patio en un centro de reunión.
+                Utilizamos maderas tratadas para resistir el clima, combinadas con revestimientos
+                rústicos que aportan calidez. Un espacio diseñado para disfrutar asados y 
+                juntas familiares durante todo el año.
+            </p>
+        </div>
+    </section>
+
+    <div class="container-3d">
+        </div>
+
+    <div class="gallery-title">
+        <h3>Galería del Proyecto</h3>
+        <p>Proceso constructivo y terminaciones.</p>
+    </div>
+
+    <section class="gallery-grid">
+        <div class="gallery-item">
+            <img src="../img/quinchos/FT-Alerce/portada-quincho-ft.webp" alt="Quincho FT Portada" loading="lazy">
+        </div>
+        
+        <div class="gallery-item">
+            <img src="../img/quinchos/FT-Alerce/proceso-1-quincho-ft.webp" alt="Estructura inicial quincho" loading="lazy">
+        </div>
+
+        <div class="gallery-item">
+            <img src="../img/quinchos/FT-Alerce/proceso-2-quincho-ft.webp" alt="Avance techumbre" loading="lazy">
+        </div>
+
+        <div class="gallery-item">
+            <img src="../img/quinchos/FT-Alerce/proceso-3-quincho-ft.webp" alt="Revestimiento madera" loading="lazy">
+        </div>
+
+        <div class="gallery-item">
+            <img src="../img/quinchos/FT-Alerce/proceso-4-quincho-ft.webp" alt="Detalle interior" loading="lazy">
+        </div>
+
+        <div class="gallery-item">
+            <img src="../img/quinchos/FT-Alerce/proceso-5-quincho-ft.webp" alt="Terminaciones quincho" loading="lazy">
+        </div>
+        
+        </section>
+
+    <div class="back-section">
+        <h3>¿Quieres un espacio como este?</h3>
+        <p>Cotiza tu quincho a medida en Puerto Montt y alrededores.</p>
+        <a href="index.html" class="btn-back">&larr; Ver más quinchos</a>
+    </div>
+
+</main>
+
+<a href="https://wa.me/56967797864?text=Hola,%20vi%20el%20Quincho%20FT%20en%20Alerce%20y%20me%20gustaría%20cotizar." 
+   class="whatsapp-project" target="_blank">
+   <i class="fab fa-whatsapp" style="font-size: 20px;"></i> 
+   <span>Consultar por este proyecto</span>
+</a>
+
+<div id="imageModal" class="modal">
+    <span class="close">&times;</span>
+    <span class="modal-nav modal-prev"><i class="fas fa-chevron-left"></i></span>
+    <span class="modal-nav modal-next"><i class="fas fa-chevron-right"></i></span>
+    <img id="modalImg" alt="Vista ampliada proyecto">
 </div>
+
+<script>
+    // --- Lógica del Carrusel de Imágenes ---
+    const modal = document.getElementById("imageModal");
+    const modalImg = document.getElementById("modalImg");
+    const closeImg = document.querySelector("#imageModal .close");
+    const prevBtn = document.querySelector(".modal-prev");
+    const nextBtn = document.querySelector(".modal-next");
+    
+    const galleryImages = Array.from(document.querySelectorAll(".gallery-grid img"));
+    let currentIndex = 0;
+
+    function showImage(index) {
+        if (index < 0) index = galleryImages.length - 1;
+        if (index >= galleryImages.length) index = 0;
+        currentIndex = index;
+        modalImg.src = galleryImages[currentIndex].src;
+        modal.style.display = "flex";
+    }
+
+    galleryImages.forEach((img, index) => {
+        img.onclick = function() {
+            showImage(index);
+        }
+    });
+
+    prevBtn.onclick = function() { showImage(currentIndex - 1); }
+    nextBtn.onclick = function() { showImage(currentIndex + 1); }
+
+    closeImg.onclick = function() { modal.style.display = "none"; }
+    modal.onclick = function(e) {
+        if (e.target === modal) { modal.style.display = "none"; }
+    }
+</script>
 
 </body>
 </html>
