@@ -3,108 +3,99 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nuestros Quinchos | Burdeo Renovaciones</title>
-    <meta name="description" content="Diseño y construcción de quinchos modernos y rústicos en Puerto Montt y el sur de Chile.">
+    <title>Quinchos y Terrazas | Burdeo Renovaciones</title>
+    <meta name="description" content="Diseño y construcción de quinchos en Puerto Montt y alrededores. Espacios cálidos con madera nativa.">
     
     <link rel="icon" type="image/png" href="../img/favicon.png">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
-    
-    <style>
-        /* Estilos consistentes */
-        :root { --burdeo: #800020; --negro: #1a1a1a; }
-        body { margin: 0; font-family: 'Montserrat', sans-serif; background-color: #fafafa; }
-        
-        .header { text-align: center; padding: 60px 20px; background: white; border-bottom: 1px solid #eee; }
-        .header h1 { font-family: 'Playfair Display', serif; font-size: 3rem; margin: 0 0 10px; color: var(--negro); }
-        .header p { color: #666; font-size: 1.1rem; }
-        
-        .container { max-width: 1200px; margin: 0 auto; padding: 50px 20px; }
-        
-        .projects-grid { 
-            display: grid; 
-            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); 
-            gap: 30px; 
-        }
-        
-        .card { 
-            background: white;
-            border-radius: 8px; 
-            overflow: hidden; 
-            box-shadow: 0 5px 15px rgba(0,0,0,0.08); 
-            transition: transform 0.3s ease; 
-        }
-        .card:hover { transform: translateY(-5px); box-shadow: 0 10px 25px rgba(0,0,0,0.15); }
-        
-        .card a { text-decoration: none; color: inherit; display: block; }
-        
-        .card-img-container { height: 280px; overflow: hidden; }
-        .card img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
-        .card:hover img { transform: scale(1.05); }
-        
-        .card-body { padding: 25px; }
-        .card-body h3 { margin: 0 0 10px; color: var(--burdeo); font-family: 'Playfair Display', serif; font-size: 1.5rem; }
-        .card-body p { margin: 0; color: #666; font-size: 0.95rem; }
-        
-        .btn { 
-            display: inline-block; 
-            margin-top: 15px; 
-            color: #333; 
-            font-weight: 600; 
-            font-size: 0.9rem; 
-            border-bottom: 2px solid transparent;
-            transition: 0.3s;
-        }
-        .card:hover .btn { border-color: var(--burdeo); color: var(--burdeo); }
-        
-        .back-home { display: block; text-align: center; margin-top: 60px; color: #666; text-decoration: none; font-weight: 500; }
-        .back-home:hover { color: var(--burdeo); }
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-        @media (max-width: 768px) {
-            .header h1 { font-size: 2.5rem; }
-            .card-img-container { height: 220px; }
-        }
+    <style>
+        :root { --burdeo: #800020; --negro: #1a1a1a; --blanco: #ffffff; }
+        body { font-family: 'Montserrat', sans-serif; margin: 0; color: #333; line-height: 1.6; }
+        h1, h2, h3 { font-family: 'Playfair Display', serif; }
+        a { text-decoration: none; color: inherit; transition: 0.3s; }
+        
+        header { padding: 10px 0; border-bottom: 1px solid #eee; position: sticky; top: 0; background: var(--blanco); z-index: 100; }
+        .container { max-width: 1200px; margin: auto; padding: 0 20px; }
+        .nav-flex { display: flex; justify-content: space-between; align-items: center; }
+        
+        /* LOGO IMAGEN */
+        .logo-img img { height: 60px; width: auto; transition: transform 0.3s; display: block; }
+        .logo-img:hover img { transform: scale(1.05); }
+
+        .breadcrumb { font-size: 0.9rem; color: #666; }
+        
+        .category-hero { text-align: center; padding: 60px 20px; background-color: #f9f9f9; margin-bottom: 40px; }
+        
+        .projects-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: 40px; padding-bottom: 80px; }
+        .project-card { background: var(--blanco); border-radius: 4px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); overflow: hidden; }
+        .img-wrapper { height: 280px; overflow: hidden; }
+        .img-wrapper img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s; }
+        .project-card:hover .img-wrapper img { transform: scale(1.05); }
+        
+        .card-info { padding: 25px; }
+        .location { font-size: 0.85rem; text-transform: uppercase; color: var(--burdeo); font-weight: 600; display: block; margin-bottom: 10px; }
+        .btn-details { display: inline-block; border: 1px solid #ddd; padding: 8px 20px; border-radius: 50px; font-size: 0.9rem; margin-top: 15px; }
+        .btn-details:hover { background: var(--burdeo); color: white; border-color: var(--burdeo); }
+        
+        /* Ajuste móvil */
+        @media (max-width: 768px) { .projects-grid { grid-template-columns: 1fr; } }
     </style>
 </head>
 <body>
 
-    <div class="header">
-        <h1>Nuestros Quinchos</h1>
-        <p>Espacios creados para compartir el calor del sur</p>
-    </div>
-
-    <div class="container">
-        <div class="projects-grid">
+    <header>
+        <div class="container nav-flex">
+            <a href="../index.html" class="logo-img">
+                <img src="../img/LOGO BURDEO.png" alt="Burdeo Renovaciones">
+            </a>
             
-            <div class="card">
+            <nav class="breadcrumb">
+                <a href="../index.html">Inicio</a> / 
+                <a href="../proyectos.html">Proyectos</a> / 
+                <span>Quinchos</span>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="category-hero">
+            <h1>Quinchos y Terrazas</h1>
+            <p>Creamos espacios de encuentro cálidos y funcionales, diseñados para disfrutar la tradición del sur sin importar el clima.</p>
+        </section>
+
+        <section class="container projects-grid">
+
+            <article class="project-card">
                 <a href="ft-alerce.html">
-                    <div class="card-img-container">
+                    <div class="img-wrapper">
                         <img src="../img/quinchos/FT-Alerce/portada-quincho-ft.webp" alt="Quincho FT Alerce">
                     </div>
-                    <div class="card-body">
+                    <div class="card-info">
+                        <span class="location">Alerce</span>
                         <h3>Quincho FT</h3>
-                        <p>Remodelación en Alerce con terminaciones rústicas y funcionales.</p>
-                        <span class="btn">Ver Proyecto &rarr;</span>
+                        <p>Remodelación rústica y funcional con maderas tratadas.</p>
+                        <span class="btn-details">Ver más &rarr;</span>
                     </div>
                 </a>
-            </div>
+            </article>
 
-            <div class="card">
+            <article class="project-card">
                 <a href="soldeoriente.html">
-                    <div class="card-img-container">
+                    <div class="img-wrapper">
                         <img src="../img/quinchos/soldeoriente1/portada-quincho-soldeoriente.webp" alt="Quincho Sol de Oriente">
                     </div>
-                    <div class="card-body">
+                    <div class="card-info">
+                        <span class="location">Puerto Montt</span>
                         <h3>Sol de Oriente</h3>
-                        <p>Espacio techado en Puerto Montt, diseño integral en madera.</p>
-                        <span class="btn">Ver Proyecto &rarr;</span>
+                        <p>Diseño integral techado para disfrutar todo el año.</p>
+                        <span class="btn-details">Ver más &rarr;</span>
                     </div>
                 </a>
-            </div>
+            </article>
 
-        </div>
-
-        <a href="../proyectos.html" class="back-home">&larr; Volver a Categorías</a>
-    </div>
-
+        </section>
+    </main>
 </body>
 </html>
