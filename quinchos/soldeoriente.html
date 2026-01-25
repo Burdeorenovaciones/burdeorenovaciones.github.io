@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Quincho Sol de Oriente | Burdeo Renovaciones</title>
+    <meta name="description" content="Diseño y construcción de Quincho en Sol de Oriente, Puerto Montt. Espacio techado con madera y terminaciones modernas.">
+    
+    <link rel="icon" type="image/png" href="../img/favicon.png">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root { --burdeo: #800020; --negro: #1a1a1a; --blanco: #ffffff; --whatsapp: #25D366; }
+        body { margin: 0; font-family: 'Montserrat', sans-serif; color: #333; background-color: #fafafa; }
+        h1, h2 { font-family: 'Playfair Display', serif; }
+        
+        header { padding: 15px 0; border-bottom: 1px solid #eee; background: white; position: sticky; top: 0; z-index: 100; }
+        .container { max-width: 1200px; margin: auto; padding: 0 20px; }
+        .nav-flex { display: flex; justify-content: space-between; align-items: center; }
+        .logo-img { height: 70px; }
+        .breadcrumb { font-size: 0.9rem; color: #666; }
+        .breadcrumb a { text-decoration: none; color: inherit; }
+        .breadcrumb a:hover { color: var(--burdeo); }
+
+        .project-header { text-align: center; padding: 50px 20px 30px; background: white; }
+        .project-header h1 { color: var(--burdeo); margin: 0 0 10px; font-size: 2.5rem; }
+        .project-meta { color: #666; font-size: 1rem; margin-bottom: 20px; display: flex; justify-content: center; gap: 20px; }
+        .project-meta i { color: var(--burdeo); margin-right: 5px; }
+        .project-desc { max-width: 800px; margin: 0 auto 40px; text-align: center; line-height: 1.8; color: #444; }
+
+        /* Galería */
+        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 15px; margin-bottom: 60px; }
+        .gallery-item { position: relative; height: 350px; overflow: hidden; border-radius: 6px; cursor: pointer; }
+        .gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s; }
+        .gallery-item:hover img { transform: scale(1.05); }
+
+        .btn-container { text-align: center; margin: 40px 0 80px; }
+        .btn-outline { padding: 12px 30px; border: 1px solid #333; text-decoration: none; color: #333; border-radius: 50px; font-weight: 600; transition: 0.3s; margin: 0 10px; }
+        .btn-outline:hover { background: #333; color: white; }
+        
+        .whatsapp-float { position: fixed; bottom: 30px; right: 30px; background: var(--whatsapp); color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 30px; box-shadow: 0 5px 15px rgba(0,0,0,0.2); z-index: 999; transition: 0.3s; text-decoration: none; }
+        .whatsapp-float:hover { transform: scale(1.1); }
+
+        /* Modal */
+        .modal { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.95); z-index: 2000; justify-content: center; align-items: center; }
+        .modal img { max-width: 90%; max-height: 85vh; border-radius: 4px; box-shadow: 0 0 20px rgba(0,0,0,0.5); }
+        .close { position: absolute; top: 20px; right: 30px; color: white; font-size: 40px; cursor: pointer; }
+        
+        @media (max-width: 768px) {
+            .project-header h1 { font-size: 2rem; }
+            .gallery-grid { grid-template-columns: 1fr; }
+            .gallery-item { height: 280px; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="container nav-flex">
+        <a href="../index.html">
+            <img src="../img/LOGO BURDEO.png" alt="Burdeo Renovaciones" class="logo-img">
+        </a>
+        <div class="breadcrumb">
+            <a href="../index.html">Inicio</a> / 
+            <a href="index.html">Quinchos</a> / 
+            <span>Sol de Oriente</span>
+        </div>
+    </div>
+</header>
+
+<main class="container">
+    
+    <section class="project-header">
+        <h1>Quincho Sol de Oriente</h1>
+        <div class="project-meta">
+            <span><i class="fas fa-map-marker-alt"></i> Puerto Montt</span>
+            <span><i class="fas fa-hammer"></i> Construcción</span>
+        </div>
+        <div class="project-desc">
+            <p>Un proyecto integral donde combinamos estructura y calidez. Desde el diseño inicial hasta la ejecución, creamos un espacio protegido del clima sureño, ideal para compartir en familia.</p>
+        </div>
+    </section>
+
+    <div class="gallery-grid">
+        
+        <div class="gallery-item" onclick="openModal(this)">
+            <img src="../img/quinchos/soldeoriente1/portada-quincho-soldeoriente.webp" alt="Quincho Sol de Oriente Portada" loading="lazy">
+        </div>
+
+        <div class="gallery-item" onclick="openModal(this)">
+            <img src="../img/quinchos/soldeoriente1/Dibujo-quincho-soldeoriente.webp" alt="Diseño 3D Quincho" loading="lazy">
+        </div>
+
+        <div class="gallery-item" onclick="openModal(this)">
+            <img src="../img/quinchos/soldeoriente1/proceso-1-quincho-soldeoriente.webp" alt="Estructura inicial" loading="lazy">
+        </div>
+        
+        <div class="gallery-item" onclick="openModal(this)">
+            <img src="../img/quinchos/soldeoriente1/proceso-2-quincho-soldeoriente.webp" alt="Avance obra" loading="lazy">
+        </div>
+
+        <div class="gallery-item" onclick="openModal(this)">
+            <img src="../img/quinchos/soldeoriente1/proceso-3-quincho-soldeoriente.webp" alt="Detalle techo" loading="lazy">
+        </div>
+
+        <div class="gallery-item" onclick="openModal(this)">
+            <img src="../img/quinchos/soldeoriente1/proceso-4-quincho-soldeoriente.webp" alt="Terminaciones madera" loading="lazy">
+        </div>
+
+    </div>
+
+    <div class="btn-container">
+        <a href="index.html" class="btn-outline">← Volver a Quinchos</a>
+    </div>
+
+</main>
+
+<a href="https://wa.me/56967797864?text=Hola,%20vi%20el%20proyecto%20Sol%20de%20Oriente%20y%20me%20interesa%20algo%20así." class="whatsapp-float" target="_blank">
+    <i class="fab fa-whatsapp"></i>
+</a>
+
+<div id="imageModal" class="modal" onclick="this.style.display='none'">
+    <span class="close">&times;</span>
+    <img id="modalImg">
+</div>
+
+<script>
+    function openModal(element) {
+        var modal = document.getElementById("imageModal");
+        var modalImg = document.getElementById("modalImg");
+        var img = element.querySelector('img');
+        
+        modal.style.display = "flex";
+        modalImg.src = img.src;
+    }
+</script>
+
+</body>
+</html>
