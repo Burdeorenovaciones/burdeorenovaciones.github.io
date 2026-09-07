@@ -1,185 +1,238 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cocinas a Medida | Burdeo Renovaciones</title>
-    <meta name="description" content="Diseño y remodelación de cocinas en Puerto Montt, Puerto Varas y Frutillar.">
-    
-    <link rel="icon" type="image/png" href="../img/favicon.png">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <style>
-        :root { --burdeo: #800020; --negro: #1a1a1a; --blanco: #ffffff; }
-        body { font-family: 'Montserrat', sans-serif; margin: 0; color: #333; line-height: 1.6; }
-        h1, h2, h3 { font-family: 'Playfair Display', serif; }
-        a { text-decoration: none; color: inherit; transition: 0.3s; }
-        
-        header { padding: 10px 0; border-bottom: 1px solid #eee; position: sticky; top: 0; background: var(--blanco); z-index: 100; }
-        .container { max-width: 1200px; margin: auto; padding: 0 20px; }
-        .nav-flex { display: flex; justify-content: space-between; align-items: center; }
-        
-        /* LOGO IMAGEN (Nuevo estilo) */
-        .logo-img img { height: 60px; width: auto; transition: transform 0.3s; display: block; }
-        .logo-img:hover img { transform: scale(1.05); }
+  <title>Cocinas a Medida en Puerto Montt y Puerto Varas | Burdeo Renovaciones</title>
+  <meta name="description" content="Diseño y remodelación de cocinas a medida en Puerto Montt, Puerto Varas y Región de Los Lagos. Conoce proyectos reales de Burdeo Renovaciones.">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <link rel="canonical" href="https://burdeorenovaciones.cl/cocinas/">
 
-        .breadcrumb { font-size: 0.9rem; color: #666; }
-        
-        .category-hero { text-align: center; padding: 60px 20px; background-color: #f9f9f9; margin-bottom: 40px; }
-        
-        .projects-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: 40px; padding-bottom: 80px; }
-        .project-card { background: var(--blanco); border-radius: 4px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); overflow: hidden; }
-        .img-wrapper { height: 280px; overflow: hidden; }
-        .img-wrapper img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s; }
-        .project-card:hover .img-wrapper img { transform: scale(1.05); }
-        
-        .card-info { padding: 25px; }
-        .location { font-size: 0.85rem; text-transform: uppercase; color: var(--burdeo); font-weight: 600; display: block; margin-bottom: 10px; }
-        .btn-details { display: inline-block; border: 1px solid #ddd; padding: 8px 20px; border-radius: 50px; font-size: 0.9rem; margin-top: 15px; }
-        .btn-details:hover { background: var(--burdeo); color: white; border-color: var(--burdeo); }
-        
-        /* Ajuste móvil */
-        @media (max-width: 768px) { .projects-grid { grid-template-columns: 1fr; } }
-    </style>
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="es_CL">
+  <meta property="og:site_name" content="Burdeo Renovaciones">
+  <meta property="og:title" content="Cocinas a Medida en Puerto Montt | Burdeo Renovaciones">
+  <meta property="og:description" content="Mira proyectos reales de cocinas diseñadas y remodeladas por Burdeo Renovaciones en la Región de Los Lagos.">
+  <meta property="og:url" content="https://burdeorenovaciones.cl/cocinas/">
+  <meta property="og:image" content="https://burdeorenovaciones.cl/img/proyectos/depto-k/cocina-terminada-2.webp">
+
+  <link rel="icon" type="image/png" href="../img/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"CollectionPage",
+    "name":"Cocinas a medida — Burdeo Renovaciones",
+    "url":"https://burdeorenovaciones.cl/cocinas/",
+    "description":"Proyectos reales de diseño y remodelación de cocinas a medida en Puerto Montt, Puerto Varas y Región de Los Lagos.",
+    "about":{"@type":"Service","name":"Diseño y remodelación de cocinas a medida","areaServed":["Puerto Montt","Puerto Varas","Región de Los Lagos"]},
+    "publisher":{"@type":"LocalBusiness","name":"Burdeo Renovaciones","url":"https://burdeorenovaciones.cl/","telephone":"+56 9 6779 7864"}
+  }
+  </script>
+
+  <style>
+    :root{--burdeo:#800020;--burdeo-dark:#5b0017;--ink:#171717;--muted:#686868;--line:#e9e4e1;--surface:#f6f4f2;--white:#fff}
+    *{box-sizing:border-box}
+    body{margin:0;font-family:'Montserrat',sans-serif;color:var(--ink);line-height:1.6;background:#fff}
+    h1,h2,h3{font-family:'Playfair Display',serif;line-height:1.15}
+    img{display:block;max-width:100%}
+    a{color:inherit}
+    .container{width:min(1180px,calc(100% - 40px));margin:auto}
+    header{position:sticky;top:0;z-index:30;background:rgba(255,255,255,.96);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+    .nav{height:78px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+    .logo img{height:58px;width:auto}
+    .nav-links{display:flex;align-items:center;gap:24px;font-size:.84rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em}
+    .nav-links a{text-decoration:none}
+    .nav-links a:hover{color:var(--burdeo)}
+    .nav-cta{border:1px solid var(--burdeo);color:var(--burdeo);padding:10px 16px;border-radius:999px}
+
+    .hero{background:var(--surface);padding:80px 0 68px;border-bottom:1px solid var(--line)}
+    .crumb{font-size:.8rem;color:var(--muted);margin-bottom:24px}
+    .crumb a{text-decoration:none}
+    .eyebrow{display:flex;align-items:center;gap:10px;color:var(--burdeo);font-size:.76rem;font-weight:700;text-transform:uppercase;letter-spacing:.15em;margin-bottom:12px}
+    .eyebrow:before{content:'';width:30px;height:2px;background:var(--burdeo)}
+    .hero h1{font-size:clamp(2.5rem,5.2vw,4.7rem);max-width:900px;margin:0 0 20px}
+    .hero p{max-width:760px;color:#555;font-size:1.05rem;margin:0 0 26px}
+    .hero-actions{display:flex;gap:12px;flex-wrap:wrap}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:13px 20px;text-decoration:none;font-weight:700;border-radius:4px}
+    .btn-primary{background:var(--burdeo);color:#fff}
+    .btn-primary:hover{background:var(--burdeo-dark)}
+    .btn-outline{border:1px solid #aaa;color:#333}
+    .btn-outline:hover{border-color:var(--burdeo);color:var(--burdeo)}
+
+    .trust{padding:25px 0;border-bottom:1px solid var(--line)}
+    .trust-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+    .trust-item{display:flex;align-items:center;gap:12px;color:#444;font-size:.9rem}
+    .trust-item i{color:var(--burdeo);font-size:1.15rem}
+
+    .projects{padding:72px 0 88px}
+    .section-head{display:flex;justify-content:space-between;align-items:end;gap:30px;margin-bottom:36px}
+    .section-head h2{font-size:clamp(2rem,4vw,3rem);margin:0 0 8px}
+    .section-head p{color:var(--muted);margin:0;max-width:680px}
+    .projects-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
+    .project-card{background:#fff;border:1px solid var(--line);overflow:hidden;text-decoration:none;transition:.25s ease;min-width:0}
+    .project-card:hover{transform:translateY(-4px);box-shadow:0 14px 35px rgba(0,0,0,.08);border-color:#ddd}
+    .photo{height:300px;overflow:hidden;background:#eee;position:relative}
+    .photo img{width:100%;height:100%;object-fit:cover;transition:transform .45s ease}
+    .project-card:hover .photo img{transform:scale(1.035)}
+    .tag{position:absolute;left:14px;top:14px;background:rgba(23,23,23,.85);color:#fff;padding:7px 10px;font-size:.68rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em}
+    .tag.local{background:var(--burdeo)}
+    .card-body{padding:22px}
+    .location{font-size:.72rem;color:var(--burdeo);font-weight:700;text-transform:uppercase;letter-spacing:.12em}
+    .card-body h3{font-size:1.45rem;margin:8px 0 9px}
+    .card-body p{font-size:.9rem;color:#666;margin:0 0 16px}
+    .more{font-size:.82rem;font-weight:700;color:var(--burdeo)}
+
+    .seo-copy{background:var(--surface);padding:75px 0}
+    .seo-grid{display:grid;grid-template-columns:1fr 1fr;gap:70px}
+    .seo-copy h2{font-size:clamp(2rem,3.8vw,3rem);margin-bottom:18px}
+    .seo-copy p{color:#555}
+    .service-list{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:24px}
+    .service-list span{background:#fff;border:1px solid var(--line);padding:12px 14px;font-size:.86rem}
+    .service-list i{color:var(--burdeo);margin-right:8px}
+
+    .cta{background:var(--ink);color:#fff;padding:72px 0}
+    .cta-grid{display:grid;grid-template-columns:1fr auto;gap:40px;align-items:center}
+    .cta h2{font-size:clamp(2rem,4vw,3rem);margin:0 0 12px}
+    .cta p{color:#c7c7c7;margin:0;max-width:700px}
+    footer{background:#0d0d0d;color:#999;padding:35px 0;font-size:.82rem}
+    .footer-flex{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+    .footer-flex a{color:#ddd;text-decoration:none}
+    .whatsapp-float{position:fixed;right:22px;bottom:22px;width:58px;height:58px;border-radius:50%;background:#25d366;color:#fff;display:grid;place-items:center;text-decoration:none;font-size:1.7rem;z-index:40;box-shadow:0 8px 24px rgba(0,0,0,.2)}
+
+    @media(max-width:900px){.projects-grid{grid-template-columns:repeat(2,1fr)}.seo-grid{grid-template-columns:1fr;gap:32px}.cta-grid{grid-template-columns:1fr}.cta .btn{justify-self:start}}
+    @media(max-width:680px){.container{width:min(100% - 28px,1180px)}.nav{height:68px}.logo img{height:48px}.nav-links a:not(.nav-cta){display:none}.nav-cta{padding:9px 12px;font-size:.7rem}.hero{padding:55px 0 48px}.trust-grid{grid-template-columns:1fr;gap:12px}.projects{padding:55px 0 68px}.projects-grid{grid-template-columns:1fr}.photo{height:320px}.section-head{display:block}.service-list{grid-template-columns:1fr}.hero-actions .btn{width:100%}}
+  </style>
 </head>
 <body>
+<header>
+  <div class="container nav">
+    <a href="../index.html" class="logo" aria-label="Burdeo Renovaciones - Inicio"><img src="../img/LOGO BURDEO.png" alt="Burdeo Renovaciones"></a>
+    <nav class="nav-links" aria-label="Navegación principal">
+      <a href="../index.html">Inicio</a>
+      <a href="../proyectos.html">Proyectos</a>
+      <a class="nav-cta" href="https://wa.me/56967797864?text=Hola%20Burdeo%20Renovaciones%2C%20quiero%20cotizar%20una%20cocina%20a%20medida." target="_blank" rel="noopener">Cotizar</a>
+    </nav>
+  </div>
+</header>
 
-    <header>
-        <div class="container nav-flex">
-            <a href="../index.html" class="logo-img">
-                <img src="../img/LOGO BURDEO.png" alt="Burdeo Renovaciones">
-            </a>
-            
-            <nav class="breadcrumb">
-                <a href="../index.html">Inicio</a> / 
-                <a href="../proyectos.html">Proyectos</a> / 
-                <span>Cocinas</span>
-            </nav>
+<main>
+  <section class="hero">
+    <div class="container">
+      <div class="crumb"><a href="../index.html">Inicio</a> &nbsp;/&nbsp; <a href="../proyectos.html">Proyectos</a> &nbsp;/&nbsp; Cocinas</div>
+      <span class="eyebrow">Diseño y remodelación en Los Lagos</span>
+      <h1>Cocinas a medida en Puerto Montt y el sur de Chile</h1>
+      <p>Diseñamos cocinas pensadas para el espacio real, el almacenamiento que necesitas y la forma en que vives tu hogar. Explora trabajos terminados, procesos de obra y soluciones desarrolladas por Burdeo Renovaciones.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="https://wa.me/56967797864?text=Hola%20Burdeo%20Renovaciones%2C%20quiero%20cotizar%20una%20cocina%20a%20medida%20en%20la%20Regi%C3%B3n%20de%20Los%20Lagos." target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Cotizar mi cocina</a>
+        <a class="btn btn-outline" href="#proyectos">Ver proyectos reales</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="trust" aria-label="Características del servicio">
+    <div class="container trust-grid">
+      <div class="trust-item"><i class="fas fa-ruler-combined"></i><span>Diseño adaptado a cada espacio</span></div>
+      <div class="trust-item"><i class="fas fa-location-dot"></i><span>Puerto Montt y Región de Los Lagos</span></div>
+      <div class="trust-item"><i class="fas fa-images"></i><span>Proyectos y procesos reales</span></div>
+    </div>
+  </section>
+
+  <section class="projects" id="proyectos">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <span class="eyebrow">Portafolio</span>
+          <h2>Transformaciones reales</h2>
+          <p>Priorizamos proyectos documentados con fotografías reales para que puedas conocer tanto el resultado como el proceso.</p>
         </div>
-    </header>
+      </div>
 
-    <main>
-        <section class="category-hero">
-            <h1>Cocinas a Medida</h1>
-            <p>Espacios diseñados para compartir, resistentes a la humedad del sur y con maderas nativas.</p>
-        </section>
+      <div class="projects-grid">
+        <a href="proyecto-depto-puerto-montt.html" class="project-card">
+          <div class="photo"><img src="../img/proyectos/depto-k/cocina-terminada-2.webp" alt="Cocina a medida terminada en departamento de Puerto Montt"><span class="tag local">Nuevo · Puerto Montt</span></div>
+          <div class="card-body"><span class="location">Puerto Montt</span><h3>Proyecto Departamento</h3><p>Cocina integrada de estética contemporánea, documentada desde la obra hasta el resultado final.</p><span class="more">Ver proyecto →</span></div>
+        </a>
 
-        <section class="container projects-grid">
+        <a href="proyecto-william.html" class="project-card">
+          <div class="photo"><img src="../img/cocinas/william-puertasur/portada.png" alt="Cocina moderna en Puerta Sur Puerto Montt" loading="lazy"><span class="tag">Cocina</span></div>
+          <div class="card-body"><span class="location">Puerta Sur · Puerto Montt</span><h3>Proyecto William</h3><p>Diseño moderno con línea limpia y una propuesta de almacenamiento funcional.</p><span class="more">Ver proyecto →</span></div>
+        </a>
 
-            <article class="project-card">
-                <a href="proyecto-deptos-pv.html">
-                    <div class="img-wrapper">
-                        <img src="../img/cocinas/DeptoS_PV/portada.webp" alt="Cocina Departamento Puerto Varas">
-                    </div>
-                    <div class="card-info">
-                        <span class="location">Puerto Varas</span>
-                        <h3>Proyecto Deptos PV</h3>
-                        <p>Diseño moderno y optimización máxima de espacios para departamento.</p>
-                        <span class="btn-details">Ver más &rarr;</span>
-                    </div>
-                </a>
-            </article>
+        <a href="proyecto-luigi.html" class="project-card">
+          <div class="photo"><img src="../img/cocinas/puerta-sur/luigui/portada.png" alt="Cocina a medida en Puerta Sur Puerto Montt" loading="lazy"><span class="tag">Cocina</span></div>
+          <div class="card-body"><span class="location">Puerta Sur · Puerto Montt</span><h3>Proyecto Luigi</h3><p>Renovación funcional con optimización de espacios y estética contemporánea.</p><span class="more">Ver proyecto →</span></div>
+        </a>
 
-            <article class="project-card">
-                <a href="proyecto-ft.html">
-                    <div class="img-wrapper">
-                        <img src="../img/cocinas/alerce/FT/portada-cocina-ft.jpg" alt="Cocina en Alerce">
-                    </div>
-                    <div class="card-info">
-                        <span class="location">Alerce</span>
-                        <h3>Proyecto FT</h3>
-                        <p>Renovación integral priorizando almacenamiento vertical.</p>
-                        <span class="btn-details">Ver más &rarr;</span>
-                    </div>
-                </a>
-            </article>
+        <a href="proyecto-deptos-pv.html" class="project-card">
+          <div class="photo"><img src="../img/cocinas/DeptoS_PV/portada.webp" alt="Cocina de departamento en Puerto Varas" loading="lazy"><span class="tag">Departamento</span></div>
+          <div class="card-body"><span class="location">Puerto Varas</span><h3>Proyecto Deptos PV</h3><p>Diseño moderno orientado a aprovechar al máximo una planta compacta.</p><span class="more">Ver proyecto →</span></div>
+        </a>
 
-            <article class="project-card">
-                <a href="proyecto-frutillar.html">
-                    <div class="img-wrapper">
-                        <img src="../img/cocinas/frutillar/cocina-frutillar-portada.jpg" alt="Cocina Frutillar">
-                    </div>
-                    <div class="card-info">
-                        <span class="location">Frutillar</span>
-                        <h3>Casa del Lago</h3>
-                        <p>Inspiración clásica con tonos blancos y madera de mañío.</p>
-                        <span class="btn-details">Ver más &rarr;</span>
-                    </div>
-                </a>
-            </article>
+        <a href="proyecto-katya.html" class="project-card">
+          <div class="photo"><img src="../img/cocinas/puerto-varas/katya1/portada-cocina-casa-katya.jpeg" alt="Cocina con isla en Puerto Varas" loading="lazy"><span class="tag">Cocina</span></div>
+          <div class="card-body"><span class="location">Puerto Varas</span><h3>Casa Katya</h3><p>Concepto abierto con isla central y una composición de líneas simples.</p><span class="more">Ver proyecto →</span></div>
+        </a>
 
-            <article class="project-card">
-                <a href="proyecto-chacana.html">
-                    <div class="img-wrapper">
-                        <img src="../img/cocinas/muermos/chacana/portada-cocina-chacana-muermos.jpg" alt="Cocina Los Muermos">
-                    </div>
-                    <div class="card-info">
-                        <span class="location">Los Muermos</span>
-                        <h3>Proyecto Chacana</h3>
-                        <p>Diseño rústico moderno adaptado al entorno campestre.</p>
-                        <span class="btn-details">Ver más &rarr;</span>
-                    </div>
-                </a>
-            </article>
+        <a href="proyecto-katya-2.html" class="project-card">
+          <div class="photo"><img src="../img/cocinas/katya2/Proceso 6.webp" alt="Segunda etapa de cocina en Puerto Varas" loading="lazy"><span class="tag">Segunda etapa</span></div>
+          <div class="card-body"><span class="location">Puerto Varas</span><h3>Casa Katya · Fase 2</h3><p>Nuevos avances y detalles complementarios del proyecto de concepto abierto.</p><span class="more">Ver proyecto →</span></div>
+        </a>
 
-            <article class="project-card">
-                <a href="proyecto-katya.html">
-                    <div class="img-wrapper">
-                        <img src="../img/cocinas/puerto-varas/katya1/portada-cocina-casa-katya.jpeg" alt="Cocina Casa Katya Puerto Varas">
-                    </div>
-                    <div class="card-info">
-                        <span class="location">Puerto Varas</span>
-                        <h3>Casa Katya</h3>
-                        <p>Concepto abierto con isla central y elegancia minimalista.</p>
-                        <span class="btn-details">Ver más &rarr;</span>
-                    </div>
-                </a>
-            </article>
+        <a href="proyecto-ft.html" class="project-card">
+          <div class="photo"><img src="../img/cocinas/alerce/FT/portada-cocina-ft.jpg" alt="Cocina a medida en Alerce Puerto Montt" loading="lazy"><span class="tag">Cocina</span></div>
+          <div class="card-body"><span class="location">Alerce · Puerto Montt</span><h3>Proyecto FT</h3><p>Renovación integral con foco en almacenamiento y aprovechamiento vertical.</p><span class="more">Ver proyecto →</span></div>
+        </a>
 
-            <article class="project-card">
-                <a href="proyecto-katya-2.html">
-                    <div class="img-wrapper">
-                        <img src="../img/cocinas/katya2/Proceso 6.webp" alt="Casa Katya Segunda Etapa">
-                    </div>
-                    <div class="card-info">
-                        <span class="location">Puerto Varas</span>
-                        <h3>Casa Katya (Fase 2)</h3>
-                        <p>Nuevos avances y detalles complementarios para esta cocina de concepto abierto.</p>
-                        <span class="btn-details">Ver más &rarr;</span>
-                    </div>
-                </a>
-            </article>
+        <a href="proyecto-frutillar.html" class="project-card">
+          <div class="photo"><img src="../img/cocinas/frutillar/cocina-frutillar-portada.jpg" alt="Cocina a medida en Frutillar" loading="lazy"><span class="tag">Cocina</span></div>
+          <div class="card-body"><span class="location">Frutillar</span><h3>Casa del Lago</h3><p>Una propuesta clara y cálida, integrada a la identidad del entorno del sur.</p><span class="more">Ver proyecto →</span></div>
+        </a>
 
-            <article class="project-card">
-                <a href="proyecto-luigi.html">
-                    <div class="img-wrapper">
-                        <img src="../img/cocinas/puerta-sur/luigui/portada.png" alt="Cocina Luigi Puerta Sur">
-                    </div>
-                    <div class="card-info">
-                        <span class="location">Puerta Sur</span>
-                        <h3>Proyecto Luigi</h3>
-                        <p>Renovación funcional con optimización de espacios y estética moderna.</p>
-                        <span class="btn-details">Ver más &rarr;</span>
-                    </div>
-                </a>
-            </article>
+        <a href="proyecto-chacana.html" class="project-card">
+          <div class="photo"><img src="../img/cocinas/muermos/chacana/portada-cocina-chacana-muermos.jpg" alt="Cocina remodelada en Los Muermos" loading="lazy"><span class="tag">Cocina</span></div>
+          <div class="card-body"><span class="location">Los Muermos</span><h3>Proyecto Chacana</h3><p>Diseño rústico contemporáneo adaptado a un entorno residencial del sur.</p><span class="more">Ver proyecto →</span></div>
+        </a>
+      </div>
+    </div>
+  </section>
 
-            <article class="project-card">
-                <a href="proyecto-william.html">
-                    <div class="img-wrapper">
-                        <img src="../img/cocinas/william-puertasur/portada.png" alt="Cocina William Puerta Sur">
-                    </div>
-                    <div class="card-info">
-                        <span class="location">Puerta Sur</span>
-                        <h3>Proyecto William</h3>
-                        <p>Diseño moderno con línea Infinity y acabados de alta gama.</p>
-                        <span class="btn-details">Ver más &rarr;</span>
-                    </div>
-                </a>
-            </article>
+  <section class="seo-copy">
+    <div class="container seo-grid">
+      <div>
+        <span class="eyebrow">Cocinas en Puerto Montt</span>
+        <h2>Una cocina se diseña desde cómo la vas a usar</h2>
+        <p>En una remodelación, centímetros, recorridos, enchufes, iluminación y almacenamiento importan tanto como el acabado. Por eso cada proyecto debe partir desde el espacio existente y las necesidades reales del hogar.</p>
+        <p>Atendemos proyectos en Puerto Montt y distintas comunas de la Región de Los Lagos, evaluando cada caso según ubicación, alcance y requerimientos.</p>
+      </div>
+      <div>
+        <h3>¿Qué podemos considerar en tu proyecto?</h3>
+        <div class="service-list">
+          <span><i class="fas fa-check"></i>Distribución y diseño</span>
+          <span><i class="fas fa-check"></i>Mobiliario a medida</span>
+          <span><i class="fas fa-check"></i>Almacenamiento</span>
+          <span><i class="fas fa-check"></i>Iluminación integrada</span>
+          <span><i class="fas fa-check"></i>Adecuaciones de espacio</span>
+          <span><i class="fas fa-check"></i>Instalación y terminaciones</span>
+        </div>
+      </div>
+    </div>
+  </section>
 
-        </section>
-    </main>
+  <section class="cta">
+    <div class="container cta-grid">
+      <div><h2>Cuéntanos qué quieres transformar</h2><p>Envíanos tu comuna, algunas medidas aproximadas y fotos del espacio. Eso nos ayuda a entender mejor tu proyecto desde el primer contacto.</p></div>
+      <a class="btn btn-primary" href="https://wa.me/56967797864?text=Hola%20Burdeo%20Renovaciones%2C%20quiero%20cotizar%20una%20cocina.%20Mi%20proyecto%20est%C3%A1%20en%3A%20" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Comenzar cotización</a>
+    </div>
+  </section>
+</main>
+
+<footer><div class="container footer-flex"><span>© 2026 Burdeo Renovaciones · Puerto Montt, Chile</span><span><a href="../proyectos.html">Todos los proyectos</a> · <a href="mailto:hola@burdeorenovaciones.cl">hola@burdeorenovaciones.cl</a></span></div></footer>
+<a class="whatsapp-float" aria-label="Cotizar por WhatsApp" href="https://wa.me/56967797864" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i></a>
 </body>
 </html>
