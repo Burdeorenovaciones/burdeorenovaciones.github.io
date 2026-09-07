@@ -38,13 +38,13 @@
       --fs-label:clamp(.69rem,.1vw + .67rem,.76rem);
       --fs-h3:clamp(1.16rem,.35vw + 1.08rem,1.38rem);
       --fs-h2:clamp(2rem,2.55vw,3rem);
-      --fs-h1:clamp(3.05rem,4.65vw,4.65rem);
+      --fs-h1:clamp(2.85rem,4.15vw,4.15rem);
     }
     *{box-sizing:border-box}
     html{scroll-behavior:smooth}
     body{margin:0;font-family:'Montserrat',sans-serif;color:var(--ink);font-size:var(--fs-body);line-height:1.68;background:#fff;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
     h1,h2,h3{font-family:'Playfair Display',serif;margin-top:0;text-wrap:balance}
-    h1{font-size:var(--fs-h1);line-height:1.01;letter-spacing:-.032em}
+    h1{font-size:var(--fs-h1);line-height:1.02;letter-spacing:-.03em}
     h2{font-size:var(--fs-h2);line-height:1.08;letter-spacing:-.022em}
     h3{font-size:var(--fs-h3);line-height:1.18;letter-spacing:-.012em}
     p{max-width:68ch}
@@ -53,8 +53,8 @@
     .container{width:min(1180px,calc(100% - 40px));margin:auto}
     .eyebrow{display:flex;align-items:center;gap:10px;color:var(--burdeo);text-transform:uppercase;letter-spacing:.16em;font-size:var(--fs-label);line-height:1.3;font-weight:700}
     .eyebrow:before{content:'';width:28px;height:2px;background:var(--burdeo);flex:0 0 28px}
-    .btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:13px 20px;border-radius:4px;text-decoration:none;font-size:clamp(.86rem,.14vw + .83rem,.94rem);line-height:1.2;font-weight:700;letter-spacing:-.005em;border:1px solid transparent;cursor:pointer;font-family:inherit}
-    .btn-primary{background:var(--burdeo);color:#fff}.btn-primary:hover{background:var(--burdeo2)}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:13px 20px;border-radius:4px;text-decoration:none;font-size:clamp(.86rem,.14vw + .83rem,.94rem);line-height:1.2;font-weight:700;letter-spacing:-.005em;border:1px solid transparent;cursor:pointer;font-family:inherit;transition:.2s ease}
+    .btn-primary{background:var(--burdeo);color:#fff}.btn-primary:hover{background:var(--burdeo2);transform:translateY(-1px)}
     .btn-dark{background:var(--ink);color:#fff}.btn-dark:hover{background:#2d2d2d}
     .btn-outline{border-color:#bbb;background:#fff;color:#333}.btn-outline:hover{border-color:var(--burdeo);color:var(--burdeo)}
 
@@ -68,14 +68,15 @@
     .nav-cta{padding:12px 19px;border:1.5px solid var(--burdeo);color:var(--burdeo);border-radius:999px;letter-spacing:.075em;transition:.2s ease}
     .nav-cta:hover{background:var(--burdeo);color:#fff!important;box-shadow:0 8px 18px rgba(128,0,32,.15)}
 
-    .hero{min-height:77vh;display:grid;align-items:end;color:#fff;background:linear-gradient(90deg,rgba(0,0,0,.76),rgba(0,0,0,.22)),url('img/proyectos/puerta-sur-mauricio/portada.webp') center/cover no-repeat;padding:clamp(76px,7.5vw,110px) 0 clamp(56px,5vw,72px)}
-    .hero-copy{max-width:760px}
-    .hero .eyebrow{color:#fff;margin-bottom:15px}.hero .eyebrow:before{background:#fff}
-    .hero h1{max-width:12.9ch;margin:0 0 20px}
-    .hero p{font-size:clamp(1rem,.35vw + .94rem,1.15rem);line-height:1.58;color:#eee;max-width:650px;margin:0 0 27px;text-wrap:pretty}
-    .hero-actions{display:flex;gap:12px;flex-wrap:wrap}
-    .hero .btn-outline{background:rgba(255,255,255,.08);border-color:#fff;color:#fff;backdrop-filter:blur(4px)}.hero .btn-outline:hover{background:#fff;color:var(--ink)}
-    .hero-proof{display:flex;gap:22px;flex-wrap:wrap;margin-top:29px;font-size:var(--fs-small);line-height:1.35;color:#eee}.hero-proof span{display:flex;align-items:center;gap:8px}.hero-proof i{color:#fff}
+    .hero{min-height:clamp(560px,68vh,720px);display:grid;align-items:center;color:#fff;background:linear-gradient(90deg,rgba(12,9,9,.74) 0%,rgba(12,9,9,.58) 36%,rgba(12,9,9,.18) 72%,rgba(12,9,9,.08) 100%),linear-gradient(0deg,rgba(0,0,0,.20),rgba(0,0,0,0) 42%),url('img/proyectos/puerta-sur-mauricio/portada.webp') 58% 50%/cover no-repeat;padding:clamp(58px,6vw,82px) 0}
+    .hero-copy{max-width:640px}
+    .hero .eyebrow{color:#fff;margin-bottom:14px}.hero .eyebrow:before{background:#fff}
+    .hero h1{max-width:11.6ch;margin:0 0 18px;text-shadow:0 2px 14px rgba(0,0,0,.18)}
+    .hero p{font-size:clamp(.98rem,.28vw + .94rem,1.1rem);line-height:1.56;color:rgba(255,255,255,.92);max-width:560px;margin:0 0 24px;text-wrap:pretty}
+    .hero-actions{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+    .hero .btn-primary{padding:14px 23px;box-shadow:0 8px 24px rgba(128,0,32,.28)}
+    .hero .btn-outline{background:rgba(18,18,18,.18);border-color:rgba(255,255,255,.78);color:#fff;backdrop-filter:blur(3px)}
+    .hero .btn-outline:hover{background:#fff;color:var(--ink);border-color:#fff}
     .trust{border-bottom:1px solid var(--line);padding:23px 0}.trust-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.trust-item{display:flex;gap:12px;align-items:center;font-size:clamp(.82rem,.15vw + .79rem,.9rem);line-height:1.45;color:#444}.trust-item i{color:var(--burdeo);font-size:1.1rem}
     section{padding:82px 0}
     .section-head{max-width:740px;margin-bottom:36px}.section-head h2{margin:10px 0 14px}.section-head p{font-size:clamp(.96rem,.18vw + .92rem,1.05rem);line-height:1.65;color:var(--muted);margin:0;max-width:64ch}
@@ -89,20 +90,20 @@
     footer{background:#090909;color:#aaa;padding:48px 0 30px}.footer-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:40px}.footer-brand img{height:72px;filter:brightness(0) invert(1)}.footer-grid h3{color:#fff;font-size:1.08rem;margin-bottom:14px}.footer-grid p{font-size:.88rem;line-height:1.6}.footer-grid a{color:#ccc;text-decoration:none}.footer-grid a:hover{color:#fff}.footer-links{display:grid;gap:8px;font-size:.85rem}.copyright{border-top:1px solid #222;margin-top:34px;padding-top:22px;font-size:.76rem}.whatsapp-float{position:fixed;right:20px;bottom:20px;width:58px;height:58px;border-radius:50%;background:var(--green);color:#fff;display:grid;place-items:center;text-decoration:none;font-size:1.7rem;z-index:60;box-shadow:0 8px 24px rgba(0,0,0,.22)}
 
     @media(max-width:950px){
-      :root{--fs-h1:clamp(2.85rem,6.4vw,3.75rem);--fs-h2:clamp(1.9rem,4.5vw,2.7rem)}
+      :root{--fs-h1:clamp(2.65rem,5.7vw,3.5rem);--fs-h2:clamp(1.9rem,4.5vw,2.7rem)}
       .nav{min-height:86px;gap:24px}.brand{min-width:170px}.brand img{height:68px;max-width:190px}.nav-links{gap:20px}
-      .hero{min-height:70vh;padding:76px 0 56px}.hero-copy{max-width:690px}.hero h1{max-width:13.2ch}.hero p{max-width:600px}
+      .hero{min-height:clamp(530px,64vh,650px);padding:62px 0;background-position:60% 50%}.hero-copy{max-width:590px}.hero h1{max-width:11.8ch}.hero p{max-width:520px}
       .section-head{max-width:680px}.service-grid{grid-template-columns:repeat(2,1fr)}.projects-grid{grid-template-columns:repeat(2,1fr)}.local-grid,.google-box,.contact-grid{grid-template-columns:1fr}.local-grid{gap:40px}.google-box{gap:30px}.steps{grid-template-columns:repeat(2,1fr)}.footer-grid{grid-template-columns:1fr 1fr}
     }
     @media(max-width:680px){
-      :root{--fs-h1:clamp(2.35rem,10.4vw,2.95rem);--fs-h2:clamp(1.75rem,7.8vw,2.25rem);--fs-h3:clamp(1.12rem,4.6vw,1.28rem)}
+      :root{--fs-h1:clamp(2.25rem,9.5vw,2.75rem);--fs-h2:clamp(1.75rem,7.8vw,2.25rem);--fs-h3:clamp(1.12rem,4.6vw,1.28rem)}
       .container{width:min(100% - 28px,1180px)}header{box-shadow:0 3px 14px rgba(0,0,0,.035)}.nav{min-height:78px;padding:7px 0;gap:12px}.brand{min-width:auto}.brand img{height:62px;max-width:158px}.nav-links{gap:0;margin-left:auto}.nav-links a:not(.nav-cta){display:none}.nav-cta{font-size:.69rem;padding:10px 14px;letter-spacing:.06em}
-      .hero{min-height:68vh;padding:72px 0 44px}.hero-copy{max-width:100%}.hero .eyebrow{margin-bottom:12px}.hero h1{max-width:12.5ch;line-height:1.03;margin-bottom:16px}.hero p{font-size:.98rem;line-height:1.55;max-width:36ch;margin-bottom:22px}.hero-actions .btn{width:100%}.hero-proof{gap:9px;display:grid;margin-top:22px;font-size:.78rem}
+      .hero{min-height:560px;padding:52px 0;background:linear-gradient(90deg,rgba(12,9,9,.76),rgba(12,9,9,.42)),linear-gradient(0deg,rgba(0,0,0,.18),rgba(0,0,0,0) 45%),url('img/proyectos/puerta-sur-mauricio/portada.webp') 64% 50%/cover no-repeat}.hero-copy{max-width:100%}.hero .eyebrow{margin-bottom:12px}.hero h1{max-width:11.4ch;line-height:1.04;margin-bottom:15px}.hero p{font-size:.96rem;line-height:1.52;max-width:33ch;margin-bottom:21px}.hero-actions{gap:10px}.hero-actions .btn{width:100%;min-height:48px}.hero .btn-primary{padding:13px 18px}
       .trust-grid,.service-grid,.projects-grid,.steps,.faq-grid,.footer-grid{grid-template-columns:1fr}.project-photo{height:315px}.form-row{grid-template-columns:1fr}.google-box{padding:26px}.local-grid{gap:34px}section{padding:60px 0}.section-head{margin-bottom:30px}.section-head h2{margin-top:9px}.service-card,.step,.faq-item{padding:22px}
     }
     @media(max-width:380px){
-      :root{--fs-h1:clamp(2.2rem,11vw,2.6rem);--fs-h2:clamp(1.65rem,8vw,2rem)}
-      .brand img{height:56px;max-width:145px}.nav-cta{font-size:.64rem;padding:9px 11px}.nav{min-height:72px}.hero{padding-top:64px}.hero p{font-size:.94rem}.eyebrow{letter-spacing:.13em}
+      :root{--fs-h1:clamp(2.08rem,10.2vw,2.45rem);--fs-h2:clamp(1.65rem,8vw,2rem)}
+      .brand img{height:56px;max-width:145px}.nav-cta{font-size:.64rem;padding:9px 11px}.nav{min-height:72px}.hero{min-height:535px;padding:46px 0;background-position:66% 50%}.hero p{font-size:.92rem}.eyebrow{letter-spacing:.13em}
     }
   </style>
 </head>
@@ -114,7 +115,7 @@
   </div>
 </header>
 <main>
-  <section class="hero"><div class="container hero-copy"><span class="eyebrow">Puerto Montt · Región de Los Lagos</span><h1>Remodelamos espacios para que funcionen mejor y se sientan tuyos.</h1><p>Cocinas a medida, quinchos, muebles y remodelaciones con diseño, fabricación e instalación. Conoce proyectos reales de Burdeo Renovaciones y cotiza directamente por WhatsApp.</p><div class="hero-actions"><a class="btn btn-primary" href="https://wa.me/56967797864?text=Hola%20Burdeo%20Renovaciones%2C%20quiero%20cotizar%20un%20proyecto%20en%20Puerto%20Montt." target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Cotizar por WhatsApp</a><a class="btn btn-outline" href="#proyectos">Ver proyectos reales</a></div><div class="hero-proof"><span><i class="fas fa-location-dot"></i> Atención en Puerto Montt y alrededores</span><span><i class="fas fa-images"></i> Portafolio con obras reales</span><span><i class="fas fa-ruler-combined"></i> Soluciones diseñadas a medida</span></div></div></section>
+  <section class="hero"><div class="container hero-copy"><span class="eyebrow">Puerto Montt · Región de Los Lagos</span><h1>Remodelamos espacios para que funcionen mejor y se sientan tuyos.</h1><p>Cocinas a medida, quinchos, muebles y remodelaciones pensadas para tu espacio, con diseño, fabricación e instalación.</p><div class="hero-actions"><a class="btn btn-primary" href="https://wa.me/56967797864?text=Hola%20Burdeo%20Renovaciones%2C%20quiero%20cotizar%20un%20proyecto%20en%20Puerto%20Montt." target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Cotizar por WhatsApp</a><a class="btn btn-outline" href="#proyectos">Ver proyectos reales</a></div></div></section>
   <div class="trust"><div class="container trust-grid"><div class="trust-item"><i class="fas fa-pencil-ruler"></i><span>Diseño según tu espacio y necesidades</span></div><div class="trust-item"><i class="fas fa-hammer"></i><span>Fabricación e instalación coordinadas</span></div><div class="trust-item"><i class="fab fa-whatsapp"></i><span>Cotización y contacto directo por WhatsApp</span></div></div></div>
   <section id="servicios" class="services"><div class="container"><div class="section-head"><span class="eyebrow">Qué hacemos</span><h2>Diseño y ejecución con una sola mirada.</h2><p>No mostramos soluciones genéricas: cada proyecto parte de las medidas, uso del espacio, estilo y prioridades de quienes viven ahí.</p></div><div class="service-grid"><article class="service-card"><i class="fas fa-kitchen-set"></i><h3>Cocinas a medida</h3><p>Distribución, almacenamiento, cubiertas, iluminación y mobiliario diseñados para el espacio disponible.</p></article><article class="service-card"><i class="fas fa-house-chimney-window"></i><h3>Remodelaciones</h3><p>Renovación de ambientes con coordinación de terminaciones, mobiliario y soluciones funcionales.</p></article><article class="service-card"><i class="fas fa-fire-burner"></i><h3>Quinchos</h3><p>Espacios para compartir, con diseño de mobiliario, zonas de apoyo y terminaciones adaptadas al uso.</p></article><article class="service-card"><i class="fas fa-ruler-combined"></i><h3>Muebles a medida</h3><p>Soluciones de almacenamiento y mobiliario diseñadas para aprovechar mejor cada metro disponible.</p></article></div></div></section>
   <section id="proyectos"><div class="container"><div class="section-head"><span class="eyebrow">Portafolio real</span><h2>Proyectos que puedes recorrer antes de cotizar.</h2><p>Estamos reorganizando el portafolio para que cada proyecto muestre ubicación, resultado y proceso.</p></div><div class="projects-grid"><a class="project-card" href="cocinas/proyecto-depto-puerto-montt.html"><div class="project-photo"><img src="img/proyectos/depto-k/cocina-terminada-2.webp" alt="Cocina a medida en departamento de Puerto Montt"><span class="project-tag">Puerto Montt</span></div><div class="project-info"><span class="project-location">Departamento · Puerto Montt</span><h3>Proyecto Departamento</h3><p>Una cocina contemporánea documentada desde la planificación y obra hasta su resultado final.</p><span class="more">Ver caso completo →</span></div></a><a class="project-card" href="cocinas/proyecto-puerta-sur.html"><div class="project-photo"><img src="img/proyectos/puerta-sur-mauricio/portada.webp" alt="Cocina a medida con isla en Puerta Sur Puerto Montt" loading="lazy"><span class="project-tag">Puerta Sur</span></div><div class="project-info"><span class="project-location">Puerta Sur · Puerto Montt</span><h3>Proyecto Puerta Sur</h3><p>Mobiliario oscuro, isla central e iluminación cálida para un espacio de alto uso cotidiano.</p><span class="more">Ver caso completo →</span></div></a><a class="project-card" href="cocinas/proyecto-william.html"><div class="project-photo"><img src="img/cocinas/william-puertasur/portada.png" alt="Cocina moderna proyecto William en Puerta Sur" loading="lazy"><span class="project-tag">Puerta Sur</span></div><div class="project-info"><span class="project-location">Puerta Sur · Puerto Montt</span><h3>Proyecto William</h3><p>Diseño moderno y almacenamiento funcional en uno de los proyectos ya documentados del portafolio.</p><span class="more">Ver caso completo →</span></div></a></div><div class="projects-actions"><a class="btn btn-dark" href="proyectos.html">Ver todos los proyectos</a><a class="btn btn-outline" href="cocinas/">Ver cocinas</a></div></div></section>
