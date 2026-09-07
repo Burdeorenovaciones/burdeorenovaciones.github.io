@@ -1,0 +1,1 @@
+Proyecto Depto Fabian — Puerto Montt. Imágenes seleccionadas y optimizadas desde HEIC para uso web. Rama: mejora-web-seo-2026.
