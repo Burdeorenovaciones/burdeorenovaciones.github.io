@@ -13,6 +13,8 @@ Rama de trabajo: `mejora-web-seo-2026`
 - Proyecto FT — Alerce — `cocinas/proyecto-ft.html`
 - Proyecto Frutillar — `cocinas/proyecto-frutillar.html`
 - Departamentos Puerto Varas — `cocinas/proyecto-deptos-pv.html`
+- Proyecto Departamento Puerto Montt (Katherine) — `cocinas/proyecto-depto-puerto-montt.html` — **nuevo en rama**
+- Proyecto Puerta Sur — `cocinas/proyecto-puerta-sur.html` — **nuevo en rama**
 
 ### Quinchos
 - Quincho FT — Alerce — `quinchos/ft-alerce.html`
@@ -28,13 +30,15 @@ Rama de trabajo: `mejora-web-seo-2026`
 
 Estas coincidencias se consideran proyectos existentes; no se crearán duplicados. Si Drive contiene fotografías mejores o posteriores, se evaluarán como ampliación de las galerías actuales.
 
-## 3. Proyectos detectados en Drive que NO tienen página propia confirmada en GitHub
+## 3. Proyectos y carpetas detectados en Drive
 
-### Prioridad alta — Puerto Montt / conversión local
-- Depto Katherine Chávez — Puerto Montt. Tiene fotografías de proceso, fotografías finales, HEIC y videos. **En incorporación.**
-- Depto 1602 — Puerto Montt. Pendiente revisar fotografías finales.
-- Depto Fabian — Puerto Montt. Pendiente revisar fotografías finales.
-- Casa Muricio / Mauricio — Puerta Sur. Tiene portada, HEIC, PNG, videos y una subcarpeta WebP. Pendiente selección visual.
+### Incorporados en la rama
+- **Depto Katherine Chávez — Puerto Montt.** Fotografías finales, diseño y proceso revisados. Página y carpeta creadas.
+- **Casa Muricio / Mauricio — Puerta Sur.** Se encontró una subcarpeta WebP preparada en Drive; se seleccionaron y verificaron portada, vista general y detalle. Página `proyecto-puerta-sur.html` creada.
+
+### Pendientes — prioridad Puerto Montt
+- **Depto Fabian — Puerto Montt.** Se revisaron visualmente los HEIC. `IMG_3005`, `IMG_3006` e `IMG_3007` muestran el resultado final y son las mejores candidatas para publicación; `IMG_2999`, `IMG_3001` e `IMG_3004` sirven como proceso/detalle. Las conversiones WebP fueron validadas localmente. **No crear página ni referenciar imágenes hasta completar y verificar su carga binaria en GitHub.**
+- **`9. Depto 1602 - PTO MONTT`.** La carpeta funciona como contenedor y dentro de ella aparecen `Depto Katherine Chavez`, `Fotos Carlos`, `Katerin Chavez` y una planilla `Dpto 1602`. **No tratar como un proyecto independiente sin nuevos antecedentes**, para evitar duplicar Katherine.
 
 ### Prioridad media — Puerto Varas y entorno
 - Casa Perez — Puerto Varas. Pendiente revisión visual.
@@ -63,17 +67,25 @@ Para evitar duplicados y archivos dañados:
 7. Validar el archivo final localmente antes de subirlo.
 8. Después de subir: comprobar tamaño, cabecera WebP y ruta en GitHub antes de referenciarlo desde HTML.
 9. No utilizar archivos HEIC directamente en la web.
-10. No modificar `main` hasta revisar la rama de trabajo.
+10. No mantener archivos temporales `.b64` u otros artefactos de transferencia en el repositorio.
+11. No modificar `main` hasta revisar la rama de trabajo.
 
 ## 5. Estado del proyecto Katherine
 
-Carpeta creada en la rama: `img/proyectos/depto-k/`.
+Carpeta en la rama: `img/proyectos/depto-k/`.
 
-Imágenes ya abiertas y verificadas visualmente antes de su carga:
+Imágenes verificadas:
 - `cocina-terminada-1.webp`: vista final real de la cocina.
 - `cocina-terminada-2.webp`: segunda vista final real de la cocina.
-- `diseno-previo.webp`: fotografía del diseño/planificación.
+- `diseno-previo.webp`: diseño/planificación.
 - `proceso-obra-1.webp`: obra previa a la instalación de mobiliario.
 - `proceso-obra-2.webp`: segunda vista del proceso de remodelación.
 
-Las versiones actuales son ligeras para listado y prototipado. La página de proyecto se estructura para permitir reemplazarlas por versiones de galería de mayor resolución sin cambiar URLs ni SEO.
+## 6. Estado de SEO y conversión
+
+- Home rediseñada para búsquedas y conversión en Puerto Montt.
+- SEO local reforzado con servicios, áreas atendidas, proyectos reales y FAQ visible.
+- Datos estructurados `LocalBusiness`, `WebSite` y `FAQPage` incorporados en la home.
+- Se eliminaron del nuevo diseño los testimonios hardcodeados no verificados y se sustituyeron por enlaces directos a Google.
+- `sitemap.xml` actualizado con las páginas nuevas y fecha 2026-09-07.
+- WhatsApp se mantiene como canal principal de conversión y el formulario de la home solo construye el mensaje; no almacena datos.
