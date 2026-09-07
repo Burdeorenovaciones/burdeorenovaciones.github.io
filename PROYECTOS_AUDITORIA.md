@@ -69,9 +69,11 @@ Para evitar duplicados y archivos dañados:
 
 Carpeta creada en la rama: `img/proyectos/depto-k/`.
 
-Los tres WebP actuales fueron verificados contra sus archivos fuente locales y corresponden a:
-- vista final de cocina,
-- segunda vista final de cocina,
-- imagen de diseño/planificación.
+Imágenes ya abiertas y verificadas visualmente antes de su carga:
+- `cocina-terminada-1.webp`: vista final real de la cocina.
+- `cocina-terminada-2.webp`: segunda vista final real de la cocina.
+- `diseno-previo.webp`: fotografía del diseño/planificación.
+- `proceso-obra-1.webp`: obra previa a la instalación de mobiliario.
+- `proceso-obra-2.webp`: segunda vista del proceso de remodelación.
 
-Antes de publicar la página definitiva se incorporarán también imágenes de obra/proceso y se usarán versiones de mayor resolución para la galería final, manteniendo miniaturas ligeras para los listados.
+Las versiones actuales son ligeras para listado y prototipado. La página de proyecto se estructura para permitir reemplazarlas por versiones de galería de mayor resolución sin cambiar URLs ni SEO.
