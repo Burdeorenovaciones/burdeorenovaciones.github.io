@@ -24,6 +24,9 @@ La trazabilidad V1 real se mantiene en `prototype/`, `supabase/` y `docs/`. El s
 - Resultado preliminar e Inicio ya consumen la venta vigente cuando existe línea base.
 - `supabase/v1_quote_approval_baseline.sql`: aprobación única, snapshot económico congelado, adicionales/órdenes de cambio y venta vigente.
 - `prototype/approval-baseline-v1.js`: lógica staging aislada conservada como referencia/QA.
+- `prototype/payments-v1.js`: lógica staging de anticipo/abono/pago final, reversa auditable, cobrado, saldo pendiente y estado de cobranza; QA ejecutado OK.
+- `supabase/v1_payments_collections.sql`: registro financiero de pagos y referencia de comprobante privado sin binarios.
+- `docs/V1_PAGOS_COBRANZA.md`: reglas funcionales, arquitectura Drive↔Supabase y criterios de cierre del bloque 7.
 - `Movimientos → Facturas XML`: importador DTE staging individual/múltiple, vista previa, SHA-256, detección de duplicados e historial ficticio.
 - `supabase/v1_document_references.sql`: modelo documental común Drive↔Supabase sin binarios.
 - `supabase/v1_dte_import.sql`: cabeceras, líneas, referencias y deduplicación DTE.
@@ -38,7 +41,7 @@ La trazabilidad V1 real se mantiene en `prototype/`, `supabase/` y `docs/`. El s
 4. Materiales V1: **COMPLETADO PARA STAGING; persistencia productiva pendiente de bloques 16–17**
 5. PDF cliente/versionado: **COMPLETADO PARA STAGING; Drive/Supabase productivos pendientes de bloques 16–17**
 6. Aprobación/línea base/adicionales: **COMPLETADO PARA STAGING; interfaz integrada y QA lógico incluido**
-7. Pagos/cobranza: **PENDIENTE DE REINTEGRACIÓN — SIGUIENTE PRIORIDAD**
+7. Pagos/cobranza: **EN PROGRESO — lógica, esquema y QA listos; interfaz en app unificada pendiente**
 8. Compras/OC: **PENDIENTE DE REINTEGRACIÓN**
 9. Importador XML DTE SII V1: **COMPLETADO PARA STAGING; integración productiva pendiente de bloques 16–17**
 10. Imputación factura/costo: **PENDIENTE**
@@ -55,7 +58,8 @@ La trazabilidad V1 real se mantiene en `prototype/`, `supabase/` y `docs/`. El s
 
 ### QA del bloque actual
 
-- Validación estática de JavaScript ejecutada con `node --check` sobre el script extraído de `prototype/app-v1.html`: **OK**.
+- Validación estática de `prototype/payments-v1.js` ejecutada con `node --check`: **OK**.
+- `runPaymentTests()`: **OK**; valida suma de pagos confirmados, saldo, reversa, cierre de saldo y referencia documental ficticia.
 - `runQuoteTests()`: valida cálculo principal del cotizador con datos ficticios.
 - `runMaterialTests()`: valida recomendación de costo vigente/fallback/revisión manual.
 - `runApprovalTests()`: valida línea base congelada, adicional borrador sin efecto, adicional aprobado sumando a venta vigente e inmutabilidad de venta/costo original.
@@ -63,7 +67,7 @@ La trazabilidad V1 real se mantiene en `prototype/`, `supabase/` y `docs/`. El s
 
 ### Próxima prioridad real
 
-Reintegrar **Pagos/cobranza V1** dentro de `Movimientos → Pagos`: anticipo, abonos, pago final, saldo pendiente, estado financiero, referencia de comprobante privado y QA; el archivo del comprobante irá a Drive privado y Supabase conservará solo el registro financiero y referencia documental.
+Cerrar **Pagos/cobranza V1** dentro de `Movimientos → Pagos`: formulario de anticipo/abono/pago final, conexión directa con `currentNetSale()`, total cobrado, saldo pendiente, estado financiero, historial/reversa, referencia de comprobante privado y QA integrado en `prototype/app-v1.html`. No avanzar a Compras/OC hasta que este bloque quede navegable dentro de la app única.
 
 ### Reglas de ejecución
 
