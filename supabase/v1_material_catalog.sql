@@ -63,19 +63,26 @@ on v1_material_prices (organization_id, variant_id, price_date desc);
 
 -- Vista de recomendación V1:
 -- 1) último costo real <= 60 días;
--- 2) si no, referencia más reciente;
+-- 2) si no, referencia más reciente entre WEB_REFERENCE y MANUAL_REFERENCE;
 -- 3) si no existe, revisión manual.
 create or replace view v1_material_budget_recommendation as
-with ranked as (
+with grouped_prices as (
   select p.*,
-    row_number() over (partition by p.organization_id,p.variant_id,p.price_type order by p.price_date desc,p.created_at desc) rn
+    case when p.price_type = 'REAL_PURCHASE' then 'REAL' else 'REFERENCE' end as price_group
   from v1_material_prices p
+), ranked as (
+  select p.*,
+    row_number() over (
+      partition by p.organization_id,p.variant_id,p.price_group
+      order by p.price_date desc,p.created_at desc
+    ) rn
+  from grouped_prices p
 ), pivoted as (
   select organization_id, variant_id,
-    max(unit_cost) filter (where price_type='REAL_PURCHASE' and rn=1) last_real_cost,
-    max(price_date) filter (where price_type='REAL_PURCHASE' and rn=1) last_real_cost_date,
-    max(unit_cost) filter (where price_type in ('WEB_REFERENCE','MANUAL_REFERENCE') and rn=1) reference_cost,
-    max(price_date) filter (where price_type in ('WEB_REFERENCE','MANUAL_REFERENCE') and rn=1) reference_date
+    max(unit_cost) filter (where price_group='REAL' and rn=1) last_real_cost,
+    max(price_date) filter (where price_group='REAL' and rn=1) last_real_cost_date,
+    max(unit_cost) filter (where price_group='REFERENCE' and rn=1) reference_cost,
+    max(price_date) filter (where price_group='REFERENCE' and rn=1) reference_date
   from ranked
   group by organization_id,variant_id
 )
