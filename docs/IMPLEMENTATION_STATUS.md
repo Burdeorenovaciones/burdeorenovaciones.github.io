@@ -17,15 +17,18 @@ La trazabilidad V1 real se mantiene en `prototype/`, `supabase/` y `docs/`. El s
 ### Cambios verificables acumulados
 
 - `prototype/app-v1.html`: shell único navegable con Inicio, Proyectos, Cotizaciones, Materiales, Movimientos y Resultado.
-- Cotizador V1 reintegrado en la app: familias de costo, indirectos, margen objetivo, precio sugerido, Neto/IVA/Total, margen efectivo, desglose por familia y snapshot temporal de staging.
-- Materiales V1 reintegrado en la app: búsqueda/filtros por familia/proveedor, variantes por marca/espesor/color, último costo real, referencia, fecha, costo recomendado y acción `Usar en cotización`.
-- Las líneas seleccionadas desde Materiales conservan snapshot de variante, costo, fuente, fecha y proveedor para que una actualización futura del catálogo no reescriba la cotización.
-- `Movimientos → Facturas XML`: importador DTE staging individual/múltiple, vista previa, líneas, SHA-256, detección de duplicados e historial ficticio en memoria.
+- Cotizador V1: familias de costo, indirectos, margen objetivo, precio sugerido, Neto/IVA/Total, margen efectivo y snapshot temporal de staging.
+- Materiales V1: búsqueda/filtros, variantes por marca/espesor/color/proveedor, último costo real, referencia, costo recomendado y snapshot hacia cotización.
+- PDF cliente/versionado V1 reintegrado: generación V1/V2/V3 como snapshots inmutables, vista A4 cliente, impresión/Guardar PDF desde navegador y listado de versiones.
+- La vista cliente excluye costo directo, costos presupuestados, proveedores, indirectos, utilidad, margen y snapshots internos.
+- En producción el PDF físico se destina a Google Drive privado; Supabase guarda datos/versiones y referencias `document_reference_id`/`drive_file_id`.
+- `Movimientos → Facturas XML`: importador DTE staging individual/múltiple, vista previa, SHA-256, detección de duplicados e historial ficticio en memoria.
 - `supabase/v1_document_references.sql`: modelo documental común Drive↔Supabase sin binarios.
 - `supabase/v1_dte_import.sql`: cabeceras, líneas, referencias, deduplicación y vista QA DTE.
 - `supabase/v1_quoting.sql`: cabecera/partidas del cotizador, snapshots de costo y vista QA.
-- `supabase/v1_material_catalog.sql`: proveedores, materiales, variantes, historial de precios, recomendación de costo y snapshot asociado a línea de cotización.
-- `docs/V1_IMPORTADOR_DTE_SII.md`, `docs/V1_COTIZADOR.md` y `docs/V1_CATALOGO_MATERIALES.md`: especificaciones funcionales.
+- `supabase/v1_material_catalog.sql`: proveedores, materiales, variantes, historial de precios y recomendación de costo.
+- `supabase/v1_quote_customer_versions.sql`: snapshot comercial por versión, líneas cliente y vista QA de cuadratura/referencia Drive.
+- Documentación funcional en `docs/V1_IMPORTADOR_DTE_SII.md`, `docs/V1_COTIZADOR.md`, `docs/V1_CATALOGO_MATERIALES.md` y `docs/V1_PDF_COTIZACION_CLIENTE.md`.
 - El sitio público `index.html` no fue modificado.
 
 ### Roadmap V1
@@ -34,8 +37,8 @@ La trazabilidad V1 real se mantiene en `prototype/`, `supabase/` y `docs/`. El s
 2. UX Yisel: **EN RECONSTRUCCIÓN — menú corto y accesos rápidos presentes**
 3. Cotizador V1: **COMPLETADO PARA STAGING; persistencia productiva pendiente de bloques 16–17**
 4. Materiales V1: **COMPLETADO PARA STAGING; persistencia productiva pendiente de bloques 16–17**
-5. PDF cliente/versionado: **PENDIENTE DE REINTEGRACIÓN — SIGUIENTE PRIORIDAD**
-6. Aprobación/línea base/adicionales: **PENDIENTE DE REINTEGRACIÓN**
+5. PDF cliente/versionado: **COMPLETADO PARA STAGING; integración Drive/Supabase productiva pendiente de bloques 16–17**
+6. Aprobación/línea base/adicionales: **PENDIENTE DE REINTEGRACIÓN — SIGUIENTE PRIORIDAD**
 7. Pagos/cobranza: **PENDIENTE DE REINTEGRACIÓN**
 8. Compras/OC: **PENDIENTE DE REINTEGRACIÓN**
 9. Importador XML DTE SII V1: **COMPLETADO PARA STAGING; integración productiva pendiente de bloques 16–17**
@@ -53,14 +56,14 @@ La trazabilidad V1 real se mantiene en `prototype/`, `supabase/` y `docs/`. El s
 
 ### QA del bloque actual
 
-- `runQuoteTests()`: valida costo directo, indirectos, costo total, precio sugerido, IVA, Total cliente y margen efectivo con datos ficticios.
-- `runMaterialTests()`: valida costo real reciente, fallback a referencia cuando el real está vencido, referencia sin costo real, revisión manual y snapshot de precio al incorporar una variante al cotizador.
-- El esquema SQL fue ajustado para elegir la referencia más reciente entre `WEB_REFERENCE` y `MANUAL_REFERENCE`, evitando seleccionar un valor por monto cuando existan ambas fuentes.
+- `runQuoteTests()`: valida cálculo principal del cotizador con datos ficticios.
+- `runMaterialTests()`: valida recomendación de costo vigente/fallback/revisión manual.
+- `runPdfTests()`: valida secuencia de versión, Neto/IVA/Total, congelamiento del snapshot y ausencia de campos internos sensibles en la versión cliente.
 - El prototipo no escribe a Supabase ni Drive productivos.
 
 ### Próxima prioridad real
 
-Reintegrar **PDF cliente/versionado V1** en `prototype/app-v1.html`: vista cliente sin costos/márgenes internos, versiones inmutables y preparación para que el PDF físico quede en Google Drive privado mientras Supabase conserva la versión y `drive_file_id`.
+Reintegrar **aprobación de cotización, congelamiento de línea base y adicionales/órdenes de cambio** dentro de `prototype/app-v1.html`, sin reescribir la versión original aprobada y preparando la futura persistencia en Supabase.
 
 ### Reglas de ejecución
 
