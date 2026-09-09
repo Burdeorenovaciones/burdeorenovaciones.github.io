@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Burdeo Renovaciones · V1 Operativa</title>
+<style>
+:root{--burdeo:#800020;--negro:#1a1a1a;--gris:#f4f4f4;--borde:#dedede;--ok:#176b3a;--warn:#9a6500}*{box-sizing:border-box}body{margin:0;font-family:Arial,sans-serif;background:#fafafa;color:var(--negro)}header{background:var(--burdeo);color:#fff;padding:18px 22px;display:flex;justify-content:space-between;gap:16px;align-items:center;flex-wrap:wrap}header h1{margin:0;font-size:20px}.badge{font-size:12px;background:#fff;color:var(--burdeo);padding:5px 9px;border-radius:999px;font-weight:700}.layout{display:grid;grid-template-columns:220px 1fr;min-height:calc(100vh - 70px)}nav{background:#fff;border-right:1px solid var(--borde);padding:16px}nav button{width:100%;padding:12px;border:0;background:transparent;text-align:left;border-radius:8px;margin-bottom:5px;font-size:14px;cursor:pointer}nav button.active,nav button:hover{background:#f4e9ec;color:var(--burdeo);font-weight:700}main{padding:22px;max-width:1200px;width:100%}.view{display:none}.view.active{display:block}.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px}.card{background:#fff;border:1px solid var(--borde);border-radius:12px;padding:16px}.card h3{margin:0 0 8px;font-size:14px;color:#555}.metric{font-size:24px;font-weight:800}.actions{display:flex;gap:8px;flex-wrap:wrap;margin:14px 0}.btn{border:0;border-radius:8px;padding:10px 14px;cursor:pointer;font-weight:700}.primary{background:var(--burdeo);color:#fff}.secondary{background:#eee;color:#222}.panel{background:#fff;border:1px solid var(--borde);border-radius:12px;padding:18px;margin-top:14px}.tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px}.tabs button{border:1px solid var(--borde);background:#fff;border-radius:999px;padding:8px 12px;cursor:pointer}.tabs button.active{background:var(--burdeo);color:#fff;border-color:var(--burdeo)}label{display:block;font-size:13px;font-weight:700;margin:10px 0 5px}input,select,textarea{width:100%;padding:10px;border:1px solid #ccc;border-radius:8px;background:#fff}.grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px}.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}table{width:100%;border-collapse:collapse;margin-top:10px;font-size:13px}th,td{border-bottom:1px solid #eee;padding:9px;text-align:left;vertical-align:top}th{background:#fafafa}.muted{color:#666;font-size:13px}.ok{color:var(--ok);font-weight:700}.warn{color:var(--warn);font-weight:700}.error{color:#a21d1d;font-weight:700}.hidden{display:none}.dte-card{border:1px solid var(--borde);border-radius:10px;padding:14px;margin-top:10px}.totals{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:10px}.totals div{background:#fafafa;border-radius:8px;padding:8px}.small{font-size:12px}@media(max-width:760px){.layout{grid-template-columns:1fr}nav{border-right:0;border-bottom:1px solid var(--borde);display:flex;overflow:auto;gap:4px}nav button{min-width:max-content;width:auto;margin:0}.grid2,.grid3,.totals{grid-template-columns:1fr}main{padding:14px}}
+</style>
+</head>
+<body>
+<header><h1>Burdeo Renovaciones · Gestión V1</h1><span class="badge">STAGING · solo datos ficticios</span></header>
+<div class="layout">
+<nav id="nav">
+<button class="active" data-view="inicio">Inicio</button>
+<button data-view="proyectos">Proyectos</button>
+<button data-view="cotizaciones">Cotizaciones</button>
+<button data-view="materiales">Materiales</button>
+<button data-view="movimientos">Movimientos</button>
+<button data-view="resultado">Resultado</button>
+</nav>
+<main>
+<section id="inicio" class="view active">
+<h2>Inicio</h2><p class="muted">Accesos rápidos para el flujo diario de Yisel.</p>
+<div class="actions"><button class="btn primary" onclick="go('proyectos')">Nuevo proyecto</button><button class="btn primary" onclick="go('cotizaciones')">Nueva cotización</button><button class="btn primary" onclick="go('movimientos');showMove('pagos')">Registrar pago</button><button class="btn primary" onclick="go('movimientos');showMove('compras')">Registrar compra</button><button class="btn secondary" onclick="go('resultado')">Ver resultado</button></div>
+<div class="cards"><div class="card"><h3>Proyectos activos</h3><div class="metric">2</div></div><div class="card"><h3>Cotizaciones pendientes</h3><div class="metric">1</div></div><div class="card"><h3>Por cobrar</h3><div class="metric">$1.190.000</div></div><div class="card"><h3>Compras pendientes</h3><div class="metric">2</div></div></div>
+</section>
+<section id="proyectos" class="view"><h2>Proyectos</h2><div class="panel"><p><strong>Demo Cocina Norte</strong> · Cliente ficticio · En ejecución</p><p><strong>Demo Quincho Sur</strong> · Cliente ficticio · Cotizando</p></div></section>
+<section id="cotizaciones" class="view"><h2>Cotizaciones</h2><div class="panel"><p class="muted">Shell V1 reintegrado. El cotizador definitivo será reconstruido en esta misma pantalla, no en una página separada.</p></div></section>
+<section id="materiales" class="view"><h2>Materiales</h2><div class="panel"><p class="muted">Shell V1 reintegrado. Catálogo con costo real/referencia/recomendado pendiente de reconstrucción.</p></div></section>
+<section id="movimientos" class="view">
+<h2>Movimientos</h2>
+<div class="tabs" id="moveTabs"><button class="active" data-tab="pagos" onclick="showMove('pagos')">Pagos</button><button data-tab="compras" onclick="showMove('compras')">Compras / OC</button><button data-tab="dte" onclick="showMove('dte')">Facturas XML</button><button data-tab="gastos" onclick="showMove('gastos')">Gastos</button></div>
+<div id="move-pagos" class="move-panel panel"><h3>Pagos</h3><p class="muted">Módulo a reintegrar desde el flujo V1, manteniendo comprobantes en Drive privado y datos financieros en Supabase.</p></div>
+<div id="move-compras" class="move-panel panel hidden"><h3>Compras / OC</h3><p class="muted">Módulo a reintegrar; OC/adjuntos en Drive privado, datos estructurados en Supabase.</p></div>
+<div id="move-dte" class="move-panel panel hidden">
+<h3>Importar factura XML SII</h3>
+<p class="muted">Prueba local de staging. El XML se procesa en memoria para extraer datos; no se envía ni guarda en GitHub. En producción, el original irá a Google Drive privado y Supabase recibirá solo datos estructurados + hash + referencia Drive.</p>
+<div class="grid2"><div><label>Archivo XML ficticio</label><input id="xmlFile" type="file" accept=".xml,text/xml,application/xml"></div><div><label>Proyecto para preasignación (opcional)</label><select id="dteProject"><option value="">Sin asignar</option><option>Demo Cocina Norte</option><option>Demo Quincho Sur</option></select></div></div>
+<div class="actions"><button class="btn primary" onclick="parseSelectedXml()">Revisar XML</button><button class="btn secondary" onclick="loadDemoXml()">Cargar XML ficticio de prueba</button></div>
+<div id="dteMessage" class="muted"></div>
+<div id="dtePreview"></div>
+<div id="dteHistory" class="panel"><h4>Historial de staging</h4><div id="historyRows" class="muted">Sin documentos importados en esta sesión.</div></div>
+</div>
+<div id="move-gastos" class="move-panel panel hidden"><h3>Gastos manuales</h3><p class="muted">Bloque 11 pendiente.</p></div>
+</section>
+<section id="resultado" class="view"><h2>Resultado</h2><div class="panel"><p class="muted">Resumen económico consolidado pendiente de reconstrucción en los bloques 13–14.</p></div></section>
+</main>
+</div>
+<script>
+const navButtons=[...document.querySelectorAll('#nav button')];
+navButtons.forEach(b=>b.addEventListener('click',()=>go(b.dataset.view)));
+function go(id){document.querySelectorAll('.view').forEach(v=>v.classList.toggle('active',v.id===id));navButtons.forEach(b=>b.classList.toggle('active',b.dataset.view===id));}
+function showMove(tab){document.querySelectorAll('.move-panel').forEach(p=>p.classList.add('hidden'));document.getElementById('move-'+tab).classList.remove('hidden');document.querySelectorAll('#moveTabs button').forEach(b=>b.classList.toggle('active',b.dataset.tab===tab));}
+const demoXml=`<?xml version="1.0" encoding="ISO-8859-1"?><DTE><Documento ID="F33T1"><Encabezado><IdDoc><TipoDTE>33</TipoDTE><Folio>12345</Folio><FchEmis>2026-09-01</FchEmis></IdDoc><Emisor><RUTEmisor>76.543.210-1</RUTEmisor><RznSoc>Proveedor Demo SpA</RznSoc></Emisor><Receptor><RUTRecep>77.777.777-7</RUTRecep><RznSocRecep>Burdeo Demo SpA</RznSocRecep></Receptor><Totales><MntNeto>100000</MntNeto><IVA>19000</IVA><MntTotal>119000</MntTotal></Totales></Encabezado><Detalle><NroLinDet>1</NroLinDet><NmbItem>Melamina demo 18mm</NmbItem><QtyItem>2</QtyItem><PrcItem>50000</PrcItem><MontoItem>100000</MontoItem></Detalle></Documento></DTE>`;
+let staged=[];
+function loadDemoXml(){parseXmlText(demoXml,'factura-demo-12345.xml');}
+async function parseSelectedXml(){const f=document.getElementById('xmlFile').files[0];if(!f){msg('Selecciona un XML o usa el ejemplo ficticio.','warn');return;}const text=await f.text();parseXmlText(text,f.name);}
+function txt(node,tag){const el=node.getElementsByTagName(tag)[0];return el?el.textContent.trim():'';}
+function num(node,tag){return Number(txt(node,tag)||0);}
+function normalizeRut(v){return (v||'').replace(/\./g,'').toUpperCase();}
+async function sha256(text){const data=new TextEncoder().encode(text);const hash=await crypto.subtle.digest('SHA-256',data);return [...new Uint8Array(hash)].map(b=>b.toString(16).padStart(2,'0')).join('');}
+async function parseXmlText(xml,filename){const doc=new DOMParser().parseFromString(xml,'application/xml');if(doc.querySelector('parsererror')){msg('XML inválido: no fue posible interpretarlo.','error');return;}const documents=[...doc.getElementsByTagName('Documento')];if(!documents.length){msg('No se encontró ningún nodo Documento DTE.','error');return;}const hash=await sha256(xml);const parsed=documents.map(d=>({filename,hash,tipo:txt(d,'TipoDTE'),folio:txt(d,'Folio'),fecha:txt(d,'FchEmis'),rutEmisor:normalizeRut(txt(d,'RUTEmisor')),proveedor:txt(d,'RznSoc'),rutReceptor:normalizeRut(txt(d,'RUTRecep')),neto:num(d,'MntNeto'),iva:num(d,'IVA'),exento:num(d,'MntExe'),total:num(d,'MntTotal'),project:document.getElementById('dteProject').value,lineas:[...d.getElementsByTagName('Detalle')].map(l=>({n:txt(l,'NroLinDet'),item:txt(l,'NmbItem'),qty:Number(txt(l,'QtyItem')||0),unit:Number(txt(l,'PrcItem')||0),total:Number(txt(l,'MontoItem')||0)}))}));
+parsed.forEach(p=>{p.key=`${p.rutReceptor}|${p.rutEmisor}|${p.tipo}|${p.folio}`;p.duplicate=staged.some(x=>x.key===p.key||x.hash===p.hash);});renderPreview(parsed);msg(`Se detectaron ${parsed.length} DTE(s). Revisa antes de registrar.`,parsed.some(p=>p.duplicate)?'warn':'ok');}
+function renderPreview(rows){const box=document.getElementById('dtePreview');box.innerHTML=rows.map((d,i)=>`<div class="dte-card"><div class="grid2"><div><strong>${d.proveedor||'Proveedor sin razón social'}</strong><br><span class="muted">RUT ${d.rutEmisor} · Tipo ${d.tipo} · Folio ${d.folio} · ${d.fecha||'sin fecha'}</span></div><div class="${d.duplicate?'error':'ok'}">${d.duplicate?'POSIBLE DUPLICADO':'LISTO PARA REGISTRAR'}</div></div><div class="totals"><div><span class="small">Neto</span><br><strong>$${fmt(d.neto)}</strong></div><div><span class="small">IVA</span><br><strong>$${fmt(d.iva)}</strong></div><div><span class="small">Exento</span><br><strong>$${fmt(d.exento)}</strong></div><div><span class="small">Total</span><br><strong>$${fmt(d.total)}</strong></div></div><table><thead><tr><th>Línea</th><th>Detalle</th><th>Cant.</th><th>Unit.</th><th>Total</th></tr></thead><tbody>${d.lineas.map(l=>`<tr><td>${l.n}</td><td>${l.item}</td><td>${l.qty}</td><td>$${fmt(l.unit)}</td><td>$${fmt(l.total)}</td></tr>`).join('')}</tbody></table><p class="small muted">SHA-256: ${d.hash.slice(0,20)}… · Original: Drive privado en producción · Supabase: datos estructurados + hash + drive_file_id</p><button class="btn primary" ${d.duplicate?'disabled':''} onclick='registerDte(${JSON.stringify(JSON.stringify(d))})'>Registrar en staging</button></div>`).join('');}
+function registerDte(json){const d=JSON.parse(json);if(staged.some(x=>x.key===d.key||x.hash===d.hash)){msg('Registro bloqueado por duplicado.','error');return;}staged.push(d);renderHistory();msg('DTE registrado solo en memoria de staging. No se ha enviado a Supabase ni Drive productivo.','ok');}
+function renderHistory(){const el=document.getElementById('historyRows');el.innerHTML=staged.length?`<table><thead><tr><th>Proveedor</th><th>DTE</th><th>Fecha</th><th>Total</th><th>Proyecto</th></tr></thead><tbody>${staged.map(d=>`<tr><td>${d.proveedor}</td><td>${d.tipo}-${d.folio}</td><td>${d.fecha}</td><td>$${fmt(d.total)}</td><td>${d.project||'Sin asignar'}</td></tr>`).join('')}</tbody></table>`:'Sin documentos importados en esta sesión.';}
+function msg(t,c='muted'){const e=document.getElementById('dteMessage');e.className=c;e.textContent=t;}
+function fmt(n){return Math.round(Number(n||0)).toLocaleString('es-CL');}
+function runDteTests(){const checks=[];checks.push(['DOMParser disponible',typeof DOMParser!=='undefined']);checks.push(['Demo contiene TipoDTE 33',demoXml.includes('<TipoDTE>33</TipoDTE>')]);checks.push(['Demo no contiene URLs públicas',!demoXml.includes('http')]);checks.push(['Vista declara Drive privado',document.getElementById('move-dte').textContent.includes('Drive privado')]);checks.push(['Vista declara Supabase estructurado',document.getElementById('move-dte').textContent.includes('Supabase')]);console.table(checks.map(([test,ok])=>({test,ok})));return checks.every(x=>x[1]);}
+window.addEventListener('load',runDteTests);
+</script>
+</body>
+</html>
