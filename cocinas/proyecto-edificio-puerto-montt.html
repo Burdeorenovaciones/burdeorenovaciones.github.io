@@ -37,10 +37,15 @@
     .cta{background:var(--gris);padding:40px;border-radius:10px;text-align:center;margin:20px 0 70px}
     .cta h2{margin:0 0 10px}
     .btn{display:inline-block;background:var(--burdeo);color:#fff;padding:12px 26px;border-radius:999px;font-weight:600;margin-top:10px}
-    .modal{display:none;position:fixed;z-index:1000;inset:0;background:rgba(0,0,0,.94);padding:54px 24px 24px}
+    .modal{display:none;position:fixed;z-index:1000;inset:0;background:rgba(0,0,0,.94);padding:54px 72px 24px}
     .modal.open{display:flex;align-items:center;justify-content:center}
-    .modal-content{max-width:94vw;max-height:88vh;object-fit:contain;border-radius:6px}
-    .close{position:absolute;top:10px;right:24px;color:#fff;font-size:40px;line-height:1;cursor:pointer}
+    .modal-content{max-width:92vw;max-height:86vh;object-fit:contain;border-radius:6px;box-shadow:0 10px 40px rgba(0,0,0,.35)}
+    .close{position:absolute;top:12px;right:24px;color:#fff;font-size:40px;line-height:1;cursor:pointer;z-index:3}
+    .lightbox-nav{position:absolute;top:50%;transform:translateY(-50%);width:50px;height:50px;border:0;border-radius:50%;background:rgba(255,255,255,.14);color:#fff;font-size:34px;line-height:1;display:flex;align-items:center;justify-content:center;cursor:pointer;z-index:3;transition:.2s}
+    .lightbox-nav:hover{background:rgba(255,255,255,.26)}
+    .lightbox-prev{left:18px}
+    .lightbox-next{right:18px}
+    .lightbox-counter{position:absolute;left:50%;bottom:16px;transform:translateX(-50%);color:#fff;background:rgba(0,0,0,.35);padding:5px 10px;border-radius:999px;font-size:.82rem;letter-spacing:.04em;z-index:3}
     @media(max-width:1024px){
       .gallery-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
     }
@@ -50,6 +55,11 @@
       .gallery-grid{grid-template-columns:1fr;gap:12px}
       .gallery-item,.gallery-item:nth-child(3n){grid-column:auto;aspect-ratio:4/3;min-height:0}
       .cta{padding:30px 20px}
+      .modal{padding:52px 12px 42px}
+      .modal-content{max-width:96vw;max-height:82vh}
+      .lightbox-nav{width:42px;height:42px;font-size:30px;background:rgba(0,0,0,.38)}
+      .lightbox-prev{left:8px}.lightbox-next{right:8px}
+      .close{top:8px;right:14px}
     }</style>
 </head>
 <body>
@@ -69,17 +79,82 @@
 <div class="gallery-item"><img src="../img/cocinas/edificio-puerto-montt/10-mueble-recibidor.webp" alt="Mueble complementario del proyecto" loading="lazy" decoding="async" data-lightbox></div></section>
 <section class="cta"><h2>¿Tienes un proyecto similar?</h2><p>Conversemos sobre tu espacio y las soluciones que podemos desarrollar a medida.</p><a class="btn" href="../index.html#contact">Cotizar proyecto</a><br><a href="index.html" style="display:inline-block;margin-top:20px;color:#666">← Volver a Cocinas</a></section>
 </main>
-<div id="imageModal" class="modal" aria-hidden="true"><span class="close" aria-label="Cerrar">&times;</span><img id="modalImage" class="modal-content" alt=""></div>
+<div id="imageModal" class="modal" aria-hidden="true" role="dialog" aria-modal="true">
+  <span class="close" aria-label="Cerrar">&times;</span>
+  <button class="lightbox-nav lightbox-prev" type="button" aria-label="Imagen anterior">&#10094;</button>
+  <img id="modalImage" class="modal-content" alt="">
+  <button class="lightbox-nav lightbox-next" type="button" aria-label="Imagen siguiente">&#10095;</button>
+  <div id="lightboxCounter" class="lightbox-counter" aria-live="polite"></div>
+</div>
 
 <script>
 const modal=document.getElementById('imageModal');
 const modalImg=document.getElementById('modalImage');
-document.querySelectorAll('[data-lightbox]').forEach(img=>{
-  img.addEventListener('click',()=>{modalImg.src=img.src;modalImg.alt=img.alt;modal.classList.add('open');document.body.style.overflow='hidden';});
+const counter=document.getElementById('lightboxCounter');
+const images=Array.from(document.querySelectorAll('[data-lightbox]'));
+let currentIndex=0;
+let touchStartX=0;
+
+function showImage(index){
+  if(!images.length) return;
+  currentIndex=(index+images.length)%images.length;
+  const img=images[currentIndex];
+  modalImg.src=img.src;
+  modalImg.alt=img.alt;
+  counter.textContent=(currentIndex+1)+' / '+images.length;
+}
+
+function openModal(index){
+  showImage(index);
+  modal.classList.add('open');
+  modal.setAttribute('aria-hidden','false');
+  document.body.style.overflow='hidden';
+}
+
+function closeModal(){
+  modal.classList.remove('open');
+  modal.setAttribute('aria-hidden','true');
+  document.body.style.overflow='';
+  modalImg.src='';
+}
+
+images.forEach((img,index)=>{
+  img.addEventListener('click',()=>openModal(index));
 });
-function closeModal(){modal.classList.remove('open');document.body.style.overflow='';modalImg.src='';}
+
+document.querySelector('.lightbox-prev').addEventListener('click',e=>{
+  e.stopPropagation();
+  showImage(currentIndex-1);
+});
+
+document.querySelector('.lightbox-next').addEventListener('click',e=>{
+  e.stopPropagation();
+  showImage(currentIndex+1);
+});
+
 document.querySelector('.close').addEventListener('click',closeModal);
-modal.addEventListener('click',e=>{if(e.target===modal)closeModal();});
-document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal();});
+
+modal.addEventListener('click',e=>{
+  if(e.target===modal) closeModal();
+});
+
+document.addEventListener('keydown',e=>{
+  if(!modal.classList.contains('open')) return;
+  if(e.key==='Escape') closeModal();
+  if(e.key==='ArrowLeft') showImage(currentIndex-1);
+  if(e.key==='ArrowRight') showImage(currentIndex+1);
+});
+
+modal.addEventListener('touchstart',e=>{
+  touchStartX=e.changedTouches[0].screenX;
+},{passive:true});
+
+modal.addEventListener('touchend',e=>{
+  const delta=e.changedTouches[0].screenX-touchStartX;
+  if(Math.abs(delta)>50){
+    if(delta<0) showImage(currentIndex+1);
+    else showImage(currentIndex-1);
+  }
+},{passive:true});
 </script>
 </body></html>
