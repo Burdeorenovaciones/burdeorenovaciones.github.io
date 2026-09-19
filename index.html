@@ -194,22 +194,65 @@
 
         /* HERO SECTION */
         .hero {
-            height: 85vh;
-            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+            min-height: 560px;
+            height: 72vh;
+            max-height: 690px;
+            background-image: linear-gradient(rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0.58)),
                               url('img/cocinas/muermos/chacana/portada-cocina-chacana-muermos.jpg');
             background-size: cover;
-            background-position: center;
+            background-position: center 48%;
             background-repeat: no-repeat;
             background-color: #333;
-            
+
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
             color: var(--blanco);
         }
-        .hero h1 { font-size: 3.5rem; margin-bottom: 20px; text-shadow: 0 2px 10px rgba(0,0,0,0.3); }
-        .hero p { font-size: 1.3rem; font-weight: 300; margin-bottom: 30px; max-width: 700px; }
+
+        .hero .container {
+            max-width: 1040px;
+        }
+
+        .hero-kicker {
+            display: inline-block;
+            margin-bottom: 14px;
+            font-size: 0.82rem;
+            font-weight: 600;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: rgba(255,255,255,.9);
+        }
+
+        .hero h1 {
+            margin: 0 auto 20px;
+            max-width: 980px;
+            font-size: clamp(2.7rem, 4.4vw, 4.35rem);
+            line-height: 1.06;
+            letter-spacing: -0.025em;
+            text-shadow: 0 3px 14px rgba(0,0,0,0.35);
+            text-wrap: balance;
+        }
+
+        .hero-title-main,
+        .hero-title-place {
+            display: block;
+        }
+
+        .hero-title-place {
+            margin-top: 6px;
+        }
+
+        .hero p {
+            max-width: 760px;
+            margin: 0 auto 30px;
+            font-size: clamp(1.05rem, 1.45vw, 1.22rem);
+            line-height: 1.65;
+            font-weight: 300;
+            color: rgba(255,255,255,.96);
+            text-shadow: 0 2px 8px rgba(0,0,0,.3);
+        }
         
         .hero-buttons {
             display: flex;
@@ -636,8 +679,13 @@
             .about-grid { grid-template-columns: 1fr; }
             .local-services-grid { grid-template-columns: 1fr 1fr; }
             .about-images { height: 390px; margin-top: 30px; }
-            .hero h1 { font-size: 2.5rem; }
-            .hero-buttons { flex-direction: column; gap: 10px; }
+            .hero { min-height: 500px; height: auto; padding: 64px 0; background-position: center; }
+            .hero h1 { font-size: clamp(2.35rem, 9vw, 3.15rem); line-height: 1.08; }
+            .hero-title-place { margin-top: 4px; }
+            .hero p { font-size: 1.03rem; max-width: 92%; margin-bottom: 24px; }
+            .hero-kicker { font-size: .72rem; letter-spacing: .14em; }
+            .hero-buttons { flex-direction: column; gap: 10px; align-items: center; }
+            .hero-buttons a { width: min(100%, 320px); }
             .img-founder { width: 72%; height: 100%; right: 0; object-fit: contain; }
             .img-team { width: 46%; max-width: 220px; height: auto; aspect-ratio: auto; bottom: 12px; left: -4px; }
             .modal-content { width: 95%; }
@@ -690,9 +738,13 @@
 
     <section class="hero">
         <div class="container">
-            <h1>Remodelaciones y muebles a medida en Puerto Montt</h1>
-            <p>Diseñamos espacios, construimos sueños. Cocinas, baños y remodelaciones integrales pensadas para tu hogar en Puerto Montt y el sur de Chile.</p>
-            
+            <span class="hero-kicker">Diseño · fabricación · instalación</span>
+            <h1>
+                <span class="hero-title-main">Remodelaciones y muebles a medida</span>
+                <span class="hero-title-place">en Puerto Montt</span>
+            </h1>
+            <p>Cocinas, baños, mobiliario y remodelaciones integrales para hogares de Puerto Montt y la Región de Los Lagos.</p>
+
             <div class="hero-buttons">
                 <a href="https://wa.me/56967797864" target="_blank" rel="noopener noreferrer" class="btn-primary">Cotizar mi Proyecto</a>
                 <a href="proyectos.html" class="btn-outline">Ver proyectos</a>
