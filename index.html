@@ -54,7 +54,8 @@
         "https://www.instagram.com/burdeorenovaciones/",
         "https://www.facebook.com/burdeorenueva/",
         "https://www.tiktok.com/@burdeorenovaciones",
-        "https://www.youtube.com/@BurdeoRenovaciones"
+        "https://www.youtube.com/@BurdeoRenovaciones",
+        "https://www.google.com/maps/search/?api=1&query=Burdeo%20Renovaciones&query_place_id=ChIJQbRt1oY7GJYRW7YD2GEEd0Q"
       ],
       "priceRange": "$$"
     }
@@ -531,7 +532,18 @@
             display: inline-flex; align-items: center; gap: 10px;
             background: #fff; padding: 10px 20px; 
             box-shadow: 0 2px 10px rgba(0,0,0,0.1); border-radius: 50px; margin-bottom: 40px;
+            text-decoration: none; color: #333; transition: .25s;
         }
+        .google-badge:hover { transform: translateY(-2px); box-shadow: 0 6px 18px rgba(0,0,0,.12); }
+        .google-actions { display:flex; gap:12px; flex-wrap:wrap; justify-content:center; margin-top:18px; }
+        .google-action {
+            display:inline-flex; align-items:center; justify-content:center; gap:8px;
+            padding:10px 16px; border-radius:999px; text-decoration:none; font-weight:600; font-size:.9rem;
+            border:1px solid #ddd; color:#333; background:#fff; transition:.25s;
+        }
+        .google-action:hover { border-color:var(--burdeo); color:var(--burdeo); transform:translateY(-1px); }
+        .google-action.primary { background:var(--burdeo); color:#fff; border-color:var(--burdeo); }
+        .review-source { position:absolute; top:28px; right:28px; color:#bbb; font-size:1.1rem; }
         .review-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
         
         .google-card {
@@ -549,7 +561,6 @@
             border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold;
         }
         .stars { color: var(--dorado-google); font-size: 14px; margin-top: 5px; }
-        .google-logo-small { position: absolute; top: 30px; right: 30px; width: 20px; }
 
         /* FOOTER */
         footer { background: var(--negro); color: #aaa; padding: 60px 0; font-size: 0.9rem; }
@@ -754,19 +765,19 @@
     <section id="reviews" class="section-padding reviews-section">
         <div class="container">
             <h2 style="margin-bottom: 10px;">Lo que dicen nuestros clientes</h2>
-            <div class="google-badge">
-                <i class="fab fa-google" style="color: #4285F4;"></i>
-                <span>Excelencia en servicio al cliente</span>
-            </div>
+            <a class="google-badge" href="https://www.google.com/maps/search/?api=1&query=Burdeo%20Renovaciones&query_place_id=ChIJQbRt1oY7GJYRW7YD2GEEd0Q" target="_blank" rel="noopener noreferrer" aria-label="Ver perfil de Burdeo Renovaciones en Google">
+                <i class="fab fa-google" style="color:#4285F4;" aria-hidden="true"></i>
+                <span>Ver Burdeo Renovaciones en Google</span>
+            </a>
 
             <div class="review-grid">
                 <div class="google-card">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg" class="google-logo-small" alt="G">
+                    <i class="fas fa-quote-right review-source" aria-hidden="true"></i>
                     <div class="reviewer-header">
                         <div class="reviewer-avatar">M</div>
                         <div>
                             <strong>Mariela Solari</strong>
-                            <div class="stars">
+                            <div class="stars" aria-label="5 estrellas">
                                 <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
                             </div>
                         </div>
@@ -775,12 +786,12 @@
                 </div>
 
                 <div class="google-card">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg" class="google-logo-small" alt="G">
+                    <i class="fas fa-quote-right review-source" aria-hidden="true"></i>
                     <div class="reviewer-header">
-                        <div class="reviewer-avatar" style="background: #333;">J</div>
+                        <div class="reviewer-avatar" style="background:#333;">J</div>
                         <div>
                             <strong>Jorge M.</strong>
-                            <div class="stars">
+                            <div class="stars" aria-label="5 estrellas">
                                 <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
                             </div>
                         </div>
@@ -788,10 +799,17 @@
                     <p>"Excelente trabajo en la renovación de nuestra cocina en Puerto Varas. El equipo de Yisel cumplió con los plazos y el resultado es hermoso."</p>
                 </div>
 
-                <div class="google-card" style="background: #f9f9f9; border: 2px dashed #ccc; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center;">
-                    <i class="fas fa-comment-dots" style="font-size: 30px; color: #ccc; margin-bottom: 15px;"></i>
-                    <p>¿Ya trabajaste con nosotros?</p>
-                    <a href="https://share.google/bnlRzMr2lj7M7mQ1v" target="_blank" rel="noopener noreferrer" style="color: var(--burdeo); font-weight: bold; text-decoration: none;">Déjanos tu opinión en Google</a>
+                <div class="google-card" style="background:#f9f9f9; border:2px dashed #ccc; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center;">
+                    <i class="fab fa-google" style="font-size:34px; color:#4285F4; margin-bottom:12px;" aria-hidden="true"></i>
+                    <p style="margin-bottom:8px;">Consulta nuestro perfil y opiniones directamente en Google.</p>
+                    <div class="google-actions">
+                        <a class="google-action" href="https://www.google.com/maps/search/?api=1&query=Burdeo%20Renovaciones&query_place_id=ChIJQbRt1oY7GJYRW7YD2GEEd0Q" target="_blank" rel="noopener noreferrer">
+                            <i class="fas fa-map-marker-alt" aria-hidden="true"></i> Ver perfil
+                        </a>
+                        <a class="google-action primary" href="https://share.google/bnlRzMr2lj7M7mQ1v" target="_blank" rel="noopener noreferrer">
+                            <i class="fas fa-star" aria-hidden="true"></i> Escribir reseña
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
