@@ -48,8 +48,21 @@
       "areaServed": [
         {"@type":"City","name":"Puerto Montt"},
         {"@type":"City","name":"Puerto Varas"},
+        {"@type":"City","name":"Frutillar"},
+        {"@type":"City","name":"Los Muermos"},
         {"@type":"AdministrativeArea","name":"Región de Los Lagos"}
       ],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Servicios de Burdeo Renovaciones",
+        "itemListElement": [
+          {"@type":"Offer","itemOffered":{"@type":"Service","name":"Remodelaciones en Puerto Montt","url":"https://burdeorenovaciones.cl/remodelaciones-puerto-montt.html"}},
+          {"@type":"Offer","itemOffered":{"@type":"Service","name":"Cocinas a medida","url":"https://burdeorenovaciones.cl/cocinas/index.html"}},
+          {"@type":"Offer","itemOffered":{"@type":"Service","name":"Remodelación de baños","url":"https://burdeorenovaciones.cl/banos/index.html"}},
+          {"@type":"Offer","itemOffered":{"@type":"Service","name":"Quinchos a medida","url":"https://burdeorenovaciones.cl/quinchos/index.html"}},
+          {"@type":"Offer","itemOffered":{"@type":"Service","name":"Muebles a medida en Puerto Montt","url":"https://burdeorenovaciones.cl/muebles-a-medida-puerto-montt.html"}}
+        ]
+      },
       "sameAs": [
         "https://www.instagram.com/burdeorenovaciones/",
         "https://www.facebook.com/burdeorenueva/",
@@ -230,6 +243,19 @@
             border-radius: 4px;
         }
         .btn-outline:hover { background: var(--blanco); color: var(--burdeo); }
+
+        /* SERVICIOS LOCALES */
+        .local-services { background:#fafafa; padding:64px 0; }
+        .local-services-head { text-align:center; max-width:820px; margin:0 auto 30px; }
+        .local-services-head h2 { font-size:2.35rem; margin-bottom:12px; color:var(--negro); }
+        .local-services-head p { color:#666; }
+        .local-services-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:18px; }
+        .local-service-card { background:#fff; border:1px solid #eee; border-radius:10px; padding:24px; box-shadow:0 8px 20px rgba(0,0,0,.04); }
+        .local-service-card h3 { margin:0 0 10px; font-size:1.35rem; }
+        .local-service-card p { color:#666; margin-bottom:14px; }
+        .local-service-card a { color:var(--burdeo); text-decoration:none; font-weight:600; }
+        .local-service-more { text-align:center; margin-top:24px; }
+        .local-service-more a { color:var(--burdeo); font-weight:600; text-decoration:none; }
 
         /* SOBRE NOSOTROS */
         .about-section { background: var(--blanco); }
@@ -608,6 +634,7 @@
             .menu-toggle { display: inline-flex; }
             .mobile-menu.open { display: block; }
             .about-grid { grid-template-columns: 1fr; }
+            .local-services-grid { grid-template-columns: 1fr 1fr; }
             .about-images { height: 390px; margin-top: 30px; }
             .hero h1 { font-size: 2.5rem; }
             .hero-buttons { flex-direction: column; gap: 10px; }
@@ -622,6 +649,9 @@
             .project-form-wrapper h2 { font-size: 2.2rem; }
             .form-row { grid-template-columns: 1fr; gap: 0; }
         }
+        @media (max-width: 560px) {
+            .local-services-grid { grid-template-columns: 1fr; }
+        }
     </style>
 </head>
 <body>
@@ -634,6 +664,7 @@
                 </a>
                 <ul class="nav-links">
                     <li><a href="#about">Nosotros</a></li>
+                    <li><a href="remodelaciones-puerto-montt.html">Servicios</a></li>
                     <li><a href="proyectos.html">Proyectos</a></li>
                     <li><a href="#reviews">Opiniones</a></li>
                     <li><a href="#contact">Contacto</a></li>
@@ -643,6 +674,8 @@
                 </button>
                 <div class="mobile-menu" id="mobileMenu">
                     <a href="#about">Nosotros</a>
+                    <a href="remodelaciones-puerto-montt.html">Remodelaciones</a>
+                    <a href="muebles-a-medida-puerto-montt.html">Muebles a medida</a>
                     <a href="proyectos.html">Proyectos</a>
                     <a href="cocinas/index.html">Cocinas</a>
                     <a href="banos/index.html">Baños</a>
@@ -664,6 +697,38 @@
                 <a href="https://wa.me/56967797864" target="_blank" rel="noopener noreferrer" class="btn-primary">Cotizar mi Proyecto</a>
                 <a href="proyectos.html" class="btn-outline">Ver proyectos</a>
             </div>
+        </div>
+    </section>
+
+    <section class="local-services" aria-labelledby="servicios-locales">
+        <div class="container">
+            <div class="local-services-head">
+                <h2 id="servicios-locales">Remodelaciones en Puerto Montt y Región de Los Lagos</h2>
+                <p>Soluciones para renovar espacios residenciales con diseño, mobiliario e instalación adaptados a cada proyecto.</p>
+            </div>
+            <div class="local-services-grid">
+                <article class="local-service-card">
+                    <h3>Cocinas a medida</h3>
+                    <p>Diseño y mobiliario para cocinas funcionales en Puerto Montt y comunas de Los Lagos.</p>
+                    <a href="cocinas/index.html">Ver cocinas →</a>
+                </article>
+                <article class="local-service-card">
+                    <h3>Remodelación de baños</h3>
+                    <p>Renovación de baños con vanitorios, duchas, nichos, revestimientos y almacenamiento.</p>
+                    <a href="banos/index.html">Ver baños →</a>
+                </article>
+                <article class="local-service-card">
+                    <h3>Quinchos</h3>
+                    <p>Espacios de encuentro pensados para el clima y la vida cotidiana del sur de Chile.</p>
+                    <a href="quinchos/index.html">Ver quinchos →</a>
+                </article>
+                <article class="local-service-card">
+                    <h3>Muebles a medida</h3>
+                    <p>Mobiliario personalizado para aprovechar mejor cocinas, baños y otros espacios del hogar.</p>
+                    <a href="muebles-a-medida-puerto-montt.html">Ver muebles →</a>
+                </article>
+            </div>
+            <div class="local-service-more"><a href="remodelaciones-puerto-montt.html">Conocer todos nuestros servicios de remodelación en Puerto Montt →</a></div>
         </div>
     </section>
 
@@ -898,6 +963,8 @@
                 <h4>Enlaces</h4>
                 <ul>
                     <li><a href="#about">Sobre Nosotros</a></li>
+                    <li><a href="remodelaciones-puerto-montt.html">Remodelaciones en Puerto Montt</a></li>
+                    <li><a href="muebles-a-medida-puerto-montt.html">Muebles a medida</a></li>
                     <li><a href="proyectos.html">Proyectos</a></li>
                     <li><a href="cocinas/index.html">Cocinas</a></li>
                     <li><a href="banos/index.html">Baños</a></li>
