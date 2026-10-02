@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cotiza tu proyecto | Muebles a medida y remodelaciones | Burdeo Renovaciones</title>
+  <meta name="description" content="Solicita una cotización para cocinas, clósets, muebles a medida y remodelaciones en Puerto Montt y el sur de Chile. Cuéntanos tu proyecto y te contactaremos.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://burdeorenovaciones.cl/cotizacion.html">
+
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://burdeorenovaciones.cl/cotizacion.html">
+  <meta property="og:title" content="Solicita tu cotización | Burdeo Renovaciones">
+  <meta property="og:description" content="Diseño, fabricación e instalación de cocinas, clósets, muebles a medida y remodelaciones.">
+  <meta property="og:image" content="https://burdeorenovaciones.cl/img/cocinas/frutillar/cocina-frutillar-portada.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" type="image/png" href="img/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Service",
+    "name":"Cotización de muebles a medida y remodelaciones",
+    "provider":{
+      "@type":"LocalBusiness",
+      "name":"Burdeo Renovaciones",
+      "url":"https://burdeorenovaciones.cl/",
+      "telephone":"+56 9 6779 7864",
+      "email":"hola@burdeorenovaciones.cl"
+    },
+    "areaServed":[
+      {"@type":"City","name":"Puerto Montt"},
+      {"@type":"City","name":"Puerto Varas"},
+      {"@type":"City","name":"Osorno"},
+      {"@type":"AdministrativeArea","name":"Región de Los Lagos"},
+      {"@type":"AdministrativeArea","name":"Región de Los Ríos"}
+    ],
+    "url":"https://burdeorenovaciones.cl/cotizacion.html"
+  }
+  </script>
+
+  <style>
+    :root{
+      --burdeo:#800020;
+      --burdeo-oscuro:#650018;
+      --crema:#f7f2ec;
+      --crema-2:#efe4d9;
+      --texto:#2d2b2b;
+      --muted:#6f6a67;
+      --linea:#e5dcd4;
+      --blanco:#fff;
+      --negro:#191919;
+      --sombra:0 22px 55px rgba(55,33,25,.16);
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{font-family:'Montserrat',sans-serif;color:var(--texto);line-height:1.55;background:#fff;overflow-x:hidden}
+    h1,h2,h3,h4{font-family:'Playfair Display',serif}
+    a{color:inherit}
+    .container{width:min(1200px,calc(100% - 40px));margin:auto}
+
+    header{
+      position:sticky;top:0;z-index:50;background:rgba(255,255,255,.96);
+      backdrop-filter:blur(12px);border-bottom:1px solid rgba(128,0,32,.08)
+    }
+    .nav{min-height:82px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+    .logo img{height:68px;width:auto;display:block}
+    .nav-links{display:flex;align-items:center;gap:30px}
+    .nav-links a{text-decoration:none;font-size:.9rem;font-weight:500;position:relative}
+    .nav-links a:hover,.nav-links a.active{color:var(--burdeo)}
+    .nav-links a.active:after{content:"";height:2px;background:var(--burdeo);position:absolute;left:0;right:0;bottom:-9px}
+    .nav-cta{display:inline-flex;align-items:center;gap:10px;background:var(--burdeo);color:#fff!important;padding:12px 18px;border-radius:9px;text-decoration:none;font-weight:600;box-shadow:0 8px 22px rgba(128,0,32,.2)}
+    .menu-toggle{display:none;border:0;background:none;font-size:1.35rem;color:var(--burdeo);cursor:pointer}
+    .mobile-menu{display:none;padding:0 0 18px}
+    .mobile-menu.open{display:grid;gap:12px}
+    .mobile-menu a{text-decoration:none;padding:8px 0}
+
+    .hero{
+      position:relative;isolation:isolate;
+      background:
+        linear-gradient(90deg,rgba(248,242,235,.98) 0%,rgba(248,242,235,.88) 42%,rgba(248,242,235,.38) 67%,rgba(248,242,235,.12) 100%),
+        url('img/cocinas/frutillar/cocina-frutillar-portada.jpg') center/cover no-repeat;
+      padding:54px 0 64px;
+      min-height:720px;
+    }
+    .hero:after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(255,255,255,.05),rgba(128,0,32,.03))}
+    .hero-grid{display:grid;grid-template-columns:.82fr 1.18fr;gap:56px;align-items:center}
+    .hero-copy{padding:28px 0}
+    .eyebrow{text-transform:uppercase;letter-spacing:.17em;font-size:.74rem;font-weight:700;color:var(--burdeo);margin-bottom:16px}
+    .hero h1{font-size:clamp(3.4rem,6vw,5.8rem);line-height:.92;color:var(--burdeo);letter-spacing:-.04em;max-width:560px}
+    .lead{font-size:1.04rem;max-width:520px;margin:28px 0 30px;color:#514c48;font-weight:500}
+    .benefits{display:grid;gap:12px;max-width:470px}
+    .benefit{
+      display:grid;grid-template-columns:48px 1fr;gap:14px;align-items:center;
+      background:rgba(255,255,255,.86);border:1px solid rgba(128,0,32,.08);
+      border-radius:14px;padding:13px 16px;box-shadow:0 8px 24px rgba(73,47,36,.08)
+    }
+    .benefit i{width:42px;height:42px;border-radius:50%;display:grid;place-items:center;background:#f7e8e9;color:var(--burdeo);font-size:1.05rem}
+    .benefit h3{font-size:1.05rem;color:var(--burdeo);margin-bottom:2px}
+    .benefit p{font-size:.79rem;color:#6a6561}
+
+    .form-card{background:rgba(255,255,255,.97);border:1px solid rgba(255,255,255,.8);border-radius:20px;padding:34px;box-shadow:var(--sombra)}
+    .form-top{display:flex;justify-content:space-between;align-items:flex-start;gap:20px;margin-bottom:26px}
+    .form-top h2{font-size:2rem;color:#4c1724}
+    .form-top span{font-size:.67rem;letter-spacing:.2em;text-transform:uppercase;color:#8b817b;margin-top:10px;white-space:nowrap}
+    .fields{display:grid;grid-template-columns:1fr 1fr;gap:17px 18px}
+    .field.full{grid-column:1/-1}
+    label{display:block;font-size:.77rem;font-weight:700;margin-bottom:7px;color:#494442}
+    .req{color:var(--burdeo)}
+    input,select,textarea{
+      width:100%;border:1px solid #ddd4cf;background:#fff;border-radius:8px;
+      padding:12px 13px;font:inherit;font-size:.88rem;color:#333;outline:none;transition:.2s
+    }
+    input:focus,select:focus,textarea:focus{border-color:var(--burdeo);box-shadow:0 0 0 3px rgba(128,0,32,.08)}
+    textarea{min-height:118px;resize:vertical}
+    .upload{
+      border:1px dashed #cfc2b9;border-radius:10px;padding:18px;background:#fbf9f7;text-align:center
+    }
+    .upload input{border:0;background:none;padding:0;margin-top:8px}
+    .upload i{font-size:1.45rem;color:var(--burdeo);margin-bottom:7px}
+    .upload strong{display:block;font-size:.86rem}
+    .upload small{display:block;color:#807873;font-size:.72rem;margin-top:4px}
+    .consent{display:flex;align-items:flex-start;gap:10px;font-size:.76rem;color:#625d59;margin-top:4px}
+    .consent input{width:18px;height:18px;margin-top:2px;accent-color:var(--burdeo)}
+    .form-actions{display:flex;align-items:center;justify-content:space-between;gap:20px;margin-top:20px}
+    .submit-btn{
+      border:0;background:var(--burdeo);color:#fff;border-radius:9px;padding:14px 24px;
+      font-weight:700;font-size:.93rem;cursor:pointer;display:inline-flex;gap:10px;align-items:center;
+      box-shadow:0 9px 24px rgba(128,0,32,.2);transition:.2s
+    }
+    .submit-btn:hover{background:var(--burdeo-oscuro);transform:translateY(-1px)}
+    .security{display:flex;align-items:center;gap:9px;color:#77706c;font-size:.7rem;max-width:235px}
+    .security i{font-size:1rem;color:var(--burdeo)}
+    .form-note{margin-top:12px;color:#8a817b;font-size:.7rem}
+
+    .process{padding:52px 0;background:#fff}
+    .section-heading h2{font-size:2.35rem;color:var(--burdeo);margin-bottom:6px}
+    .section-heading p{color:#706a66}
+    .process-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-top:30px}
+    .step{position:relative;padding:22px 20px;border-top:1px solid var(--linea)}
+    .step-num{width:30px;height:30px;border-radius:50%;background:var(--burdeo);color:#fff;display:grid;place-items:center;font-weight:700;font-size:.8rem;margin-bottom:12px}
+    .step h3{font-size:1.1rem;color:var(--burdeo);margin-bottom:4px}
+    .step p{font-size:.8rem;color:#6f6965}
+
+    .project-types{padding:52px 0 66px;background:var(--crema)}
+    .type-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:26px}
+    .type-card{background:#fff;border-radius:14px;padding:22px;border:1px solid #eadfd6;min-height:150px}
+    .type-card i{font-size:1.25rem;color:var(--burdeo);margin-bottom:16px}
+    .type-card h3{font-size:1.05rem;color:#60172a;margin-bottom:5px}
+    .type-card p{font-size:.78rem;color:#726b67}
+
+    footer{background:#171717;color:#aaa;padding:48px 0 28px}
+    .footer-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:45px}
+    footer img{height:100px;filter:brightness(0) invert(1)}
+    footer h4{color:#fff;margin-bottom:14px}
+    footer a{text-decoration:none;color:#aaa}
+    footer a:hover{color:#fff}
+    footer ul{list-style:none;display:grid;gap:8px;font-size:.84rem}
+    .social{display:flex;gap:14px;margin-top:16px;font-size:1.1rem}
+    .copyright{text-align:center;border-top:1px solid #2b2b2b;margin-top:34px;padding-top:22px;font-size:.75rem}
+
+    .wa-float{
+      position:fixed;right:24px;bottom:24px;width:54px;height:54px;border-radius:50%;
+      background:#25d366;color:#fff;display:grid;place-items:center;font-size:1.55rem;
+      text-decoration:none;box-shadow:0 8px 20px rgba(0,0,0,.22);z-index:60
+    }
+
+    @media(max-width:960px){
+      .nav-links,.nav-cta{display:none}.menu-toggle{display:block}
+      .hero{padding:30px 0 48px;background-position:center}
+      .hero-grid{grid-template-columns:1fr;gap:30px}
+      .hero-copy{padding-top:10px}.hero h1{font-size:clamp(3.1rem,10vw,4.8rem)}
+      .benefits{max-width:none;grid-template-columns:1fr 1fr}
+      .process-grid,.type-grid{grid-template-columns:1fr 1fr}
+      .footer-grid{grid-template-columns:1fr 1fr}
+    }
+    @media(max-width:640px){
+      .container{width:min(100% - 28px,1200px)}
+      .nav{min-height:72px}.logo img{height:58px}
+      .hero{min-height:auto}
+      .hero h1{font-size:3.2rem}
+      .benefits,.fields,.process-grid,.type-grid,.footer-grid{grid-template-columns:1fr}
+      .form-card{padding:22px 18px}.form-top{display:block}.form-top span{display:block;margin-top:7px}
+      .form-actions{align-items:stretch;flex-direction:column}.submit-btn{justify-content:center}
+      .security{max-width:none}
+      .field.full{grid-column:auto}
+    }
+  </style>
+  <link rel="stylesheet" href="css/typography.css">
+</head>
+<body>
+<header>
+  <div class="container">
+    <nav class="nav">
+      <a class="logo" href="index.html" aria-label="Volver al inicio">
+        <img src="img/LOGO BURDEO.png" alt="Burdeo Renovaciones">
+      </a>
+      <div class="nav-links">
+        <a href="index.html">Inicio</a>
+        <a href="index.html#about">Nosotros</a>
+        <a href="remodelaciones-puerto-montt.html">Servicios</a>
+        <a href="proyectos.html">Proyectos</a>
+        <a class="active" href="cotizacion.html">Cotización</a>
+      </div>
+      <a class="nav-cta" href="https://wa.me/56967797864" target="_blank" rel="noopener noreferrer">
+        <i class="fab fa-whatsapp"></i> Contáctanos <i class="fas fa-chevron-right"></i>
+      </a>
+      <button class="menu-toggle" id="menuToggle" type="button" aria-label="Abrir menú" aria-expanded="false"><i class="fas fa-bars"></i></button>
+    </nav>
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="index.html">Inicio</a>
+      <a href="index.html#about">Nosotros</a>
+      <a href="remodelaciones-puerto-montt.html">Servicios</a>
+      <a href="proyectos.html">Proyectos</a>
+      <a href="cotizacion.html"><strong>Cotización</strong></a>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="container hero-grid">
+      <div class="hero-copy">
+        <div class="eyebrow">Diseño · fabricación · instalación</div>
+        <h1>Solicita tu cotización</h1>
+        <p class="lead">En Burdeo Renovaciones diseñamos, fabricamos e instalamos soluciones a medida para transformar tus espacios en lugares únicos y funcionales.</p>
+
+        <div class="benefits">
+          <div class="benefit">
+            <i class="fas fa-ruler-combined"></i>
+            <div><h3>Diseño a medida</h3><p>Soluciones pensadas para tu espacio, estilo y necesidades.</p></div>
+          </div>
+          <div class="benefit">
+            <i class="fas fa-gears"></i>
+            <div><h3>Fabricación propia</h3><p>Controlamos cada detalle del proceso y sus terminaciones.</p></div>
+          </div>
+          <div class="benefit">
+            <i class="fas fa-helmet-safety"></i>
+            <div><h3>Instalación profesional</h3><p>Coordinamos la ejecución para entregar un resultado impecable.</p></div>
+          </div>
+          <div class="benefit">
+            <i class="fas fa-location-dot"></i>
+            <div><h3>Puerto Montt y alrededores</h3><p>Atendemos proyectos en Los Lagos, Los Ríos y zonas cercanas.</p></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-card">
+        <div class="form-top">
+          <h2>Completa el formulario</h2>
+          <span>Ideas · Madera · Hogar</span>
+        </div>
+
+        <form id="quoteForm" novalidate>
+          <div class="fields">
+            <div class="field">
+              <label for="nombre">Nombre y apellido <span class="req">*</span></label>
+              <input id="nombre" name="nombre" type="text" autocomplete="name" placeholder="Ej. María Fernández" required>
+            </div>
+            <div class="field">
+              <label for="telefono">Teléfono / WhatsApp <span class="req">*</span></label>
+              <input id="telefono" name="telefono" type="tel" autocomplete="tel" inputmode="tel" placeholder="+56 9 1234 5678" required>
+            </div>
+            <div class="field">
+              <label for="email">Correo electrónico <span class="req">*</span></label>
+              <input id="email" name="email" type="email" autocomplete="email" placeholder="tucorreo@ejemplo.cl" required>
+            </div>
+            <div class="field">
+              <label for="ciudad">Ciudad o comuna <span class="req">*</span></label>
+              <input id="ciudad" name="ciudad" type="text" autocomplete="address-level2" placeholder="Ej. Puerto Montt" required>
+            </div>
+            <div class="field">
+              <label for="tipo">Tipo de proyecto <span class="req">*</span></label>
+              <select id="tipo" name="tipo" required>
+                <option value="">Selecciona una opción</option>
+                <option>Cocina a medida</option>
+                <option>Clóset o walk-in clóset</option>
+                <option>Mueble de baño / vanitorio</option>
+                <option>Mueble a medida</option>
+                <option>Quincho</option>
+                <option>Remodelación integral</option>
+                <option>Otro proyecto</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="medidas">Medidas aproximadas</label>
+              <input id="medidas" name="medidas" type="text" placeholder="Ej. 3 m x 2,5 m o 12 m²">
+            </div>
+            <div class="field full">
+              <label for="presupuesto">Presupuesto estimado <span style="font-weight:400">(opcional)</span></label>
+              <select id="presupuesto" name="presupuesto">
+                <option value="">Selecciona un rango</option>
+                <option>Menos de $1.000.000</option>
+                <option>$1.000.000 a $3.000.000</option>
+                <option>$3.000.000 a $5.000.000</option>
+                <option>$5.000.000 a $10.000.000</option>
+                <option>Más de $10.000.000</option>
+                <option>Prefiero definirlo con Burdeo</option>
+              </select>
+            </div>
+            <div class="field full">
+              <label for="mensaje">Cuéntanos sobre tu proyecto <span class="req">*</span></label>
+              <textarea id="mensaje" name="mensaje" maxlength="700" placeholder="Describe tu proyecto, materiales de interés, estilo, plazos u otra información que nos ayude a preparar una mejor propuesta." required></textarea>
+            </div>
+            <div class="field full">
+              <label for="archivos">Adjunta fotos o referencias <span style="font-weight:400">(opcional)</span></label>
+              <div class="upload">
+                <i class="far fa-images"></i>
+                <strong>Selecciona fotos o referencias</strong>
+                <small>Puedes seleccionar varias imágenes o PDF. Las podrás adjuntar al abrirse WhatsApp.</small>
+                <input id="archivos" name="archivos" type="file" accept="image/*,.pdf" multiple>
+              </div>
+            </div>
+            <div class="field full">
+              <label class="consent">
+                <input type="checkbox" id="consentimiento" required>
+                <span>Acepto que mis datos sean utilizados por Burdeo Renovaciones para contactarme y preparar una propuesta de cotización para mi proyecto.</span>
+              </label>
+            </div>
+          </div>
+
+          <div class="form-actions">
+            <button class="submit-btn" type="submit"><i class="far fa-paper-plane"></i> Solicitar cotización <i class="fas fa-arrow-right"></i></button>
+            <div class="security"><i class="fas fa-shield-halved"></i><span>Tus datos se utilizan únicamente para gestionar tu solicitud de cotización.</span></div>
+          </div>
+          <p class="form-note">Al enviar, abriremos WhatsApp con los datos de tu proyecto. Si seleccionaste archivos, adjúntalos directamente en el chat antes de enviarlo.</p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <section class="process">
+    <div class="container">
+      <div class="section-heading">
+        <h2>Cómo trabajamos</h2>
+        <p>Un proceso simple para convertir tu idea en un proyecto concreto.</p>
+      </div>
+      <div class="process-grid">
+        <article class="step"><div class="step-num">1</div><h3>Cuéntanos tu idea</h3><p>Completa el formulario con los antecedentes principales de tu proyecto.</p></article>
+        <article class="step"><div class="step-num">2</div><h3>Analizamos tu proyecto</h3><p>Revisamos medidas, ubicación, alcance y referencias para contactarte.</p></article>
+        <article class="step"><div class="step-num">3</div><h3>Te enviamos una propuesta</h3><p>Preparamos una solución a medida y definimos contigo los próximos pasos.</p></article>
+        <article class="step"><div class="step-num">4</div><h3>Lo hacemos realidad</h3><p>Fabricamos e instalamos con foco en calidad, funcionalidad y terminaciones.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="project-types">
+    <div class="container">
+      <div class="section-heading">
+        <h2>Tipos de proyectos que cotizamos</h2>
+        <p>Soluciones a medida para distintos espacios del hogar o negocio.</p>
+      </div>
+      <div class="type-grid">
+        <article class="type-card"><i class="fas fa-kitchen-set"></i><h3>Cocinas</h3><p>Diseño, fabricación e instalación de cocinas a medida.</p></article>
+        <article class="type-card"><i class="fas fa-door-closed"></i><h3>Clósets y vestidores</h3><p>Organización, almacenamiento y diseño adaptado a tu espacio.</p></article>
+        <article class="type-card"><i class="fas fa-sink"></i><h3>Baños y vanitorios</h3><p>Muebles funcionales y terminaciones pensadas para zonas húmedas.</p></article>
+        <article class="type-card"><i class="fas fa-screwdriver-wrench"></i><h3>Remodelaciones</h3><p>Proyectos integrales que combinan mobiliario, terminaciones y montaje.</p></article>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container footer-grid">
+    <div>
+      <img src="img/LOGO BURDEO.png" alt="Burdeo Renovaciones">
+      <p style="max-width:360px;margin-top:12px;font-size:.84rem">Espacios que hacen tu historia. Diseño, fabricación e instalación en el sur de Chile.</p>
+      <div class="social">
+        <a href="https://www.instagram.com/burdeorenovaciones/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.facebook.com/burdeorenueva/" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.tiktok.com/@burdeorenovaciones" target="_blank" rel="noopener noreferrer" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+      </div>
+    </div>
+    <div>
+      <h4>Contacto</h4>
+      <ul>
+        <li><i class="fas fa-location-dot"></i> Puerto Montt, Chile</li>
+        <li><a href="https://wa.me/56967797864" target="_blank" rel="noopener noreferrer">+56 9 6779 7864</a></li>
+        <li><a href="mailto:hola@burdeorenovaciones.cl">hola@burdeorenovaciones.cl</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Enlaces</h4>
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="muebles-a-medida-puerto-montt.html">Muebles a medida</a></li>
+        <li><a href="remodelaciones-puerto-montt.html">Remodelaciones</a></li>
+        <li><a href="proyectos.html">Proyectos</a></li>
+        <li><a href="cotizacion.html">Solicitar cotización</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="container copyright">&copy; 2026 Burdeo Renovaciones. Todos los derechos reservados.</div>
+</footer>
+
+<a class="wa-float" href="https://wa.me/56967797864" target="_blank" rel="noopener noreferrer" aria-label="Abrir WhatsApp"><i class="fab fa-whatsapp"></i></a>
+
+<script>
+  const menuToggle = document.getElementById('menuToggle');
+  const mobileMenu = document.getElementById('mobileMenu');
+  if (menuToggle && mobileMenu) {
+    menuToggle.addEventListener('click', () => {
+      const open = mobileMenu.classList.toggle('open');
+      menuToggle.setAttribute('aria-expanded', String(open));
+    });
+  }
+
+  const form = document.getElementById('quoteForm');
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    if (!form.checkValidity()) {
+      form.reportValidity();
+      return;
+    }
+
+    const archivos = Array.from(document.getElementById('archivos').files || []);
+    const archivosTexto = archivos.length
+      ? archivos.map(f => f.name).join(', ')
+      : 'Sin archivos seleccionados';
+
+    const datos = {
+      nombre: document.getElementById('nombre').value.trim(),
+      telefono: document.getElementById('telefono').value.trim(),
+      email: document.getElementById('email').value.trim(),
+      ciudad: document.getElementById('ciudad').value.trim(),
+      tipo: document.getElementById('tipo').value,
+      medidas: document.getElementById('medidas').value.trim() || 'No indicadas',
+      presupuesto: document.getElementById('presupuesto').value || 'No indicado',
+      mensaje: document.getElementById('mensaje').value.trim()
+    };
+
+    const texto = [
+      'Hola Burdeo Renovaciones, quiero solicitar una cotización:',
+      '',
+      'Proyecto: ' + datos.tipo,
+      'Nombre: ' + datos.nombre,
+      'Teléfono: ' + datos.telefono,
+      'Correo: ' + datos.email,
+      'Ciudad/comuna: ' + datos.ciudad,
+      'Medidas aproximadas: ' + datos.medidas,
+      'Presupuesto estimado: ' + datos.presupuesto,
+      '',
+      'Detalle:',
+      datos.mensaje,
+      '',
+      'Archivos seleccionados: ' + archivosTexto,
+      archivos.length ? 'Los adjuntaré manualmente en este chat.' : ''
+    ].filter(Boolean).join('\n');
+
+    sessionStorage.setItem('burdeo_quote_name', datos.nombre);
+    const whatsappUrl = 'https://wa.me/56967797864?text=' + encodeURIComponent(texto);
+
+    const chat = window.open('about:blank', '_blank');
+    if (chat) {
+      chat.location.href = whatsappUrl;
+      setTimeout(() => { window.location.href = 'gracias-cotizacion.html'; }, 450);
+    } else {
+      window.location.href = whatsappUrl;
+    }
+  });
+</script>
+</body>
+</html>
