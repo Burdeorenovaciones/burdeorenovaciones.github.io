@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Solicitud recibida | Burdeo Renovaciones</title>
+  <meta name="robots" content="noindex, follow">
+  <link rel="canonical" href="https://burdeorenovaciones.cl/gracias-cotizacion.html">
+  <link rel="icon" type="image/png" href="img/favicon.png">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root{--burdeo:#800020;--crema:#f7f2ec;--texto:#2d2b2b}
+    *{box-sizing:border-box}
+    body{margin:0;font-family:'Montserrat',sans-serif;color:var(--texto);background:linear-gradient(rgba(247,242,236,.93),rgba(247,242,236,.93)),url('img/cocinas/frutillar/cocina-frutillar-portada.jpg') center/cover fixed;min-height:100vh;display:grid;place-items:center;padding:24px}
+    .card{width:min(680px,100%);background:#fff;border-radius:22px;padding:44px 38px;text-align:center;box-shadow:0 22px 60px rgba(60,35,28,.18)}
+    .logo{height:92px;margin-bottom:22px}
+    .icon{width:68px;height:68px;border-radius:50%;display:grid;place-items:center;margin:0 auto 22px;background:#f7e8e9;color:var(--burdeo);font-size:1.8rem}
+    h1{font-family:'Playfair Display',serif;color:var(--burdeo);font-size:2.6rem;margin:0 0 14px}
+    p{line-height:1.65;color:#665f5a;margin:0 auto 20px;max-width:540px}
+    .actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:26px}
+    a{display:inline-flex;align-items:center;gap:9px;padding:13px 19px;border-radius:9px;text-decoration:none;font-weight:700;font-size:.9rem}
+    .primary{background:var(--burdeo);color:#fff}
+    .secondary{border:1px solid #d9cec5;color:var(--texto);background:#fff}
+    .small{font-size:.76rem;color:#817974;margin-top:24px}
+  </style>
+</head>
+<body>
+  <main class="card">
+    <img class="logo" src="img/LOGO BURDEO.png" alt="Burdeo Renovaciones">
+    <div class="icon"><i class="fas fa-check"></i></div>
+    <h1>¡Gracias por tu solicitud!</h1>
+    <p id="mensaje">Recibimos los antecedentes de tu proyecto. Revisa la pestaña de WhatsApp que acabamos de abrir y envíanos el mensaje para continuar con la cotización.</p>
+    <div class="actions">
+      <a class="primary" href="https://wa.me/56967797864" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp"></i> Abrir WhatsApp</a>
+      <a class="secondary" href="index.html"><i class="fas fa-house"></i> Volver al inicio</a>
+    </div>
+    <div class="small">Burdeo Renovaciones · Diseño · fabricación · instalación</div>
+  </main>
+  <script>
+    const nombre = sessionStorage.getItem('burdeo_quote_name');
+    if (nombre) {
+      document.getElementById('mensaje').textContent =
+        'Gracias, ' + nombre + '. Recibimos los antecedentes de tu proyecto. Revisa la pestaña de WhatsApp que acabamos de abrir y envíanos el mensaje para continuar con la cotización.';
+    }
+  </script>
+</body>
+</html>
