@@ -224,6 +224,262 @@
       h1 { font-size:clamp(2rem,9vw,2.6rem); }
       .categories-grid { grid-template-columns:1fr; gap:20px; }
     }
+
+    /* PORTAFOLIO BURDEO — sección principal */
+    main.container {
+      max-width: 1320px;
+      padding-top: 0;
+    }
+
+    .portfolio-intro {
+      min-height: 430px;
+      margin: 34px 0 24px;
+      display: grid;
+      grid-template-columns: 1.08fr .92fr;
+      background: #fbfaf8;
+      border: 1px solid #f0ece8;
+      border-radius: 26px;
+      overflow: hidden;
+      box-shadow: 0 16px 50px rgba(25,18,14,.06);
+    }
+
+    .portfolio-copy {
+      padding: 54px 58px 46px;
+      align-self: center;
+      position: relative;
+      z-index: 2;
+    }
+
+    .portfolio-eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 22px;
+      color: var(--burdeo);
+      font-family: var(--font-body, 'Manrope', sans-serif);
+      font-size: .78rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: .11em;
+    }
+
+    .portfolio-eyebrow span {
+      display: inline-block;
+      width: 48px;
+      height: 2px;
+      background: var(--burdeo);
+    }
+
+    .portfolio-intro h1 {
+      margin: 0 0 20px;
+      max-width: 650px;
+      font-family: var(--font-heading, 'Manrope', sans-serif) !important;
+      font-size: clamp(2.65rem, 4vw, 4.25rem);
+      font-weight: 800 !important;
+      line-height: 1.02;
+      letter-spacing: -.045em;
+      color: var(--negro);
+      text-align: left;
+    }
+
+    .portfolio-lead {
+      max-width: 650px;
+      margin: 0;
+      color: #625e5b;
+      font-size: 1rem;
+      line-height: 1.72;
+    }
+
+    .portfolio-actions {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-top: 27px;
+    }
+
+    .portfolio-btn {
+      min-height: 52px;
+      padding: 0 22px;
+      border-radius: 999px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 13px;
+      text-decoration: none;
+      font-size: .9rem;
+      font-weight: 700;
+      transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
+    }
+
+    .portfolio-btn:hover { transform: translateY(-2px); }
+
+    .portfolio-btn.primary {
+      background: var(--burdeo);
+      color: #fff;
+      box-shadow: 0 10px 24px rgba(128,0,32,.18);
+    }
+
+    .portfolio-btn.secondary {
+      border: 1px solid rgba(128,0,32,.45);
+      color: var(--burdeo);
+      background: rgba(255,255,255,.72);
+    }
+
+    .portfolio-seo {
+      margin: 24px 0 0;
+      max-width: 690px;
+      font-size: .9rem;
+      line-height: 1.65;
+      color: #716b67;
+    }
+
+    .portfolio-seo a {
+      color: var(--burdeo);
+      font-weight: 700;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      text-decoration-thickness: 1px;
+    }
+
+    .portfolio-visual {
+      min-height: 430px;
+      background:
+        linear-gradient(90deg, rgba(251,250,248,.14), rgba(251,250,248,0) 35%),
+        url('img/cocinas/edificio-puerto-montt/01-portada-cocina-edificio-puerto-montt.webp') center/cover no-repeat;
+      clip-path: ellipse(88% 110% at 88% 50%);
+    }
+
+    .portfolio-categories {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      padding: 0 0 80px;
+    }
+
+    .portfolio-card {
+      display: block;
+      overflow: hidden;
+      background: #fff;
+      border: 1px solid #ece8e4;
+      border-radius: 16px;
+      text-decoration: none;
+      color: inherit;
+      box-shadow: 0 8px 28px rgba(20,16,13,.06);
+      transition: transform .25s ease, box-shadow .25s ease;
+    }
+
+    .portfolio-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 18px 40px rgba(20,16,13,.11);
+    }
+
+    .portfolio-card-image {
+      height: 300px;
+      overflow: hidden;
+      background: #eee;
+    }
+
+    .portfolio-card-image img {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+      transition: transform .5s ease;
+    }
+
+    .portfolio-card:hover .portfolio-card-image img {
+      transform: scale(1.035);
+    }
+
+    .portfolio-card-body {
+      min-height: 112px;
+      display: grid;
+      grid-template-columns: 50px 1fr 42px;
+      align-items: center;
+      gap: 14px;
+      padding: 20px 22px;
+    }
+
+    .portfolio-card-icon {
+      width: 46px;
+      height: 46px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      background: #f8ebee;
+      color: var(--burdeo);
+      font-size: 1.15rem;
+    }
+
+    .portfolio-card-copy h2 {
+      margin: 0 0 5px;
+      font-family: var(--font-heading, 'Manrope', sans-serif) !important;
+      color: var(--negro);
+      font-size: 1.2rem;
+      font-weight: 800 !important;
+      letter-spacing: -.025em;
+    }
+
+    .portfolio-card-copy p {
+      margin: 0;
+      color: #77706c;
+      font-size: .79rem;
+      line-height: 1.45;
+    }
+
+    .portfolio-card-arrow {
+      width: 38px;
+      height: 38px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      background: var(--burdeo);
+      color: #fff;
+      font-size: .9rem;
+      transition: transform .25s ease;
+    }
+
+    .portfolio-card:hover .portfolio-card-arrow {
+      transform: translateX(3px);
+    }
+
+    @media (max-width: 960px) {
+      .portfolio-intro { grid-template-columns: 1fr; }
+      .portfolio-copy { padding: 44px 38px 34px; }
+      .portfolio-visual {
+        min-height: 300px;
+        clip-path: none;
+        border-radius: 0;
+      }
+      .portfolio-categories { grid-template-columns: 1fr 1fr; }
+      .portfolio-card:last-child { grid-column: 1 / -1; max-width: 620px; width: 100%; margin: auto; }
+    }
+
+    @media (max-width: 640px) {
+      main.container { padding-left: 14px; padding-right: 14px; }
+      .portfolio-intro {
+        margin-top: 18px;
+        border-radius: 18px;
+      }
+      .portfolio-copy { padding: 34px 23px 28px; }
+      .portfolio-intro h1 { font-size: clamp(2.3rem, 11vw, 3.1rem); }
+      .portfolio-actions { flex-direction: column; }
+      .portfolio-btn { width: 100%; }
+      .portfolio-visual { min-height: 230px; }
+      .portfolio-categories {
+        grid-template-columns: 1fr;
+        gap: 18px;
+        padding-bottom: 56px;
+      }
+      .portfolio-card:last-child { grid-column: auto; max-width: none; }
+      .portfolio-card-image { height: 250px; }
+      .portfolio-card-body {
+        grid-template-columns: 44px 1fr 38px;
+        gap: 11px;
+        padding: 17px 16px;
+      }
+      .portfolio-card-icon { width: 42px; height: 42px; }
+    }
 </style>
 <link rel="stylesheet" href="css/typography.css">
   <!-- Google tag (gtag.js) -->
@@ -271,68 +527,88 @@
 
 <main class="container">
 
-  <section class="intro">
-    <h1>Proyectos de remodelación en Puerto Montt y Los Lagos</h1>
-    <p>
-      Explora cocinas, baños y quinchos realizados por Burdeo Renovaciones en Puerto Montt y distintas comunas de la Región de Los Lagos. Cada categoría reúne proyectos reales y casos detallados.
-    </p>
-    <p style="margin-top:14px;">
-      Si estás comenzando un proyecto, revisa nuestros <a href="remodelaciones-puerto-montt.html" style="color:var(--burdeo);font-weight:600;">servicios de remodelación en Puerto Montt</a> o nuestras soluciones de <a href="muebles-a-medida-puerto-montt.html" style="color:var(--burdeo);font-weight:600;">muebles a medida</a>.
-    </p>
+  <section class="portfolio-intro" aria-labelledby="portfolio-title">
+    <div class="portfolio-copy">
+      <div class="portfolio-eyebrow"><span></span> Portafolio Burdeo</div>
+      <h1 id="portfolio-title">Proyectos que transforman espacios</h1>
+      <p class="portfolio-lead">
+        Explora cocinas, baños y quinchos realizados por Burdeo Renovaciones en Puerto Montt y distintas comunas de la Región de Los Lagos. Cada proyecto refleja nuestro compromiso con el diseño, la funcionalidad y las terminaciones.
+      </p>
+
+      <div class="portfolio-actions">
+        <a href="cotizacion.html" class="portfolio-btn primary">
+          <i class="far fa-calendar" aria-hidden="true"></i>
+          <span>Cotizar proyecto</span>
+          <i class="fas fa-arrow-right" aria-hidden="true"></i>
+        </a>
+        <a href="remodelaciones-puerto-montt.html" class="portfolio-btn secondary">
+          <span>Conoce nuestros servicios</span>
+          <i class="fas fa-arrow-right" aria-hidden="true"></i>
+        </a>
+      </div>
+
+      <p class="portfolio-seo">
+        Si estás comenzando un proyecto, revisa nuestros
+        <a href="remodelaciones-puerto-montt.html">servicios de remodelación en Puerto Montt</a>
+        o nuestras soluciones de
+        <a href="muebles-a-medida-puerto-montt.html">muebles a medida</a>.
+      </p>
+    </div>
+
+    <div class="portfolio-visual" role="img" aria-label="Proyecto de cocina y mobiliario realizado por Burdeo Renovaciones"></div>
   </section>
 
-  <section class="categories-grid">
-
-    <a href="cocinas/index.html" class="category-card">
-      <img src="img/cocinas/frutillar/cocina-frutillar-portada.jpg"
-           alt="Cocinas a medida en el sur de Chile"
-           class="cat-bg"
-           fetchpriority="high"
-           decoding="async">
-      <div class="cat-overlay">
-        <h2>Cocinas</h2>
-        <span>Ver galería →</span>
+  <section class="portfolio-categories" aria-label="Categorías de proyectos">
+    <a href="cocinas/index.html" class="portfolio-card">
+      <div class="portfolio-card-image">
+        <img src="img/cocinas/frutillar/cocina-frutillar-portada.jpg"
+             alt="Cocinas a medida realizadas por Burdeo Renovaciones"
+             fetchpriority="high"
+             decoding="async">
+      </div>
+      <div class="portfolio-card-body">
+        <span class="portfolio-card-icon"><i class="fas fa-kitchen-set" aria-hidden="true"></i></span>
+        <div class="portfolio-card-copy">
+          <h2>Cocinas</h2>
+          <p>Diseño funcional y mobiliario a medida para el corazón del hogar.</p>
+        </div>
+        <span class="portfolio-card-arrow" aria-hidden="true"><i class="fas fa-arrow-right"></i></span>
       </div>
     </a>
 
-    <a href="quinchos/index.html" class="category-card">
-      <img src="img/quinchos/FT-Alerce/portada-quincho-ft.webp"
-           alt="Quinchos rústicos y modernos"
-           class="cat-bg"
-           loading="lazy"
-           decoding="async">
-      <div class="cat-overlay">
-        <h2>Quinchos</h2>
-        <span>Ver galería →</span>
+    <a href="quinchos/index.html" class="portfolio-card">
+      <div class="portfolio-card-image">
+        <img src="img/quinchos/FT-Alerce/portada-quincho-ft.webp"
+             alt="Quinchos desarrollados por Burdeo Renovaciones"
+             loading="lazy"
+             decoding="async">
+      </div>
+      <div class="portfolio-card-body">
+        <span class="portfolio-card-icon"><i class="fas fa-fire" aria-hidden="true"></i></span>
+        <div class="portfolio-card-copy">
+          <h2>Quinchos</h2>
+          <p>Espacios pensados para compartir, disfrutar y recibir.</p>
+        </div>
+        <span class="portfolio-card-arrow" aria-hidden="true"><i class="fas fa-arrow-right"></i></span>
       </div>
     </a>
 
-    <a href="banos/index.html" class="category-card">
-      <img src="img/banos/valle-volcanes/01-portada-bano-valle-volcanes.webp"
-           alt="Remodelación de baños en Puerto Montt y Región de Los Lagos"
-           class="cat-bg"
-           loading="lazy"
-           decoding="async">
-      <div class="cat-overlay">
-        <h2>Baños</h2>
-        <span>Ver galería →</span>
+    <a href="banos/index.html" class="portfolio-card">
+      <div class="portfolio-card-image">
+        <img src="img/banos/valle-volcanes/01-portada-bano-valle-volcanes.webp"
+             alt="Remodelación de baños realizada por Burdeo Renovaciones"
+             loading="lazy"
+             decoding="async">
+      </div>
+      <div class="portfolio-card-body">
+        <span class="portfolio-card-icon"><i class="fas fa-bath" aria-hidden="true"></i></span>
+        <div class="portfolio-card-copy">
+          <h2>Baños</h2>
+          <p>Espacios que combinan comodidad, materiales y estilo.</p>
+        </div>
+        <span class="portfolio-card-arrow" aria-hidden="true"><i class="fas fa-arrow-right"></i></span>
       </div>
     </a>
-
-    <div class="category-card disabled">
-      <div class="cat-overlay">
-        <h2>Closets</h2>
-        <span>Próximamente</span>
-      </div>
-    </div>
-
-    <div class="category-card disabled">
-      <div class="cat-overlay">
-        <h2>Ampliaciones</h2>
-        <span>Próximamente</span>
-      </div>
-    </div>
-
   </section>
 
 </main>
