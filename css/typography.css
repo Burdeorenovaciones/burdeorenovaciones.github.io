@@ -110,3 +110,31 @@ nav,
   font-family: var(--font-heading) !important;
   font-weight: 800 !important;
 }
+
+
+/* Estado activo uniforme de navegación principal */
+.nav-links a,
+.links a {
+  position: relative;
+}
+
+.nav-links a.active,
+.nav-links a[aria-current="page"],
+.links a.active,
+.links a[aria-current="page"] {
+  color: #800020 !important;
+  font-weight: 600 !important;
+}
+
+.nav-links a.active::after,
+.nav-links a[aria-current="page"]::after,
+.links a.active::after,
+.links a[aria-current="page"]::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -12px;
+  height: 2px;
+  background: #800020;
+}
