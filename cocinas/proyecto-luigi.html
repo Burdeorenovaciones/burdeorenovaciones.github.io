@@ -350,21 +350,27 @@
     gtag('js', new Date());
     gtag('config', 'G-9KVSLHEYNJ');
   </script>
+<style>
+/* Navegación global Burdeo */
+.br-site-header{background:#fff;padding:10px 0;position:sticky;top:0;z-index:1000;box-shadow:0 2px 10px rgba(0,0,0,.05);border-bottom:0}.br-site-container{max-width:1200px;margin:auto;padding:0 20px}.br-site-nav{display:flex;align-items:center;justify-content:space-between;gap:24px;position:relative}.br-site-logo{display:flex;align-items:center;text-decoration:none}.br-site-logo img{height:72px;width:auto;display:block;transition:transform .3s ease}.br-site-logo:hover img{transform:scale(1.05)}.br-nav-links{display:flex;align-items:center;gap:30px;margin-left:auto}.br-nav-links a{font-family:'Manrope',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;text-decoration:none;color:#1a1a1a;font-size:13px;font-weight:500;text-transform:uppercase;letter-spacing:1px;line-height:1;transition:color .3s ease;position:relative}.br-nav-links a:hover{color:#800020}.br-nav-links a.active{color:#800020;font-weight:600}.br-nav-links a.active::after{content:"";position:absolute;left:0;right:0;bottom:-12px;height:2px;background:#800020}.br-menu-toggle{display:none;width:44px;height:44px;border:1px solid #ddd;border-radius:8px;background:#fff;color:#1a1a1a;align-items:center;justify-content:center;font-size:1.25rem;cursor:pointer}.br-mobile-menu{display:none;position:absolute;top:calc(100% + 10px);left:0;right:0;background:#fff;border:1px solid #eee;border-radius:10px;box-shadow:0 12px 30px rgba(0,0,0,.12);padding:12px;z-index:1100}.br-mobile-menu.open{display:block}.br-mobile-menu a{display:block;padding:12px 14px;border-radius:7px;text-decoration:none;color:#1a1a1a;font-family:'Manrope',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-weight:500}.br-mobile-menu a:hover,.br-mobile-menu a:focus-visible{background:#f6f6f6}.br-mobile-cta{margin-top:6px;background:#800020!important;color:#fff!important;text-align:center}@media(max-width:768px){.br-site-header{padding:8px 0}.br-site-logo img{height:62px}.br-nav-links{display:none}.br-menu-toggle{display:inline-flex}}
+</style>
 </head>
 
 <body>
 
-<header>
-    <div class="container nav-flex">
-        <a href="../index.html">
-            <img src="../img/LOGO BURDEO.png" alt="Logo Burdeo Renovaciones" class="logo-img">
-        </a>
-        <div class="breadcrumb">
-            <a href="../index.html">Inicio</a> /
-            <a href="index.html">Cocinas</a> /
-            <span>Proyecto Luigi</span>
-        </div>
-    </div>
+<header class="br-site-header">
+  <div class="br-site-container">
+    <nav class="br-site-nav" aria-label="Navegación principal">
+      <a class="br-site-logo" href="../index.html" aria-label="Burdeo Renovaciones - Inicio"><img src="../img/LOGO BURDEO.png" alt="Burdeo Renovaciones"></a>
+      <div class="br-nav-links">
+        <a href="../index.html">Inicio</a><a href="../index.html#about">Nosotros</a><a href="../remodelaciones-puerto-montt.html">Servicios</a><a href="../proyectos.html" class="active" aria-current="page">Proyectos</a><a href="../index.html#reviews">Opiniones</a><a href="../cotizacion.html">Cotización</a>
+      </div>
+      <button class="br-menu-toggle" id="brMenuToggle" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="brMobileMenu">☰</button>
+      <div class="br-mobile-menu" id="brMobileMenu">
+        <a href="../index.html">Inicio</a><a href="../index.html#about">Nosotros</a><a href="../remodelaciones-puerto-montt.html">Servicios</a><a href="../proyectos.html"><strong>Proyectos</strong></a><a href="../index.html#reviews">Opiniones</a><a href="../cotizacion.html">Cotización</a><a href="https://wa.me/56967797864" target="_blank" rel="noopener noreferrer" class="br-mobile-cta">Cotizar por WhatsApp</a>
+      </div>
+    </nav>
+  </div>
 </header>
 
 <main class="container">
@@ -512,5 +518,8 @@
     });
 </script>
 
+<script>
+const brMenuToggle=document.getElementById('brMenuToggle');const brMobileMenu=document.getElementById('brMobileMenu');if(brMenuToggle&&brMobileMenu){brMenuToggle.addEventListener('click',()=>{const open=brMobileMenu.classList.toggle('open');brMenuToggle.setAttribute('aria-expanded',String(open));});brMobileMenu.querySelectorAll('a').forEach(link=>link.addEventListener('click',()=>{brMobileMenu.classList.remove('open');brMenuToggle.setAttribute('aria-expanded','false');}));}
+</script>
 </body>
 </html>
