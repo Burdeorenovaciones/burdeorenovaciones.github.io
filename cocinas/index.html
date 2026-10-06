@@ -77,6 +77,193 @@
         /* Ajuste móvil */
         @media (max-width: 768px) { .projects-grid { grid-template-columns: 1fr; } }
     .local-copy{max-width:900px;margin:0 auto 36px;padding:0 20px;text-align:center;color:#5f5f5f;line-height:1.75}.local-copy a{color:var(--burdeo);font-weight:600}
+
+        /* Introducción Cocinas — jerarquía limpia y SEO integrado */
+        .kitchen-intro {
+            background: linear-gradient(180deg, #fbfaf8 0%, #ffffff 100%);
+            border-bottom: 1px solid #f0ece8;
+        }
+
+        .kitchen-intro-inner {
+            max-width: 980px;
+            padding-top: 64px;
+            padding-bottom: 52px;
+            text-align: center;
+        }
+
+        .kitchen-eyebrow {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 18px;
+            color: var(--burdeo);
+            font-family: var(--font-body, 'Manrope', sans-serif);
+            font-size: .74rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: .11em;
+        }
+
+        .kitchen-eyebrow span {
+            width: 42px;
+            height: 2px;
+            background: var(--burdeo);
+            display: inline-block;
+        }
+
+        .kitchen-intro h1 {
+            max-width: 780px;
+            margin: 0 auto 20px;
+            font-family: var(--font-heading, 'Manrope', sans-serif) !important;
+            font-size: clamp(2.65rem, 4.7vw, 4.5rem);
+            font-weight: 800 !important;
+            line-height: 1.02;
+            letter-spacing: -.045em;
+            color: var(--negro);
+            text-wrap: balance;
+        }
+
+        .kitchen-lead {
+            max-width: 760px;
+            margin: 0 auto;
+            color: #605b57;
+            font-size: clamp(1rem, 1.4vw, 1.12rem);
+            line-height: 1.72;
+        }
+
+        .kitchen-areas {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 24px;
+        }
+
+        .kitchen-areas span {
+            padding: 8px 13px;
+            border-radius: 999px;
+            background: #f5f0ec;
+            color: #5f5854;
+            font-size: .78rem;
+            font-weight: 600;
+            line-height: 1;
+        }
+
+        .kitchen-actions {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 28px;
+        }
+
+        .kitchen-btn {
+            min-height: 50px;
+            padding: 0 22px;
+            border-radius: 999px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 11px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: .9rem;
+            transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
+        }
+
+        .kitchen-btn:hover { transform: translateY(-2px); }
+
+        .kitchen-btn.primary {
+            background: var(--burdeo);
+            color: #fff;
+            box-shadow: 0 10px 24px rgba(128,0,32,.16);
+        }
+
+        .kitchen-btn.secondary {
+            color: var(--burdeo);
+            border: 1px solid rgba(128,0,32,.4);
+            background: #fff;
+        }
+
+        .kitchen-seo-links {
+            max-width: 800px;
+            margin: 26px auto 0;
+            padding-top: 22px;
+            border-top: 1px solid #ece6e1;
+            color: #77706b;
+            font-size: .9rem;
+            line-height: 1.7;
+        }
+
+        .kitchen-seo-links a {
+            color: var(--burdeo);
+            font-weight: 700;
+            text-decoration: underline;
+            text-decoration-thickness: 1px;
+            text-underline-offset: 3px;
+        }
+
+        #proyectos-cocinas {
+            scroll-margin-top: 110px;
+            padding-top: 44px;
+        }
+
+        @media (max-width: 768px) {
+            .kitchen-intro-inner {
+                padding: 40px 20px 34px;
+            }
+
+            .kitchen-eyebrow {
+                font-size: .66rem;
+                letter-spacing: .09em;
+                gap: 9px;
+            }
+
+            .kitchen-eyebrow span { width: 30px; }
+
+            .kitchen-intro h1 {
+                font-size: clamp(2.45rem, 11vw, 3.35rem);
+                line-height: 1.03;
+                margin-bottom: 18px;
+            }
+
+            .kitchen-lead {
+                font-size: 1rem;
+                line-height: 1.62;
+            }
+
+            .kitchen-areas {
+                gap: 7px;
+                margin-top: 20px;
+            }
+
+            .kitchen-areas span {
+                font-size: .72rem;
+                padding: 7px 11px;
+            }
+
+            .kitchen-actions {
+                flex-direction: column;
+                align-items: stretch;
+                margin-top: 24px;
+            }
+
+            .kitchen-btn {
+                width: 100%;
+            }
+
+            .kitchen-seo-links {
+                margin-top: 22px;
+                padding-top: 18px;
+                font-size: .86rem;
+                line-height: 1.6;
+            }
+
+            #proyectos-cocinas {
+                padding-top: 28px;
+            }
+        }
 </style>
 <link rel="stylesheet" href="../css/typography.css">
   <!-- Google tag (gtag.js) -->
@@ -143,13 +330,49 @@
 </header>
 
     <main>
-        <section class="category-hero">
-            <h1>Cocinas a medida en Puerto Montt y Los Lagos</h1>
-            <p>Diseñamos, fabricamos e instalamos cocinas a medida para hogares de Puerto Montt y la Región de Los Lagos, con soluciones de almacenamiento, distribución e integración de mobiliario.</p>
-        </section>
+        <section class="kitchen-intro">
+  <div class="container kitchen-intro-inner">
+    <div class="kitchen-eyebrow">
+      <span></span>
+      Cocinas · diseño · fabricación · instalación
+    </div>
 
-        <div class="local-copy"><p>En nuestro portafolio puedes revisar proyectos reales en <strong>Puerto Montt, Puerto Varas, Frutillar, Alerce y Los Muermos</strong>. Cada cocina se desarrolla según el espacio disponible, la forma de uso y las necesidades de almacenamiento del hogar.</p><p>También puedes conocer nuestros servicios de <a href="../muebles-a-medida-puerto-montt.html">muebles a medida en Puerto Montt</a> y <a href="../remodelaciones-puerto-montt.html">remodelaciones en la Región de Los Lagos</a>.</p></div>
-<section class="container projects-grid">
+    <h1>Cocinas a medida en Puerto Montt y Osorno</h1>
+
+    <p class="kitchen-lead">
+      Diseñamos, fabricamos e instalamos cocinas a medida, pensadas para aprovechar mejor cada espacio y resolver almacenamiento, distribución y uso cotidiano con una propuesta integrada.
+    </p>
+
+    <div class="kitchen-areas" aria-label="Zonas con proyectos y cobertura">
+      <span>Puerto Montt</span>
+      <span>Puerto Varas</span>
+      <span>Frutillar</span>
+      <span>Alerce</span>
+      <span>Los Muermos</span>
+      <span>Osorno</span>
+    </div>
+
+    <div class="kitchen-actions">
+      <a href="#proyectos-cocinas" class="kitchen-btn primary">
+        Ver proyectos
+        <i class="fas fa-arrow-down" aria-hidden="true"></i>
+      </a>
+      <a href="../cotizacion.html" class="kitchen-btn secondary">
+        Cotizar cocina
+        <i class="fas fa-arrow-right" aria-hidden="true"></i>
+      </a>
+    </div>
+
+    <p class="kitchen-seo-links">
+      ¿Buscas una solución más amplia? Conoce nuestros
+      <a href="../muebles-a-medida-puerto-montt.html">muebles a medida en Puerto Montt</a>
+      y nuestros
+      <a href="../remodelaciones-puerto-montt.html">servicios de remodelación en la Región de Los Lagos</a>.
+    </p>
+  </div>
+</section>
+
+<section class="container projects-grid" id="proyectos-cocinas">
 
             <article class="project-card">
                 <a href="proyecto-edificio-puerto-montt.html">
