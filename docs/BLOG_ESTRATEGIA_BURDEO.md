@@ -1,6 +1,6 @@
 # Blog Burdeo Renovaciones — propuesta editorial para revisión
 
-Estado: BORRADOR, no publicado. No fusionar antes de revisar visualmente en escritorio y móvil.
+Estado: versión inicial de lanzamiento aprobada por el usuario. Portada y primer artículo se publicarán juntos con menú, enlaces internos y sitemap. Verificar visualmente en escritorio y móvil tras el despliegue.
 
 ## Enfoque
 
@@ -12,7 +12,7 @@ Mantener intacta la identidad visual del sitio: logo, tipografía, navegación, 
 - `/blog/casa-katya-cocina-con-isla-puerto-varas.html`: primer artículo piloto sobre el proyecto Casa Katya.
 - Cada entrada: proyecto/fuente real, fotos verificadas, título SEO único, lugar real, consejo útil, enlace a galería y botón a cotización por WhatsApp.
 - Usar esquema Blog y BlogPosting, títulos/canonical individuales y enlaces internos a los servicios.
-- Agregar «Blog» a la navegación del sitio y al sitemap **solo cuando se apruebe publicar**.
+- La navegación del sitio incorpora «Inspiración» mediante la integración de redes y acceso fijo desde Inicio; el sitemap incluye las dos URL del blog.
 
 ## Pilares de contenido (no todos publicados)
 
@@ -45,11 +45,11 @@ Mantener intacta la identidad visual del sitio: logo, tipografía, navegación, 
 3. Fotografías visibles, recortes adecuados, textos legibles en celular, tablet y escritorio.
 4. Clics a proyectos reales y WhatsApp funcionan sin inventar confirmación de cotización.
 5. JSON-LD validado, H1 único, canonical correcto; enlaces y fotografías existentes.
-6. Agregar al inicio una sección editorial moderada, navegación Blog y sitemap **después de aprobación**, manteniendo la web principal intacta hasta entonces.
+6. El lanzamiento incluye una sección editorial moderada en Inicio, navegación «Inspiración» y sitemap. Mantener el resto del sitio y la cotización por WhatsApp.
 
 ## Material ya preparado
 
 - `blog/index.html`: portada editorial en borrador.
 - `blog/casa-katya-cocina-con-isla-puerto-varas.html`: artículo 1 con detalles basados en `cocinas/proyecto-katya.html` y `cocinas/proyecto-katya-2.html`.
 
-Esta rama no incluye cambios a `main` ni al formulario de cotizaciones.
+El cambio se integra mediante PR #21. No modifica la lógica del formulario de cotización por WhatsApp. Las fotografías de los mockups aprobados son referenciales; el sitio publicado utiliza imágenes reales del repositorio.
