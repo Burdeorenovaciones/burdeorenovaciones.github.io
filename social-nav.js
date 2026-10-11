@@ -44,9 +44,37 @@
       .burdeo-social-mobile{display:none}
       .burdeo-social-label{width:100%;margin:2px 0 8px;color:#76706d;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;text-align:center}
       @media (max-width:1100px) and (min-width:769px){.burdeo-social-nav{gap:5px;margin-left:14px;padding-left:14px}.burdeo-social-nav a{width:29px;height:29px;font-size:12px}.nav-links,.br-nav-links{gap:18px!important}}
+      @media (min-width:769px) and (max-width:980px){header .nav-links,header .br-nav-links{display:none!important}header .menu-toggle,header .br-menu-toggle{display:inline-flex!important}header .mobile-menu.open,header .br-mobile-menu.open{display:block!important}}
       @media (max-width:768px){.burdeo-social-nav{display:none!important}.burdeo-social-mobile{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:10px;margin-top:8px;padding:14px 8px 8px;border-top:1px solid #eee}.burdeo-social-mobile a{width:38px;height:38px;font-size:15px}}
     `;
     document.head.appendChild(style);
+  }
+
+  // Agrega un acceso uniforme a Inspiración en las plantillas existentes.
+  // Evita duplicados cuando la página ya lo incluye en su HTML.
+  function ensureInspirationLink(header) {
+    const desktop = header.querySelector('.nav-links, .br-nav-links');
+    if (desktop && !desktop.querySelector('a[href="/blog/"]')) {
+      const isList = desktop.tagName.toLowerCase() === 'ul';
+      const anchor = document.createElement('a');
+      anchor.href = '/blog/';
+      anchor.textContent = 'Inspiración';
+      const node = isList ? document.createElement('li') : anchor;
+      if (isList) node.appendChild(anchor);
+      const project = Array.from(desktop.querySelectorAll('a')).find(a => a.getAttribute('href')?.includes('proyectos.html'));
+      const ref = project ? (isList ? project.closest('li') : project) : null;
+      if (ref && ref.parentElement === desktop) desktop.insertBefore(node, ref.nextSibling);
+      else desktop.appendChild(node);
+    }
+    const mobile = header.querySelector('.mobile-menu, .br-mobile-menu');
+    if (mobile && !mobile.querySelector('a[href="/blog/"]')) {
+      const anchor = document.createElement('a');
+      anchor.href = '/blog/';
+      anchor.textContent = 'Inspiración';
+      const project = Array.from(mobile.querySelectorAll('a')).find(a => a.getAttribute('href')?.includes('proyectos.html'));
+      if (project && project.parentElement === mobile) mobile.insertBefore(anchor, project.nextSibling);
+      else mobile.appendChild(anchor);
+    }
   }
 
   function init() {
@@ -58,6 +86,7 @@
     const logo = nav.querySelector('a.logo-img') || nav.querySelector('a.logo-link') || nav.querySelector('a.br-site-logo') || nav.querySelector('a[aria-label*="Burdeo"]') || nav.querySelector('a[aria-label*="Inicio"]');
     if (!logo) return;
 
+    ensureInspirationLink(header);
     ensureFontAwesome();
     addStyles();
 
