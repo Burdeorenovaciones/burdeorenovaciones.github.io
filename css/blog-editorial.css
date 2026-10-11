@@ -1,0 +1,155 @@
+
+/* Blog editorial Burdeo. Identidad base (logo, navegación, redes, pie) proviene de Inicio. */
+.inspire-kicker,.inspire-section-label,.inspire-category{font-size:.75rem;letter-spacing:.11em;text-transform:uppercase;color:#800020;font-weight:800}
+.inspire-section-label{display:flex;align-items:center;gap:11px;margin-bottom:18px}
+.inspire-section-label:before{content:"";width:25px;height:2px;background:#800020;flex:none}
+.inspire-button{display:inline-flex;align-items:center;justify-content:center;gap:15px;background:#800020;color:#fff!important;border:1px solid #800020;border-radius:4px;padding:14px 24px;text-decoration:none;font-weight:700;font-size:.9rem;line-height:1.35}
+.inspire-button:hover{background:#5e0019}
+.inspire-button.ghost{background:transparent;color:#800020!important}
+.inspire-button.ghost:hover{background:#800020;color:#fff!important}
+.inspire-actions{display:flex;gap:14px;flex-wrap:wrap;margin-top:27px}
+.inspire-hero,.inspire-article-hero{position:relative;overflow:hidden;background:#faf7f3}
+.inspire-hero{min-height:485px}
+.inspire-hero-photo,.inspire-article-hero-image{position:absolute;inset:0 0 0 44%;background-image:url('/img/cocinas/puerto-varas/katya1/portada-cocina-casa-katya.jpeg');background-position:center;background-size:cover}
+.inspire-hero:before,.inspire-article-hero:before{content:"";position:absolute;z-index:1;inset:0;background:linear-gradient(90deg,#faf7f3 0%,#faf7f3 30%,rgba(250,247,243,.96) 39%,rgba(250,247,243,.56) 54%,rgba(250,247,243,0) 73%)}
+.inspire-hero-grid{min-height:485px;position:relative;z-index:2;display:grid;grid-template-columns:59% 41%;align-items:center}
+.inspire-hero-copy{max-width:600px;padding:35px 0}
+.inspire-hero h1{font-size:clamp(2.65rem,5vw,4.8rem);line-height:1.06;letter-spacing:-.05em;color:#1a1a1a;margin:17px 0}
+.inspire-hero h1 span{display:block;color:#800020}
+.inspire-hero p{color:#555;line-height:1.65;font-size:1.1rem;max-width:550px}
+.inspire-section{padding:52px 0;background:#fff}
+.inspire-section-tight{padding:17px 0 45px}
+.inspire-featured{display:grid;grid-template-columns:57% 43%;background:#fbf9f7;border:1px solid #e9e0db;border-radius:10px;overflow:hidden;min-height:365px}
+.inspire-featured-image{display:block;overflow:hidden;min-height:365px}
+.inspire-featured-image img{display:block;width:100%;height:100%;min-height:365px;object-fit:cover;transition:transform .35s}
+.inspire-featured-image:hover img{transform:scale(1.02)}
+.inspire-featured-text{display:flex;flex-direction:column;justify-content:center;padding:35px}
+.inspire-featured h2{color:#1d1d1d;font-size:clamp(1.7rem,2.6vw,2.55rem);line-height:1.16;letter-spacing:-.04em;margin:12px 0 15px}
+.inspire-featured p{color:#655f5b;font-size:.94rem;line-height:1.7;margin-bottom:19px}
+.inspire-featured-actions{display:flex;align-items:center;gap:17px;flex-wrap:wrap}
+.inspire-featured-actions span{font-size:.77rem;color:#777}
+.inspire-themes-grid,.inspire-recent-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.inspire-theme{position:relative;display:block;color:#252525;text-decoration:none;background:#fbf9f7;border:1px solid #eee5df;border-radius:8px;overflow:hidden}
+.inspire-theme>img{width:100%;height:148px;object-fit:cover;display:block}
+.inspire-theme-icon{position:absolute;top:128px;left:19px;width:44px;height:44px;border-radius:10px;background:#fff;color:#800020;display:grid;place-items:center;font-size:1.15rem}
+.inspire-theme-copy{position:relative;padding:27px 21px 22px}
+.inspire-theme-copy h3{font-size:1.22rem;color:#221d1c;margin:5px 0 8px}
+.inspire-theme-copy p{font-size:.86rem;color:#635b57;line-height:1.5;padding-right:17px}
+.inspire-theme-copy>i{position:absolute;right:18px;bottom:22px;color:#800020}
+.inspire-section-head{display:flex;justify-content:space-between;gap:16px;align-items:center}
+.inspire-section-head a{color:#800020;font-weight:700;font-size:.87rem;text-decoration:none}
+.inspire-recent{text-decoration:none;display:block;color:#252020}
+.inspire-recent img{display:block;width:100%;height:203px;object-fit:cover;border-radius:5px}
+.inspire-recent span{display:block;margin:14px 0 7px;color:#800020;font-size:.73rem;font-weight:800;letter-spacing:.06em}
+.inspire-recent h3{font-size:1.25rem;line-height:1.25}
+.inspire-recent p{color:#800020;font-size:.83rem;margin-top:10px}
+.inspire-bottom{text-align:center;background:#f7f2ec;padding:62px 0}
+.inspire-bottom h2{font-size:clamp(1.8rem,3.5vw,2.75rem);margin-bottom:16px}
+.inspire-bottom p{max-width:760px;margin:0 auto 27px;color:#666;line-height:1.8}
+/* Artículo */
+.inspire-article-hero{min-height:460px}
+.inspire-article-hero-image{left:43%}
+.inspire-article-hero-layout{min-height:460px;display:grid;grid-template-columns:54% 46%;align-items:center;position:relative;z-index:2}
+.inspire-article-intro{padding:42px 0;max-width:615px}
+.inspire-crumbs{font-size:.8rem;color:#5d5753;margin-bottom:26px}
+.inspire-crumbs a{color:#575250;text-decoration:none}
+.inspire-article-intro h1{font-size:clamp(2.2rem,4vw,3.75rem);line-height:1.08;letter-spacing:-.05em;margin:15px 0 19px;color:#171717}
+.inspire-article-intro>p{font-size:1rem;color:#555;line-height:1.7}
+.inspire-article-meta{margin-top:23px;display:flex;gap:22px;flex-wrap:wrap;align-items:center;font-size:.78rem;color:#666}
+.inspire-article-meta a{color:#800020;font-weight:700}
+.inspire-photo-credit{text-align:right;padding-top:11px;font-size:.71rem;color:#766e68}
+.inspire-article-content{padding:45px 0 50px}
+.inspire-article-grid{display:grid;grid-template-columns:minmax(0,1.75fr) minmax(260px,.9fr);gap:52px;align-items:start}
+.inspire-chapter{padding:4px 0 26px}
+.inspire-chapter h2{font-size:clamp(1.95rem,3vw,2.7rem);line-height:1.16;margin:10px 0 19px}
+.inspire-chapter p{font-size:1rem;color:#54504e;line-height:1.85;margin-bottom:19px}
+.inspire-chapter a,.inspire-original-project a{color:#800020;text-underline-offset:3px}
+.inspire-chapter ul{padding-left:26px}
+.inspire-chapter li{color:#54504e;font-size:.97rem;line-height:1.7;margin-bottom:12px}
+.inspire-tip{margin:25px 0;padding:24px 27px;border-left:3px solid #800020;background:#f7f2ec;border-radius:7px}
+.inspire-tip>i{color:#800020;font-size:1.4rem}
+.inspire-tip p{font-size:1.08rem;color:#493f3e;line-height:1.6;font-style:italic;margin:9px 0 14px}
+.inspire-tip strong{color:#800020;text-transform:uppercase;font-size:.73rem;letter-spacing:.07em}
+.inspire-article-aside{position:sticky;top:120px}
+.inspire-side-photo{margin:0 0 23px}
+.inspire-side-photo img{display:block;width:100%;aspect-ratio:1.35;object-fit:cover;border-radius:6px}
+.inspire-side-photo figcaption{font-size:.74rem;color:#777;margin-top:7px}
+.inspire-side-panel{background:#f7f2ec;border-radius:6px;padding:27px 25px;margin:0 0 24px}
+.inspire-side-panel h2{font-size:1.45rem;margin:0 0 17px}
+.inspire-side-panel>div{display:flex;align-items:flex-start;gap:12px;margin:15px 0}
+.inspire-side-panel i{color:#800020;min-width:22px;margin-top:4px}
+.inspire-side-panel p{margin:0;font-size:.82rem;line-height:1.54;color:#665d58}
+.inspire-side-panel strong{color:#302a2a;font-size:.88rem;display:block}
+.inspire-original-project{padding:26px;border:1px solid #e5dcd6;background:#faf7f4;border-radius:7px}
+.inspire-original-project h3{font-size:1.22rem;margin:0 0 8px}
+.inspire-original-project p{font-size:.89rem;color:#666;margin-bottom:18px}
+.inspire-original-project>a{display:block;margin:10px 0;font-weight:700}
+.inspire-article-cta{background:#f7f2ec;padding:34px 0}
+.inspire-article-cta .container{display:grid;grid-template-columns:auto 1fr auto;gap:20px;align-items:center}
+.inspire-article-cta .container>i{color:#800020;font-size:2.4rem}
+.inspire-article-cta h2{color:#800020;font-size:clamp(1.5rem,2.6vw,2.1rem);margin:0 0 8px}
+.inspire-article-cta p{font-size:.88rem;color:#68605a}
+.inspire-related{padding-top:45px}
+.inspire-related-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:19px}
+.inspire-related-card{display:grid;grid-template-columns:43% 57%;border:1px solid #e8dfd9;background:#fbf8f5;text-decoration:none;color:#242424;border-radius:5px;overflow:hidden}
+.inspire-related-card img{width:100%;height:100%;min-height:160px;object-fit:cover}
+.inspire-related-card>div{padding:19px}
+.inspire-related-card span{font-size:.7rem;color:#800020;font-weight:700}
+.inspire-related-card h3{font-size:1.1rem;line-height:1.3;margin:9px 0 12px}
+.inspire-related-card p{font-size:.8rem;color:#800020;font-weight:700}
+.inspire-back{margin-top:27px}
+.inspire-back a{color:#800020;font-weight:700}
+@media(max-width:1150px){.inspire-hero-grid{grid-template-columns:65% 35%}.inspire-featured-text{padding:24px}.inspire-article-grid{gap:30px}}
+@media(max-width:850px){
+ .inspire-hero:before,.inspire-article-hero:before{background:linear-gradient(90deg,#faf7f3 0%,rgba(250,247,243,.95) 48%,rgba(250,247,243,.1) 100%)}
+ .inspire-featured{grid-template-columns:1fr}
+ .inspire-featured-image,.inspire-featured-image img{height:318px;min-height:0}
+ .inspire-themes-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .inspire-article-grid{grid-template-columns:1fr}
+ .inspire-article-aside{position:static;display:grid;grid-template-columns:1fr 1fr;gap:20px}
+ .inspire-side-panel{grid-row:span 2}
+ .inspire-article-cta .container{grid-template-columns:auto 1fr}
+ .inspire-article-cta .inspire-button{grid-column:1/-1;justify-self:start}
+}
+@media(max-width:640px){
+ .inspire-hero{min-height:0}
+ .inspire-hero-photo{inset:0 0 auto 0;height:240px}
+ .inspire-hero:before{background:linear-gradient(180deg,transparent 0,transparent 170px,#faf7f3 240px,#faf7f3 100%)}
+ .inspire-hero-grid{display:block;min-height:0;padding-top:225px}
+ .inspire-hero-copy{padding:23px 0 35px}
+ .inspire-hero h1{font-size:clamp(2.5rem,10vw,3.3rem)}
+ .inspire-hero p{font-size:1rem}
+ .inspire-actions{flex-direction:column}
+ .inspire-button{width:100%}
+ .inspire-section{padding:35px 0}
+ .inspire-section-tight{padding:21px 0}
+ .inspire-featured-image,.inspire-featured-image img{height:228px}
+ .inspire-featured h2{font-size:1.8rem}
+ .inspire-featured-actions{flex-direction:column;align-items:stretch}
+ .inspire-themes-grid,.inspire-recent-grid,.inspire-related-grid{grid-template-columns:1fr}
+ .inspire-theme>img{height:180px}
+ .inspire-theme-icon{top:160px}
+ .inspire-recent img{height:210px}
+ .inspire-bottom{padding:45px 0}
+ .inspire-article-hero{min-height:0}
+ .inspire-article-hero-image{inset:0 0 auto 0;height:245px}
+ .inspire-article-hero:before{background:linear-gradient(180deg,transparent 0,transparent 174px,#faf7f3 240px,#faf7f3 100%)}
+ .inspire-article-hero-layout{display:block;min-height:0;padding-top:230px}
+ .inspire-article-intro{padding:22px 0 33px}
+ .inspire-article-intro h1{font-size:clamp(2.05rem,8vw,3rem)}
+ .inspire-article-content{padding:27px 0}
+ .inspire-chapter h2{font-size:1.88rem}
+ .inspire-article-aside{display:block}
+ .inspire-article-cta .container{display:block;text-align:center}
+ .inspire-article-cta .inspire-button{margin-top:20px}
+ .inspire-related-card{grid-template-columns:40% 60%}
+ .inspire-related-card>div{padding:14px}
+}
+
+/* Títulos editoriales del diseño aprobado; el resto mantiene Manrope de Burdeo. */
+.inspire-hero h1,.inspire-featured h2,.inspire-theme-copy h3,.inspire-recent h3,.inspire-article-intro h1,.inspire-chapter h2,.inspire-related-card h3{
+  font-family:'Playfair Display',Georgia,serif!important;
+  font-weight:700!important;
+  letter-spacing:-.035em;
+}
+@media(max-width:640px){.inspire-hero h1,.inspire-article-intro h1{line-height:1.13}}
