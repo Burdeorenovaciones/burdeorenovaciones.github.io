@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Solicitud recibida | Burdeo Renovaciones</title>
+  <title>Continúa en WhatsApp | Burdeo Renovaciones</title>
   <meta name="robots" content="noindex, follow">
   <link rel="canonical" href="https://burdeorenovaciones.cl/gracias-cotizacion.html">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
@@ -39,12 +39,12 @@
 <body>
   <main class="card">
     <img class="logo" src="img/LOGO BURDEO.png" alt="Burdeo Renovaciones">
-    <div class="icon"><i class="fas fa-check"></i></div>
-    <h1>¡Gracias por tu solicitud!</h1>
-    <p id="mensaje">Recibimos los antecedentes de tu proyecto. Revisa la pestaña de WhatsApp que acabamos de abrir y envíanos el mensaje para continuar con la cotización.</p>
+    <div class="icon"><i class="fab fa-whatsapp"></i></div>
+    <h1>Finaliza tu consulta en WhatsApp</h1>
+    <p id="mensaje">Esta página no confirma el envío de una solicitud. Si ya preparaste tu cotización, vuelve al chat de WhatsApp y pulsa «Enviar». Solo entonces Burdeo podrá recibir tu mensaje.</p>
     <div class="actions">
       <a class="primary" href="https://wa.me/56967797864" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp"></i> Abrir WhatsApp</a>
-      <a class="secondary" href="/"><i class="fas fa-house"></i> Volver al inicio</a>
+      <a class="secondary" href="/cotizacion.html"><i class="fas fa-arrow-left"></i> Volver al formulario</a>
     </div>
     <div class="small">Burdeo Renovaciones · Diseño · fabricación · instalación</div>
   </main>
@@ -52,7 +52,7 @@
     const nombre = sessionStorage.getItem('burdeo_quote_name');
     if (nombre) {
       document.getElementById('mensaje').textContent =
-        'Gracias, ' + nombre + '. Recibimos los antecedentes de tu proyecto. Revisa la pestaña de WhatsApp que acabamos de abrir y envíanos el mensaje para continuar con la cotización.';
+        'Hola, ' + nombre + '. Esta página no confirma el envío de tu cotización. Revisa el chat de WhatsApp y pulsa «Enviar» para que Burdeo reciba tu mensaje.';
     }
   </script>
 </body>
