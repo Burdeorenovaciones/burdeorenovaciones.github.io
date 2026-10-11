@@ -2,17 +2,17 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://burdeorenovaciones.cl/</loc>
-    <lastmod>2026-10-10</lastmod>
+    <lastmod>2026-10-07</lastmod>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://burdeorenovaciones.cl/proyectos.html</loc>
-    <lastmod>2026-10-10</lastmod>
+    <lastmod>2026-10-07</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://burdeorenovaciones.cl/cocinas/index.html</loc>
-    <lastmod>2026-10-10</lastmod>
+    <lastmod>2026-10-07</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
@@ -92,7 +92,7 @@
   </url>
   <url>
     <loc>https://burdeorenovaciones.cl/remodelaciones-puerto-montt.html</loc>
-    <lastmod>2026-10-10</lastmod>
+    <lastmod>2026-10-07</lastmod>
     <priority>0.95</priority>
   </url>
   <url>
@@ -104,20 +104,5 @@
     <loc>https://burdeorenovaciones.cl/cotizacion.html</loc>
     <lastmod>2026-10-07</lastmod>
     <priority>0.95</priority>
-  </url>
-  <url>
-    <loc>https://burdeorenovaciones.cl/remodelaciones-osorno.html</loc>
-    <lastmod>2026-10-10</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://burdeorenovaciones.cl/cocinas-a-medida-puerto-varas.html</loc>
-    <lastmod>2026-10-10</lastmod>
-    <priority>0.85</priority>
-  </url>
-  <url>
-    <loc>https://burdeorenovaciones.cl/zonas-de-servicio.html</loc>
-    <lastmod>2026-10-10</lastmod>
-    <priority>0.8</priority>
   </url>
 </urlset>
