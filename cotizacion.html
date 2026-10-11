@@ -134,7 +134,16 @@
     .submit-btn:hover{background:var(--burdeo-oscuro);transform:translateY(-1px)}
     .security{display:flex;align-items:center;gap:9px;color:#77706c;font-size:.7rem;max-width:235px}
     .security i{font-size:1rem;color:var(--burdeo)}
-    .form-note{margin-top:12px;color:#8a817b;font-size:.7rem}
+    .form-note{margin-top:12px;color:#675f5a;font-size:.79rem;line-height:1.65}
+    .form-intro{font-size:.85rem;color:#6c625d;margin:-10px 0 24px;line-height:1.65}
+    .form-status{display:flex;gap:14px;align-items:flex-start;margin-top:20px;padding:18px;border-radius:12px;border:1px solid #ded5cd;background:#faf6f2}
+    .form-status[hidden]{display:none}
+    .form-status > i{font-size:1.5rem;color:var(--burdeo);margin-top:2px}
+    .form-status strong{display:block;color:#5a1b2a;font-size:.95rem}
+    .form-status p{margin:6px 0 10px;font-size:.81rem;color:#625a55;line-height:1.55}
+    .form-status a{font-size:.83rem;font-weight:700;color:var(--burdeo)}
+    .upload-note{font-size:.79rem;color:#625d59;margin-top:6px}
+    @media(max-width:640px){.submit-btn{width:100%;min-height:52px}.form-status{padding:16px}}
 
     .process{padding:52px 0;background:#fff}
     .section-heading h2{font-size:2.35rem;color:var(--burdeo);margin-bottom:6px}
@@ -459,26 +468,27 @@
       <div class="form-card">
         <div class="form-top">
           <h2>Completa el formulario</h2>
-          <span>Ideas · Madera · Hogar</span>
+          <span>Atención personalizada</span>
         </div>
 
+        <p class="form-intro">Completa los datos principales. Prepararemos un mensaje para WhatsApp que podrás revisar y enviar a Burdeo.</p>
         <form id="quoteForm" novalidate>
           <div class="fields">
             <div class="field">
               <label for="nombre">Nombre y apellido <span class="req">*</span></label>
-              <input id="nombre" name="nombre" type="text" autocomplete="name" placeholder="Ej. María Fernández" required>
+              <input id="nombre" name="nombre" type="text" autocomplete="name" placeholder="Ej. María Fernández" minlength="2" maxlength="90" required>
             </div>
             <div class="field">
               <label for="telefono">Teléfono / WhatsApp <span class="req">*</span></label>
-              <input id="telefono" name="telefono" type="tel" autocomplete="tel" inputmode="tel" placeholder="+56 9 1234 5678" required>
+              <input id="telefono" name="telefono" type="tel" autocomplete="tel" inputmode="tel" placeholder="+56 9 1234 5678" minlength="8" maxlength="24" required>
             </div>
             <div class="field">
-              <label for="email">Correo electrónico <span class="req">*</span></label>
-              <input id="email" name="email" type="email" autocomplete="email" placeholder="tucorreo@ejemplo.cl" required>
+              <label for="email">Correo electrónico <span style="font-weight:400">(opcional)</span></label>
+              <input id="email" name="email" type="email" autocomplete="email" maxlength="120" placeholder="tucorreo@ejemplo.cl">
             </div>
             <div class="field">
               <label for="ciudad">Ciudad o comuna <span class="req">*</span></label>
-              <input id="ciudad" name="ciudad" type="text" autocomplete="address-level2" placeholder="Ej. Puerto Montt" required>
+              <input id="ciudad" name="ciudad" type="text" autocomplete="address-level2" maxlength="100" placeholder="Ej. Puerto Montt, Osorno o Valdivia" required>
             </div>
             <div class="field">
               <label for="tipo">Tipo de proyecto <span class="req">*</span></label>
@@ -495,7 +505,7 @@
             </div>
             <div class="field">
               <label for="medidas">Medidas aproximadas</label>
-              <input id="medidas" name="medidas" type="text" placeholder="Ej. 3 m x 2,5 m o 12 m²">
+              <input id="medidas" name="medidas" type="text" maxlength="100" placeholder="Ej. 3 m x 2,5 m o 12 m²">
             </div>
             <div class="field full">
               <label for="presupuesto">Presupuesto estimado <span style="font-weight:400">(opcional)</span></label>
@@ -511,30 +521,36 @@
             </div>
             <div class="field full">
               <label for="mensaje">Cuéntanos sobre tu proyecto <span class="req">*</span></label>
-              <textarea id="mensaje" name="mensaje" maxlength="700" placeholder="Describe tu proyecto, materiales de interés, estilo, plazos u otra información que nos ayude a preparar una mejor propuesta." required></textarea>
+              <textarea id="mensaje" name="mensaje" minlength="10" maxlength="700" placeholder="Ej. Quiero renovar mi cocina en Osorno. Necesito muebles inferiores, cubierta y una isla. ¿Podemos coordinar una visita?" required></textarea>
             </div>
             <div class="field full">
-              <label for="archivos">Adjunta fotos o referencias <span style="font-weight:400">(opcional)</span></label>
-              <div class="upload">
-                <i class="far fa-images"></i>
-                <strong>Selecciona fotos o referencias</strong>
-                <small>Puedes seleccionar varias imágenes o PDF. Las podrás adjuntar al abrirse WhatsApp.</small>
-                <input id="archivos" name="archivos" type="file" accept="image/*,.pdf" multiple>
+              <div class="upload" role="note">
+                <i class="far fa-images" aria-hidden="true"></i>
+                <strong>¿Tienes fotos, planos o referencias?</strong>
+                <p class="upload-note">Podrás adjuntarlos directamente en el chat de WhatsApp. Esta página no carga archivos automáticamente.</p>
               </div>
             </div>
             <div class="field full">
               <label class="consent">
                 <input type="checkbox" id="consentimiento" required>
-                <span>Acepto que mis datos sean utilizados por Burdeo Renovaciones para contactarme y preparar una propuesta de cotización para mi proyecto.</span>
+                <span>Acepto que Burdeo Renovaciones utilice los datos que envíe por WhatsApp para responder a mi consulta y preparar una propuesta de cotización.</span>
               </label>
             </div>
           </div>
 
           <div class="form-actions">
-            <button class="submit-btn" type="submit"><i class="far fa-paper-plane"></i> Solicitar cotización <i class="fas fa-arrow-right"></i></button>
-            <div class="security"><i class="fas fa-shield-halved"></i><span>Tus datos se utilizan únicamente para gestionar tu solicitud de cotización.</span></div>
+            <button class="submit-btn" type="submit"><i class="fab fa-whatsapp" aria-hidden="true"></i> Continuar por WhatsApp <i class="fas fa-arrow-right" aria-hidden="true"></i></button>
+            <div class="security"><i class="fas fa-shield-halved"></i><span>La información solo se compartirá con Burdeo si envías el mensaje en WhatsApp.</span></div>
           </div>
-          <p class="form-note">Al enviar, abriremos WhatsApp con los datos de tu proyecto. Si seleccionaste archivos, adjúntalos directamente en el chat antes de enviarlo.</p>
+          <p class="form-note">Al continuar se abrirá WhatsApp con tu mensaje preparado. <strong>Tu solicitud no se enviará hasta que pulses «Enviar» dentro de WhatsApp.</strong></p>
+          <div id="envioEstado" class="form-status" role="status" aria-live="polite" hidden>
+            <i class="fab fa-whatsapp" aria-hidden="true"></i>
+            <div>
+              <strong>Un último paso: envía tu mensaje en WhatsApp</strong>
+              <p>Ya preparamos los antecedentes de tu proyecto. Revisa el chat de WhatsApp y pulsa «Enviar» para que Burdeo pueda recibirlos. Si tienes fotografías o planos, adjúntalos allí.</p>
+              <a id="abrirWhatsApp" href="https://wa.me/56967797864" target="_blank" rel="noopener noreferrer">Volver a abrir WhatsApp <i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+            </div>
+          </div>
         </form>
       </div>
     </div>
@@ -547,7 +563,7 @@
         <p>Un proceso simple para convertir tu idea en un proyecto concreto.</p>
       </div>
       <div class="process-grid">
-        <article class="step"><div class="step-num">1</div><h3>Cuéntanos tu idea</h3><p>Completa el formulario con los antecedentes principales de tu proyecto.</p></article>
+        <article class="step"><div class="step-num">1</div><h3>Cuéntanos tu idea</h3><p>Completa los datos principales y envíanos el mensaje preparado en WhatsApp.</p></article>
         <article class="step"><div class="step-num">2</div><h3>Analizamos tu proyecto</h3><p>Revisamos medidas, ubicación, alcance y referencias para contactarte.</p></article>
         <article class="step"><div class="step-num">3</div><h3>Te enviamos una propuesta</h3><p>Preparamos una solución a medida y definimos contigo los próximos pasos.</p></article>
         <article class="step"><div class="step-num">4</div><h3>Lo hacemos realidad</h3><p>Fabricamos e instalamos con foco en calidad, funcionalidad y terminaciones.</p></article>
@@ -625,6 +641,14 @@
   }
 
   const form = document.getElementById('quoteForm');
+  const envioEstado = document.getElementById('envioEstado');
+  const abrirWhatsApp = document.getElementById('abrirWhatsApp');
+
+  // Restablece los avisos de validación al editar un campo.
+  form.querySelectorAll('input, textarea').forEach((campo) => {
+    campo.addEventListener('input', () => campo.setCustomValidity(''));
+  });
+
   form.addEventListener('submit', function (e) {
     e.preventDefault();
 
@@ -633,11 +657,6 @@
       return;
     }
 
-    const archivos = Array.from(document.getElementById('archivos').files || []);
-    const archivosTexto = archivos.length
-      ? archivos.map(f => f.name).join(', ')
-      : 'Sin archivos seleccionados';
-
     const datos = {
       nombre: document.getElementById('nombre').value.trim(),
       telefono: document.getElementById('telefono').value.trim(),
@@ -645,38 +664,55 @@
       ciudad: document.getElementById('ciudad').value.trim(),
       tipo: document.getElementById('tipo').value,
       medidas: document.getElementById('medidas').value.trim() || 'No indicadas',
-      presupuesto: document.getElementById('presupuesto').value || 'No indicado',
+      presupuesto: document.getElementById('presupuesto').value || 'Por definir',
       mensaje: document.getElementById('mensaje').value.trim()
     };
 
+    // El validador HTML admite espacios; revisar también texto realmente ingresado.
+    const camposObligatorios = ['nombre', 'telefono', 'ciudad', 'mensaje'];
+    for (const id of camposObligatorios) {
+      const campo = document.getElementById(id);
+      if (!campo.value.trim()) {
+        campo.setCustomValidity('Completa este campo con información válida.');
+        campo.reportValidity();
+        return;
+      }
+    }
+
     const texto = [
-      'Hola Burdeo Renovaciones, quiero solicitar una cotización:',
+      'Hola, Burdeo Renovaciones. Quiero solicitar una cotización:',
       '',
-      'Proyecto: ' + datos.tipo,
+      'Tipo de proyecto: ' + datos.tipo,
       'Nombre: ' + datos.nombre,
-      'Teléfono: ' + datos.telefono,
-      'Correo: ' + datos.email,
+      'WhatsApp: ' + datos.telefono,
+      datos.email ? 'Correo: ' + datos.email : '',
       'Ciudad/comuna: ' + datos.ciudad,
       'Medidas aproximadas: ' + datos.medidas,
       'Presupuesto estimado: ' + datos.presupuesto,
       '',
-      'Detalle:',
-      datos.mensaje,
-      '',
-      'Archivos seleccionados: ' + archivosTexto,
-      archivos.length ? 'Los adjuntaré manualmente en este chat.' : ''
+      'Detalles del proyecto:',
+      datos.mensaje
     ].filter(Boolean).join('\n');
 
-    sessionStorage.setItem('burdeo_quote_name', datos.nombre);
     const whatsappUrl = 'https://wa.me/56967797864?text=' + encodeURIComponent(texto);
+    abrirWhatsApp.href = whatsappUrl;
+    envioEstado.hidden = false;
 
-    const chat = window.open('about:blank', '_blank');
-    if (chat) {
-      chat.location.href = whatsappUrl;
-      setTimeout(() => { window.location.href = 'gracias-cotizacion.html'; }, 450);
-    } else {
-      window.location.href = whatsappUrl;
+    // Este evento solo mide intención de contactar, NO una cotización recibida.
+    // Evitar nombres, teléfonos, correos o texto libre en Google Analytics.
+    if (typeof gtag === 'function') {
+      gtag('event', 'quote_whatsapp_intent', {
+        form_name: 'cotizacion_burdeo',
+        project_type: datos.tipo
+      });
     }
+
+    const chat = window.open(whatsappUrl, '_blank');
+    if (chat) {
+      chat.opener = null;
+    }
+    // Si el navegador bloquea la apertura, el enlace visible permite reintentar.
+    envioEstado.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
   });
 </script>
 </body>
