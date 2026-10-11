@@ -644,6 +644,11 @@
   const envioEstado = document.getElementById('envioEstado');
   const abrirWhatsApp = document.getElementById('abrirWhatsApp');
 
+  // Restablece los avisos de validación al editar un campo.
+  form.querySelectorAll('input, textarea').forEach((campo) => {
+    campo.addEventListener('input', () => campo.setCustomValidity(''));
+  });
+
   form.addEventListener('submit', function (e) {
     e.preventDefault();
 
@@ -663,9 +668,15 @@
       mensaje: document.getElementById('mensaje').value.trim()
     };
 
-    if (!datos.nombre || !datos.telefono || !datos.ciudad || !datos.tipo || !datos.mensaje) {
-      form.reportValidity();
-      return;
+    // El validador HTML admite espacios; revisar también texto realmente ingresado.
+    const camposObligatorios = ['nombre', 'telefono', 'ciudad', 'mensaje'];
+    for (const id of camposObligatorios) {
+      const campo = document.getElementById(id);
+      if (!campo.value.trim()) {
+        campo.setCustomValidity('Completa este campo con información válida.');
+        campo.reportValidity();
+        return;
+      }
     }
 
     const texto = [
@@ -681,7 +692,7 @@
       '',
       'Detalles del proyecto:',
       datos.mensaje
-    ].filter(Boolean).join('\\n');
+    ].filter(Boolean).join('\n');
 
     const whatsappUrl = 'https://wa.me/56967797864?text=' + encodeURIComponent(texto);
     abrirWhatsApp.href = whatsappUrl;
