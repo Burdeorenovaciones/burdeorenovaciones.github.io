@@ -145,3 +145,11 @@
  .inspire-related-card{grid-template-columns:40% 60%}
  .inspire-related-card>div{padding:14px}
 }
+
+/* Títulos editoriales del diseño aprobado; el resto mantiene Manrope de Burdeo. */
+.inspire-hero h1,.inspire-featured h2,.inspire-theme-copy h3,.inspire-recent h3,.inspire-article-intro h1,.inspire-chapter h2,.inspire-related-card h3{
+  font-family:'Playfair Display',Georgia,serif!important;
+  font-weight:700!important;
+  letter-spacing:-.035em;
+}
+@media(max-width:640px){.inspire-hero h1,.inspire-article-intro h1{line-height:1.13}}
