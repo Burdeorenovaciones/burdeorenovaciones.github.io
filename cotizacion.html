@@ -134,7 +134,15 @@
     .submit-btn:hover{background:var(--burdeo-oscuro);transform:translateY(-1px)}
     .security{display:flex;align-items:center;gap:9px;color:#77706c;font-size:.7rem;max-width:235px}
     .security i{font-size:1rem;color:var(--burdeo)}
-    .form-note{margin-top:12px;color:#8a817b;font-size:.7rem}
+    .form-note{margin-top:12px;color:#736c68;font-size:.78rem;line-height:1.65}
+    .whatsapp-next{display:flex;gap:15px;align-items:flex-start;padding:19px;margin-top:20px;background:#faf6f2;border:1px solid #e8dcd4;border-radius:11px}
+    .whatsapp-next[hidden]{display:none}
+    .whatsapp-next>i{color:var(--burdeo);font-size:1.65rem;line-height:1.1}
+    .whatsapp-next strong{font-size:.9rem;color:var(--burdeo)}
+    .whatsapp-next p{font-size:.82rem;color:#59524f;line-height:1.65;margin:7px 0}
+    .whatsapp-next a{color:var(--burdeo);font-size:.84rem;font-weight:700;text-decoration:underline;text-underline-offset:3px}
+    .upload-instructions{font-size:.86rem;color:#554f4b;line-height:1.6}
+    @media(max-width:640px){.form-actions .submit-btn{width:100%;justify-content:center}}
 
     .process{padding:52px 0;background:#fff}
     .section-heading h2{font-size:2.35rem;color:var(--burdeo);margin-bottom:6px}
@@ -514,12 +522,10 @@
               <textarea id="mensaje" name="mensaje" maxlength="700" placeholder="Describe tu proyecto, materiales de interés, estilo, plazos u otra información que nos ayude a preparar una mejor propuesta." required></textarea>
             </div>
             <div class="field full">
-              <label for="archivos">Adjunta fotos o referencias <span style="font-weight:400">(opcional)</span></label>
-              <div class="upload">
-                <i class="far fa-images"></i>
-                <strong>Selecciona fotos o referencias</strong>
-                <small>Puedes seleccionar varias imágenes o PDF. Las podrás adjuntar al abrirse WhatsApp.</small>
-                <input id="archivos" name="archivos" type="file" accept="image/*,.pdf" multiple>
+              <div class="upload" role="note">
+                <i class="far fa-images" aria-hidden="true"></i>
+                <strong>¿Tienes fotos, planos o referencias?</strong>
+                <p class="upload-instructions">Después de abrir WhatsApp, adjúntalos allí antes de enviar tu mensaje. Este formulario no carga archivos.</p>
               </div>
             </div>
             <div class="field full">
@@ -531,10 +537,18 @@
           </div>
 
           <div class="form-actions">
-            <button class="submit-btn" type="submit"><i class="far fa-paper-plane"></i> Solicitar cotización <i class="fas fa-arrow-right"></i></button>
-            <div class="security"><i class="fas fa-shield-halved"></i><span>Tus datos se utilizan únicamente para gestionar tu solicitud de cotización.</span></div>
+            <button class="submit-btn" type="submit"><i class="fab fa-whatsapp" aria-hidden="true"></i> Continuar por WhatsApp <i class="fas fa-arrow-right" aria-hidden="true"></i></button>
+            <div class="security"><i class="fas fa-shield-halved"></i><span>Los datos se compartirán con Burdeo cuando envíes el mensaje por WhatsApp.</span></div>
           </div>
-          <p class="form-note">Al enviar, abriremos WhatsApp con los datos de tu proyecto. Si seleccionaste archivos, adjúntalos directamente en el chat antes de enviarlo.</p>
+          <p class="form-note">Prepararemos un mensaje para WhatsApp. <strong>Tu solicitud solo llegará a Burdeo cuando pulses «Enviar» dentro del chat.</strong></p>
+          <div id="whatsappPasoFinal" class="whatsapp-next" role="status" aria-live="polite" hidden>
+            <i class="fab fa-whatsapp" aria-hidden="true"></i>
+            <div>
+              <strong>Un último paso: envía tu mensaje en WhatsApp</strong>
+              <p>Ya preparamos tu mensaje. Revisa el chat que se abrió, adjunta tus fotografías si las tienes y pulsa «Enviar». Si cerraste WhatsApp, puedes volver a abrirlo aquí.</p>
+              <a id="reabrirWhatsapp" href="https://wa.me/56967797864" target="_blank" rel="noopener noreferrer">Abrir nuevamente WhatsApp <i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+            </div>
+          </div>
         </form>
       </div>
     </div>
@@ -625,18 +639,31 @@
   }
 
   const form = document.getElementById('quoteForm');
+  const pasoFinal = document.getElementById('whatsappPasoFinal');
+  const reabrirWhatsapp = document.getElementById('reabrirWhatsapp');
+
+  // La web solo prepara el mensaje; WhatsApp controla el envío efectivo.
+  form.querySelectorAll('input, textarea').forEach(campo => {
+    campo.addEventListener('input', () => campo.setCustomValidity(''));
+  });
+
   form.addEventListener('submit', function (e) {
     e.preventDefault();
+    pasoFinal.hidden = true;
 
     if (!form.checkValidity()) {
       form.reportValidity();
       return;
     }
-
-    const archivos = Array.from(document.getElementById('archivos').files || []);
-    const archivosTexto = archivos.length
-      ? archivos.map(f => f.name).join(', ')
-      : 'Sin archivos seleccionados';
+    // No considerar como información válida un campo obligatorio lleno de espacios.
+    for (const id of ['nombre', 'telefono', 'ciudad', 'mensaje']) {
+      const campo = document.getElementById(id);
+      if (!campo.value.trim()) {
+        campo.setCustomValidity('Completa este campo con información válida.');
+        campo.reportValidity();
+        return;
+      }
+    }
 
     const datos = {
       nombre: document.getElementById('nombre').value.trim(),
@@ -661,22 +688,26 @@
       'Presupuesto estimado: ' + datos.presupuesto,
       '',
       'Detalle:',
-      datos.mensaje,
-      '',
-      'Archivos seleccionados: ' + archivosTexto,
-      archivos.length ? 'Los adjuntaré manualmente en este chat.' : ''
+      datos.mensaje
     ].filter(Boolean).join('\n');
 
-    sessionStorage.setItem('burdeo_quote_name', datos.nombre);
     const whatsappUrl = 'https://wa.me/56967797864?text=' + encodeURIComponent(texto);
+    reabrirWhatsapp.href = whatsappUrl;
+    pasoFinal.hidden = false;
 
-    const chat = window.open('about:blank', '_blank');
-    if (chat) {
-      chat.location.href = whatsappUrl;
-      setTimeout(() => { window.location.href = 'gracias-cotizacion.html'; }, 450);
-    } else {
-      window.location.href = whatsappUrl;
+    // Intención de contacto, NO una cotización recibida.
+    // Nunca enviar nombres, teléfonos, correos ni mensajes a Analytics.
+    if (typeof gtag === 'function') {
+      gtag('event', 'quote_whatsapp_intent', {
+        form_name: 'cotizacion_burdeo',
+        project_type: datos.tipo
+      });
     }
+
+    const chat = window.open(whatsappUrl, '_blank');
+    if (chat) chat.opener = null;
+    // Si el navegador bloquea las pestañas nuevas, el enlace queda disponible.
+    pasoFinal.scrollIntoView({behavior:'smooth', block:'nearest'});
   });
 </script>
 </body>
