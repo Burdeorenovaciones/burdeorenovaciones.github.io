@@ -817,41 +817,232 @@
         }
         /* ------------------------------------------------ */
 
-        /* OPINIONES GOOGLE */
-        .reviews-section { background: var(--blanco); text-align: center; }
-        .google-badge {
-            display: inline-flex; align-items: center; gap: 10px;
-            background: #fff; padding: 10px 20px; 
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1); border-radius: 50px; margin-bottom: 40px;
-            text-decoration: none; color: #333; transition: .25s;
-        }
-        .google-badge:hover { transform: translateY(-2px); box-shadow: 0 6px 18px rgba(0,0,0,.12); }
-        .google-actions { display:flex; gap:12px; flex-wrap:wrap; justify-content:center; margin-top:18px; }
-        .google-action {
-            display:inline-flex; align-items:center; justify-content:center; gap:8px;
-            padding:10px 16px; border-radius:999px; text-decoration:none; font-weight:600; font-size:.9rem;
-            border:1px solid #ddd; color:#333; background:#fff; transition:.25s;
-        }
-        .google-action:hover { border-color:var(--burdeo); color:var(--burdeo); transform:translateY(-1px); }
-        .google-action.primary { background:var(--burdeo); color:#fff; border-color:var(--burdeo); }
-        .review-source { position:absolute; top:28px; right:28px; color:#bbb; font-size:1.1rem; }
-        .review-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
-        
-        .google-card {
-            background: #fff;
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        /* OPINIONES DE GOOGLE · TESTIMONIO REAL */
+        .reviews-section {
+            background: linear-gradient(180deg, #fff 0%, #faf7f7 100%);
             text-align: left;
-            position: relative;
-            border: 1px solid #eee;
         }
-        .reviewer-header { display: flex; align-items: center; gap: 15px; margin-bottom: 15px; }
+        .reviews-section .container { max-width: 1200px; }
+        .reviews-intro {
+            max-width: 760px;
+            margin: 0 auto 34px;
+            text-align: center;
+        }
+        .reviews-eyebrow {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 12px;
+            color: var(--burdeo);
+            font-size: .78rem;
+            font-weight: 700;
+            letter-spacing: .11em;
+            text-transform: uppercase;
+        }
+        .reviews-intro h2 {
+            font-size: clamp(2rem, 3vw, 2.8rem);
+            line-height: 1.15;
+            color: #292326;
+            margin: 0 0 14px;
+        }
+        .reviews-intro h2 span { color: var(--burdeo); }
+        .reviews-intro p {
+            color: #605b5d;
+            font-size: 1rem;
+            line-height: 1.7;
+            margin: 0;
+        }
+        .reviews-layout {
+            display: grid;
+            grid-template-columns: minmax(0, 1.6fr) minmax(270px, .9fr);
+            gap: 22px;
+            align-items: stretch;
+        }
+        .google-review-card,
+        .reviews-more {
+            border: 1px solid #eee5e8;
+            border-radius: 20px;
+            background: #fff;
+            box-shadow: 0 12px 35px rgba(48, 22, 28, .055);
+        }
+        .google-review-card { padding: clamp(24px, 3vw, 38px); }
+        .google-review-top {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+        .reviewer-header { display: flex; align-items: center; gap: 12px; }
         .reviewer-avatar {
-            width: 45px; height: 45px; background: #800020; color: white;
-            border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold;
+            width: 50px;
+            height: 50px;
+            flex: 0 0 50px;
+            display: grid;
+            place-items: center;
+            border-radius: 50%;
+            background: #e9750a;
+            color: #fff;
+            font-weight: 700;
+            font-size: 1.3rem;
         }
-        .stars { color: var(--dorado-google); font-size: 14px; margin-top: 5px; }
+        .reviewer-name { font-size: 1.05rem; font-weight: 700; color: #282326; }
+        .reviewer-meta { display: block; margin-top: 3px; color: #756f71; font-size: .8rem; }
+        .google-review-origin {
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+            text-decoration: none;
+            color: #5a5557;
+            font-size: .82rem;
+            font-weight: 600;
+        }
+        .google-review-origin i { color: #4285f4; font-size: 1.1rem; }
+        .google-review-origin:hover { color: var(--burdeo); }
+        .review-stars {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            margin-bottom: 20px;
+            color: #e9a719;
+            font-size: 1.15rem;
+        }
+        .google-review-card blockquote {
+            margin: 0;
+            padding: 0;
+            border: 0;
+            color: #393336;
+            font-size: clamp(1rem, 1.25vw, 1.15rem);
+            line-height: 1.85;
+            font-style: normal;
+        }
+        .reviews-list { display: grid; grid-template-columns: 1fr; gap: 20px; }
+        .google-review-card--compact {
+            padding: clamp(23px, 2.5vw, 30px);
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        .google-review-card--compact .google-review-top { margin-bottom: 0; }
+        .google-review-card--compact .reviewer-avatar { background: #800020; }
+        .review-brief {
+            margin: 0;
+            color: #635d61;
+            font-size: .94rem;
+            line-height: 1.7;
+        }
+        .review-direct-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            width: fit-content;
+            padding: 10px 15px;
+            border: 1px solid #e3d5db;
+            border-radius: 999px;
+            color: var(--burdeo);
+            background: #fff;
+            text-decoration: none;
+            font-size: .85rem;
+            font-weight: 700;
+        }
+        .review-direct-link:hover { border-color: var(--burdeo); background: #fff4f6; }
+        .review-direct-link:focus-visible { outline: 3px solid var(--burdeo); outline-offset: 3px; }
+        .review-card-footer {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 24px;
+            padding-top: 19px;
+            border-top: 1px solid #f0e9eb;
+            color: var(--burdeo);
+            font-size: .83rem;
+            font-weight: 650;
+        }
+        .review-card-footer i { margin-right: 5px; }
+        .reviews-more {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            padding: clamp(24px, 3vw, 38px);
+            background: #fbf7f8;
+        }
+        .reviews-more-icon {
+            display: grid;
+            place-items: center;
+            width: 54px;
+            height: 54px;
+            border-radius: 16px;
+            background: #fff;
+            color: #4285f4;
+            box-shadow: 0 4px 15px rgba(0,0,0,.055);
+            font-size: 1.45rem;
+            margin-bottom: 22px;
+        }
+        .reviews-more h3 {
+            font-size: 1.45rem;
+            color: #2c2529;
+            margin: 0 0 11px;
+        }
+        .reviews-more p {
+            margin: 0;
+            color: #635d61;
+            line-height: 1.7;
+            font-size: .94rem;
+        }
+        .google-actions {
+            display: flex;
+            flex-direction: column;
+            align-items: stretch;
+            gap: 12px;
+            width: 100%;
+            margin-top: auto;
+            padding-top: 26px;
+        }
+        .google-action {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 9px;
+            min-height: 48px;
+            padding: 12px 16px;
+            border-radius: 999px;
+            border: 1px solid #d8cbd0;
+            text-decoration: none;
+            text-align: center;
+            color: var(--burdeo);
+            background: #fff;
+            font-size: .86rem;
+            font-weight: 700;
+            line-height: 1.4;
+            transition: transform .2s, background .2s, border-color .2s;
+        }
+        .google-action:hover {
+            transform: translateY(-2px);
+            border-color: var(--burdeo);
+            background: #fff5f7;
+        }
+        .google-action.primary { color: #fff; background: var(--burdeo); border-color: var(--burdeo); }
+        .google-action.primary:hover { background: #64001a; }
+        .google-action:focus-visible,
+        .google-review-origin:focus-visible { outline: 3px solid var(--burdeo); outline-offset: 3px; }
+        @media (max-width: 800px) {
+            .reviews-layout { grid-template-columns: 1fr; }
+            .reviews-more { min-height: auto; }
+            .google-actions { flex-direction: row; flex-wrap: wrap; }
+            .google-action { flex: 1 1 210px; }
+        }
+        @media (max-width: 500px) {
+            .reviews-intro h2 { font-size: 1.85rem; }
+            .google-review-top { align-items: flex-start; }
+            .google-review-card blockquote { line-height: 1.7; }
+            .google-actions { flex-direction: column; }
+        }
+        @media (prefers-reduced-motion: reduce) {
+            .google-action { transition: none; }
+        }
 
         /* FOOTER */
         footer { background: var(--negro); color: #aaa; padding: 60px 0; font-size: 0.9rem; }
@@ -1169,25 +1360,81 @@
       </div>
     </section>
 
-    <section id="reviews" class="section-padding reviews-section">
+    <section id="reviews" class="section-padding reviews-section" aria-labelledby="google-reviews-title">
         <div class="container">
-            <h2 style="margin-bottom: 10px;">Opiniones en Google</h2>
-            <p style="max-width:680px; margin:0 auto 24px; color:#666;">
-                Por ahora no mostramos reseñas en esta página. Cuando tengamos opiniones reales y verificadas, las incorporaremos aquí.
-            </p>
+            <div class="reviews-intro">
+                <span class="reviews-eyebrow"><i class="fab fa-google" aria-hidden="true"></i> Opiniones en Google Maps</span>
+                <h2 id="google-reviews-title">Lo que dicen nuestros <span>clientes</span></h2>
+                <p>Conoce las experiencias compartidas por nuestros clientes en Google Maps.</p>
+            </div>
 
-            <a class="google-badge" href="https://www.google.com/maps/place/Burdeo+Renovaciones+%E2%80%93+Muebles+a+Medida+en+Puerto+Montt/@-41.5925906,-74.0336526,9z/data=!3m1!4b1!4m6!3m5!1s0x402c617e9bb3dc97:0x7965a3e5809cf177!8m2!3d-41.5944828!4d-73.3727882!16s%2Fg%2F11x7brd85y?entry=ttu" target="_blank" rel="noopener noreferrer" aria-label="Ver perfil de Burdeo Renovaciones en Google">
-                <i class="fab fa-google" style="color:#4285F4;" aria-hidden="true"></i>
-                <span>Ver Burdeo Renovaciones en Google</span>
-            </a>
+            <div class="reviews-layout">
+                <div class="reviews-list">
+                <article class="google-review-card" aria-label="Reseña de Elena Alvarado, 5 de 5 estrellas">
+                    <div class="google-review-top">
+                        <div class="reviewer-header">
+                            <span class="reviewer-avatar" aria-hidden="true">E</span>
+                            <div>
+                                <div class="reviewer-name">Elena Alvarado</div>
+                                <span class="reviewer-meta">Opinión publicada en Google Maps</span>
+                            </div>
+                        </div>
+                        <a class="google-review-origin" href="https://maps.app.goo.gl/9MahgpfBZrBs1y636" target="_blank" rel="noopener noreferrer" aria-label="Abrir la reseña de Elena Alvarado en Google Maps">
+                            <i class="fab fa-google" aria-hidden="true"></i> Google Maps <i class="fas fa-external-link-alt" aria-hidden="true"></i>
+                        </a>
+                    </div>
 
-            <div class="google-actions">
-                <a class="google-action" href="https://www.google.com/maps/place/Burdeo+Renovaciones+%E2%80%93+Muebles+a+Medida+en+Puerto+Montt/@-41.5925906,-74.0336526,9z/data=!3m1!4b1!4m6!3m5!1s0x402c617e9bb3dc97:0x7965a3e5809cf177!8m2!3d-41.5944828!4d-73.3727882!16s%2Fg%2F11x7brd85y?entry=ttu" target="_blank" rel="noopener noreferrer">
-                    <i class="fas fa-map-marker-alt" aria-hidden="true"></i> Ver perfil
-                </a>
-                <a class="google-action primary" href="https://share.google/bnlRzMr2lj7M7mQ1v" target="_blank" rel="noopener noreferrer">
-                    <i class="fas fa-star" aria-hidden="true"></i> Escribir una reseña
-                </a>
+                    <div class="review-stars" role="img" aria-label="Calificación: 5 de 5 estrellas">
+                        <i class="fas fa-star" aria-hidden="true"></i>
+                        <i class="fas fa-star" aria-hidden="true"></i>
+                        <i class="fas fa-star" aria-hidden="true"></i>
+                        <i class="fas fa-star" aria-hidden="true"></i>
+                        <i class="fas fa-star" aria-hidden="true"></i>
+                    </div>
+
+                    <blockquote>¡Excelente experiencia con Burdeo Renovaciones! Hicieron la remodelación del baño de mi casa y el resultado superó mis expectativas: el diseño y la calidad de los materiales son de otro nivel. Hoy es el espacio más lindo de la casa y, sin pensarlo, a futuro seguiremos trabajando con ellos. ¡100% recomendados!</blockquote>
+
+                    <div class="review-card-footer">
+                        <span><i class="fas fa-bath" aria-hidden="true"></i> Proyecto: remodelación de baño</span>
+                        <a class="review-direct-link" href="https://maps.app.goo.gl/9MahgpfBZrBs1y636" target="_blank" rel="noopener noreferrer">
+                            Ver reseña original <i class="fas fa-external-link-alt" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </article>
+
+                <article class="google-review-card google-review-card--compact" aria-label="Opinión de Carla en Google Maps">
+                    <div class="google-review-top">
+                        <div class="reviewer-header">
+                            <span class="reviewer-avatar" aria-hidden="true">C</span>
+                            <div>
+                                <div class="reviewer-name">Carla</div>
+                                <span class="reviewer-meta">Opinión en Google Maps</span>
+                            </div>
+                        </div>
+                        <a class="google-review-origin" href="https://maps.app.goo.gl/m8i82BL9WyuMaaew5" target="_blank" rel="noopener noreferrer" aria-label="Abrir la opinión de Carla en Google Maps">
+                            <i class="fab fa-google" aria-hidden="true"></i> Google Maps <i class="fas fa-external-link-alt" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                    <p class="review-brief">También puedes conocer la experiencia de Carla directamente en Google Maps.</p>
+                    <a class="review-direct-link" href="https://maps.app.goo.gl/m8i82BL9WyuMaaew5" target="_blank" rel="noopener noreferrer">
+                        Leer opinión de Carla <i class="fas fa-external-link-alt" aria-hidden="true"></i>
+                    </a>
+                </article>
+                </div>
+
+                <aside class="reviews-more" aria-label="Ver más reseñas y compartir tu experiencia">
+                    <span class="reviews-more-icon"><i class="fab fa-google" aria-hidden="true"></i></span>
+                    <h3>Más experiencias en Google Maps</h3>
+                    <p>Revisa otras opiniones de nuestros clientes directamente en el perfil oficial de Burdeo Renovaciones o comparte tu experiencia con nosotros.</p>
+                    <div class="google-actions">
+                        <a class="google-action primary" href="https://www.google.com/maps/place/Burdeo+Renovaciones+%E2%80%93+Muebles+a+Medida+en+Puerto+Montt/@-41.5925906,-74.0336526,9z/data=!3m1!4b1!4m6!3m5!1s0x402c617e9bb3dc97:0x7965a3e5809cf177!8m2!3d-41.5944828!4d-73.3727882!16s%2Fg%2F11x7brd85y?entry=ttu" target="_blank" rel="noopener noreferrer">
+                            <i class="fas fa-map-marker-alt" aria-hidden="true"></i> Ver todas las opiniones
+                        </a>
+                        <a class="google-action" href="https://share.google/bnlRzMr2lj7M7mQ1v" target="_blank" rel="noopener noreferrer">
+                            <i class="fas fa-star" aria-hidden="true"></i> Escribir una reseña
+                        </a>
+                    </div>
+                </aside>
             </div>
         </div>
     </section>
