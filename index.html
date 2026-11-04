@@ -918,6 +918,37 @@
             line-height: 1.85;
             font-style: normal;
         }
+        .reviews-list { display: grid; grid-template-columns: 1fr; gap: 20px; }
+        .google-review-card--compact {
+            padding: clamp(23px, 2.5vw, 30px);
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        .google-review-card--compact .google-review-top { margin-bottom: 0; }
+        .google-review-card--compact .reviewer-avatar { background: #800020; }
+        .review-brief {
+            margin: 0;
+            color: #635d61;
+            font-size: .94rem;
+            line-height: 1.7;
+        }
+        .review-direct-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            width: fit-content;
+            padding: 10px 15px;
+            border: 1px solid #e3d5db;
+            border-radius: 999px;
+            color: var(--burdeo);
+            background: #fff;
+            text-decoration: none;
+            font-size: .85rem;
+            font-weight: 700;
+        }
+        .review-direct-link:hover { border-color: var(--burdeo); background: #fff4f6; }
+        .review-direct-link:focus-visible { outline: 3px solid var(--burdeo); outline-offset: 3px; }
         .review-card-footer {
             display: flex;
             align-items: center;
@@ -1334,10 +1365,11 @@
             <div class="reviews-intro">
                 <span class="reviews-eyebrow"><i class="fab fa-google" aria-hidden="true"></i> Opiniones en Google Maps</span>
                 <h2 id="google-reviews-title">Lo que dicen nuestros <span>clientes</span></h2>
-                <p>Conoce una de las experiencias compartidas por nuestros clientes en Google Maps.</p>
+                <p>Conoce las experiencias compartidas por nuestros clientes en Google Maps.</p>
             </div>
 
             <div class="reviews-layout">
+                <div class="reviews-list">
                 <article class="google-review-card" aria-label="Reseña de Elena Alvarado, 5 de 5 estrellas">
                     <div class="google-review-top">
                         <div class="reviewer-header">
@@ -1347,7 +1379,7 @@
                                 <span class="reviewer-meta">Opinión publicada en Google Maps</span>
                             </div>
                         </div>
-                        <a class="google-review-origin" href="https://www.google.com/maps/place/Burdeo+Renovaciones+%E2%80%93+Muebles+a+Medida+en+Puerto+Montt/@-41.5925906,-74.0336526,9z/data=!3m1!4b1!4m6!3m5!1s0x402c617e9bb3dc97:0x7965a3e5809cf177!8m2!3d-41.5944828!4d-73.3727882!16s%2Fg%2F11x7brd85y?entry=ttu" target="_blank" rel="noopener noreferrer" aria-label="Ver el perfil de Burdeo Renovaciones en Google Maps">
+                        <a class="google-review-origin" href="https://maps.app.goo.gl/9MahgpfBZrBs1y636" target="_blank" rel="noopener noreferrer" aria-label="Abrir la reseña de Elena Alvarado en Google Maps">
                             <i class="fab fa-google" aria-hidden="true"></i> Google Maps <i class="fas fa-external-link-alt" aria-hidden="true"></i>
                         </a>
                     </div>
@@ -1364,8 +1396,31 @@
 
                     <div class="review-card-footer">
                         <span><i class="fas fa-bath" aria-hidden="true"></i> Proyecto: remodelación de baño</span>
+                        <a class="review-direct-link" href="https://maps.app.goo.gl/9MahgpfBZrBs1y636" target="_blank" rel="noopener noreferrer">
+                            Ver reseña original <i class="fas fa-external-link-alt" aria-hidden="true"></i>
+                        </a>
                     </div>
                 </article>
+
+                <article class="google-review-card google-review-card--compact" aria-label="Opinión de Carla en Google Maps">
+                    <div class="google-review-top">
+                        <div class="reviewer-header">
+                            <span class="reviewer-avatar" aria-hidden="true">C</span>
+                            <div>
+                                <div class="reviewer-name">Carla</div>
+                                <span class="reviewer-meta">Opinión en Google Maps</span>
+                            </div>
+                        </div>
+                        <a class="google-review-origin" href="https://maps.app.goo.gl/m8i82BL9WyuMaaew5" target="_blank" rel="noopener noreferrer" aria-label="Abrir la opinión de Carla en Google Maps">
+                            <i class="fab fa-google" aria-hidden="true"></i> Google Maps <i class="fas fa-external-link-alt" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                    <p class="review-brief">También puedes conocer la experiencia de Carla directamente en Google Maps.</p>
+                    <a class="review-direct-link" href="https://maps.app.goo.gl/m8i82BL9WyuMaaew5" target="_blank" rel="noopener noreferrer">
+                        Leer opinión de Carla <i class="fas fa-external-link-alt" aria-hidden="true"></i>
+                    </a>
+                </article>
+                </div>
 
                 <aside class="reviews-more" aria-label="Ver más reseñas y compartir tu experiencia">
                     <span class="reviews-more-icon"><i class="fab fa-google" aria-hidden="true"></i></span>
