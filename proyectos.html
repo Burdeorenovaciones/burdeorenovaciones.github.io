@@ -226,125 +226,17 @@
     /* PORTAFOLIO BURDEO — sección principal */
     main.container {
       max-width: 1320px;
-      padding-top: 0;
+      padding-top: 30px;
     }
 
-    .portfolio-intro {
-      min-height: 430px;
-      margin: 34px 0 24px;
-      display: grid;
-      grid-template-columns: 1.08fr .92fr;
-      background: #fbfaf8;
-      border: 1px solid #f0ece8;
-      border-radius: 26px;
-      overflow: hidden;
-      box-shadow: 0 16px 50px rgba(25,18,14,.06);
-    }
-
-    .portfolio-copy {
-      padding: 54px 58px 46px;
-      align-self: center;
-      position: relative;
-      z-index: 2;
-    }
-
-    .portfolio-eyebrow {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      margin-bottom: 22px;
-      color: var(--burdeo);
-      font-family: var(--font-body, 'Manrope', sans-serif);
-      font-size: .78rem;
-      font-weight: 800;
-      text-transform: uppercase;
-      letter-spacing: .11em;
-    }
-
-    .portfolio-eyebrow span {
-      display: inline-block;
-      width: 48px;
-      height: 2px;
-      background: var(--burdeo);
-    }
-
-    .portfolio-intro h1 {
-      margin: 0 0 20px;
-      max-width: 650px;
-      font-family: var(--font-heading, 'Manrope', sans-serif) !important;
-      font-size: clamp(2.65rem, 4vw, 4.25rem);
-      font-weight: 800 !important;
-      line-height: 1.02;
-      letter-spacing: -.045em;
+    .portfolio-heading {
+      margin: 0 0 24px;
       color: var(--negro);
-      text-align: left;
-    }
-
-    .portfolio-lead {
-      max-width: 650px;
-      margin: 0;
-      color: #625e5b;
-      font-size: 1rem;
-      line-height: 1.72;
-    }
-
-    .portfolio-actions {
-      display: flex;
-      gap: 14px;
-      flex-wrap: wrap;
-      margin-top: 27px;
-    }
-
-    .portfolio-btn {
-      min-height: 52px;
-      padding: 0 22px;
-      border-radius: 999px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 13px;
-      text-decoration: none;
-      font-size: .9rem;
-      font-weight: 700;
-      transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
-    }
-
-    .portfolio-btn:hover { transform: translateY(-2px); }
-
-    .portfolio-btn.primary {
-      background: var(--burdeo);
-      color: #fff;
-      box-shadow: 0 10px 24px rgba(128,0,32,.18);
-    }
-
-    .portfolio-btn.secondary {
-      border: 1px solid rgba(128,0,32,.45);
-      color: var(--burdeo);
-      background: rgba(255,255,255,.72);
-    }
-
-    .portfolio-seo {
-      margin: 24px 0 0;
-      max-width: 690px;
-      font-size: .9rem;
-      line-height: 1.65;
-      color: #716b67;
-    }
-
-    .portfolio-seo a {
-      color: var(--burdeo);
-      font-weight: 700;
-      text-decoration: underline;
-      text-underline-offset: 3px;
-      text-decoration-thickness: 1px;
-    }
-
-    .portfolio-visual {
-      min-height: 430px;
-      background:
-        linear-gradient(90deg, rgba(251,250,248,.14), rgba(251,250,248,0) 35%),
-        url('img/cocinas/edificio-puerto-montt/01-portada-cocina-edificio-puerto-montt.webp') center/cover no-repeat;
-      clip-path: ellipse(88% 110% at 88% 50%);
+      font-family: var(--font-heading, 'Manrope', sans-serif);
+      font-size: clamp(1.7rem, 2.7vw, 2.3rem);
+      line-height: 1.15;
+      font-weight: 800;
+      letter-spacing: -.035em;
     }
 
     .portfolio-categories {
@@ -442,28 +334,13 @@
     }
 
     @media (max-width: 960px) {
-      .portfolio-intro { grid-template-columns: 1fr; }
-      .portfolio-copy { padding: 44px 38px 34px; }
-      .portfolio-visual {
-        min-height: 300px;
-        clip-path: none;
-        border-radius: 0;
-      }
       .portfolio-categories { grid-template-columns: 1fr 1fr; }
       .portfolio-card:last-child { grid-column: 1 / -1; max-width: 620px; width: 100%; margin: auto; }
     }
 
     @media (max-width: 640px) {
-      main.container { padding-left: 14px; padding-right: 14px; }
-      .portfolio-intro {
-        margin-top: 18px;
-        border-radius: 18px;
-      }
-      .portfolio-copy { padding: 34px 23px 28px; }
-      .portfolio-intro h1 { font-size: clamp(2.3rem, 11vw, 3.1rem); }
-      .portfolio-actions { flex-direction: column; }
-      .portfolio-btn { width: 100%; }
-      .portfolio-visual { min-height: 230px; }
+      main.container { padding: 20px 14px 0; }
+      .portfolio-heading { margin-bottom: 18px; }
       .portfolio-categories {
         grid-template-columns: 1fr;
         gap: 18px;
@@ -527,37 +404,7 @@
 </header>
 
 <main class="container">
-
-  <section class="portfolio-intro" aria-labelledby="portfolio-title">
-    <div class="portfolio-copy">
-      <div class="portfolio-eyebrow"><span></span> Portafolio Burdeo</div>
-      <h1 id="portfolio-title">Proyectos que transforman espacios</h1>
-      <p class="portfolio-lead">
-        Explora cocinas, baños y quinchos realizados por Burdeo Renovaciones en Puerto Montt y distintas comunas de la Región de Los Lagos. Cada proyecto refleja nuestro compromiso con el diseño, la funcionalidad y las terminaciones.
-      </p>
-
-      <div class="portfolio-actions">
-        <a href="cotizacion.html" class="portfolio-btn primary">
-          <i class="far fa-calendar" aria-hidden="true"></i>
-          <span>Cotizar proyecto</span>
-          <i class="fas fa-arrow-right" aria-hidden="true"></i>
-        </a>
-        <a href="remodelaciones-puerto-montt.html" class="portfolio-btn secondary">
-          <span>Conoce nuestros servicios</span>
-          <i class="fas fa-arrow-right" aria-hidden="true"></i>
-        </a>
-      </div>
-
-      <p class="portfolio-seo">
-        Si estás comenzando un proyecto, revisa nuestros
-        <a href="remodelaciones-puerto-montt.html">servicios de remodelación en Puerto Montt</a>
-        o nuestras soluciones de
-        <a href="muebles-a-medida-puerto-montt.html">muebles a medida</a>.
-      </p>
-    </div>
-
-    <div class="portfolio-visual" role="img" aria-label="Proyecto de cocina y mobiliario realizado por Burdeo Renovaciones"></div>
-  </section>
+  <h1 class="portfolio-heading">Nuestros proyectos</h1>
 
   <section class="portfolio-categories" aria-label="Categorías de proyectos">
     <a href="cocinas/index.html" class="portfolio-card">
