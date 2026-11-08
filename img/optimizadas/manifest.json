@@ -1,0 +1,296 @@
+{
+  "img/LOGO BURDEO.png": {
+    "original_bytes": 1491232,
+    "original_dimensions": [
+      1024,
+      1024
+    ],
+    "variants": [
+      {
+        "path": "img/optimizadas/logo-burdeo-256.webp",
+        "width": 256,
+        "height": 256,
+        "bytes": 18102
+      },
+      {
+        "path": "img/optimizadas/logo-burdeo-512.webp",
+        "width": 512,
+        "height": 512,
+        "bytes": 47570
+      }
+    ]
+  },
+  "img/equipo-burdeo-cocina-portada.webp": {
+    "original_bytes": 96208,
+    "original_dimensions": [
+      1000,
+      1333
+    ],
+    "variants": [
+      {
+        "path": "img/optimizadas/equipo-cocina-portada-540.webp",
+        "width": 540,
+        "height": 720,
+        "bytes": 42984
+      },
+      {
+        "path": "img/optimizadas/equipo-cocina-portada-1000.webp",
+        "width": 1000,
+        "height": 1333,
+        "bytes": 102522
+      }
+    ]
+  },
+  "img/cocinas/edificio-puerto-montt/01-portada-cocina-edificio-puerto-montt.webp": {
+    "original_bytes": 194168,
+    "original_dimensions": [
+      1350,
+      1800
+    ],
+    "variants": [
+      {
+        "path": "img/optimizadas/cocina-edificio-pm-440.webp",
+        "width": 440,
+        "height": 587,
+        "bytes": 27816
+      },
+      {
+        "path": "img/optimizadas/cocina-edificio-pm-880.webp",
+        "width": 880,
+        "height": 1173,
+        "bytes": 86042
+      }
+    ]
+  },
+  "img/banos/valle-volcanes/01-portada-bano-valle-volcanes.webp": {
+    "original_bytes": 112932,
+    "original_dimensions": [
+      1350,
+      1800
+    ],
+    "variants": [
+      {
+        "path": "img/optimizadas/bano-valle-volcanes-440.webp",
+        "width": 440,
+        "height": 587,
+        "bytes": 20572
+      },
+      {
+        "path": "img/optimizadas/bano-valle-volcanes-880.webp",
+        "width": 880,
+        "height": 1173,
+        "bytes": 53182
+      }
+    ]
+  },
+  "img/quinchos/FT-Alerce/portada-quincho-ft.webp": {
+    "original_bytes": 121852,
+    "original_dimensions": [
+      1600,
+      1200
+    ],
+    "variants": [
+      {
+        "path": "img/optimizadas/quincho-ft-alerce-440.webp",
+        "width": 440,
+        "height": 330,
+        "bytes": 27000
+      },
+      {
+        "path": "img/optimizadas/quincho-ft-alerce-880.webp",
+        "width": 880,
+        "height": 660,
+        "bytes": 77630
+      }
+    ]
+  },
+  "img/cocinas/las-quemas/01-portada-cocina-las-quemas.webp": {
+    "original_bytes": 257276,
+    "original_dimensions": [
+      1350,
+      1800
+    ],
+    "variants": [
+      {
+        "path": "img/optimizadas/cocina-las-quemas-440.webp",
+        "width": 440,
+        "height": 587,
+        "bytes": 42080
+      },
+      {
+        "path": "img/optimizadas/cocina-las-quemas-880.webp",
+        "width": 880,
+        "height": 1173,
+        "bytes": 121492
+      }
+    ]
+  },
+  "img/equipo/Yisel-taller.jpg": {
+    "original_bytes": 429723,
+    "original_dimensions": [
+      1122,
+      1402
+    ],
+    "variants": [
+      {
+        "path": "img/optimizadas/yisel-taller-460.webp",
+        "width": 460,
+        "height": 575,
+        "bytes": 29946
+      },
+      {
+        "path": "img/optimizadas/yisel-taller-920.webp",
+        "width": 920,
+        "height": 1150,
+        "bytes": 86606
+      }
+    ]
+  },
+  "img/equipo/Trabajando.png": {
+    "original_bytes": 964670,
+    "original_dimensions": [
+      652,
+      869
+    ],
+    "variants": [
+      {
+        "path": "img/optimizadas/equipo-trabajando-460.webp",
+        "width": 460,
+        "height": 613,
+        "bytes": 35108
+      },
+      {
+        "path": "img/optimizadas/equipo-trabajando-652.webp",
+        "width": 652,
+        "height": 869,
+        "bytes": 64720
+      }
+    ]
+  },
+  "img/cocinas/william-puertasur/portada.png": {
+    "original_bytes": 1199516,
+    "original_dimensions": [
+      652,
+      869
+    ],
+    "variants": [
+      {
+        "path": "img/optimizadas/cocina-william-480.webp",
+        "width": 480,
+        "height": 640,
+        "bytes": 48770
+      },
+      {
+        "path": "img/optimizadas/cocina-william-652.webp",
+        "width": 652,
+        "height": 869,
+        "bytes": 99450
+      }
+    ]
+  },
+  "img/cocinas/puerta-sur/luigui/portada.png": {
+    "original_bytes": 988336,
+    "original_dimensions": [
+      652,
+      869
+    ],
+    "variants": [
+      {
+        "path": "img/optimizadas/cocina-luigi-480.webp",
+        "width": 480,
+        "height": 640,
+        "bytes": 39176
+      },
+      {
+        "path": "img/optimizadas/cocina-luigi-652.webp",
+        "width": 652,
+        "height": 869,
+        "bytes": 75098
+      }
+    ]
+  },
+  "img/cocinas/puerto-varas/katya1/portada-cocina-casa-katya.jpeg": {
+    "original_bytes": 3736336,
+    "original_dimensions": [
+      4032,
+      3024
+    ],
+    "variants": [
+      {
+        "path": "img/optimizadas/cocina-casa-katya-480.webp",
+        "width": 480,
+        "height": 360,
+        "bytes": 21752
+      },
+      {
+        "path": "img/optimizadas/cocina-casa-katya-960.webp",
+        "width": 960,
+        "height": 720,
+        "bytes": 66118
+      }
+    ]
+  },
+  "img/cocinas/frutillar/cocina-frutillar-portada.jpg": {
+    "original_bytes": 113814,
+    "original_dimensions": [
+      768,
+      1024
+    ],
+    "variants": [
+      {
+        "path": "img/optimizadas/cocina-frutillar-480.webp",
+        "width": 480,
+        "height": 640,
+        "bytes": 45152
+      },
+      {
+        "path": "img/optimizadas/cocina-frutillar-768.webp",
+        "width": 768,
+        "height": 1024,
+        "bytes": 101866
+      }
+    ]
+  },
+  "img/cocinas/muermos/chacana/portada-cocina-chacana-muermos.jpg": {
+    "original_bytes": 227694,
+    "original_dimensions": [
+      1600,
+      1200
+    ],
+    "variants": [
+      {
+        "path": "img/optimizadas/cocina-chacana-480.webp",
+        "width": 480,
+        "height": 360,
+        "bytes": 27164
+      },
+      {
+        "path": "img/optimizadas/cocina-chacana-960.webp",
+        "width": 960,
+        "height": 720,
+        "bytes": 81750
+      }
+    ]
+  },
+  "img/cocinas/alerce/FT/portada-cocina-ft.jpg": {
+    "original_bytes": 141946,
+    "original_dimensions": [
+      796,
+      1024
+    ],
+    "variants": [
+      {
+        "path": "img/optimizadas/cocina-ft-alerce-480.webp",
+        "width": 480,
+        "height": 617,
+        "bytes": 30230
+      },
+      {
+        "path": "img/optimizadas/cocina-ft-alerce-796.webp",
+        "width": 796,
+        "height": 1024,
+        "bytes": 83476
+      }
+    ]
+  }
+}
