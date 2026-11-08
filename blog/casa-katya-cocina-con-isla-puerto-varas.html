@@ -940,6 +940,28 @@
 .editorial-image-link:hover img{transform:scale(1.035)}
 @media(max-width:850px){.editorial-articles{grid-template-columns:1fr}.editorial-themes{grid-template-columns:1fr 1fr}}
 @media(max-width:640px){.editorial-hero{padding:45px 0 54px}.editorial-section{padding:52px 0}.editorial-hero h1{font-size:clamp(2.15rem,9vw,3.25rem)}.editorial-article img{height:255px}.editorial-themes{grid-template-columns:1fr}.editorial-article-content{padding:22px}.editorial-top-actions{flex-direction:column}.editorial-top-actions a{width:100%}.editorial-photo{max-height:340px}.editorial-reading p{font-size:.99rem}.editorial-bottom-cta{padding:53px 0}}
+/* Anuncio in-article de Burdeo: aislado del contenido editorial. */
+.inspire-in-article-ad{
+  max-width:100%;
+  margin:8px 0 36px;
+  padding:22px 0 25px;
+  border-top:1px solid #eee8e8;
+  border-bottom:1px solid #eee8e8;
+  overflow:hidden;
+}
+.inspire-in-article-ad-label{
+  display:block;
+  margin-bottom:13px;
+  color:#6b6464;
+  font-size:.72rem;
+  line-height:1.4;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  text-align:center;
+}
+@media(max-width:640px){
+  .inspire-in-article-ad{margin:5px 0 28px;padding:19px 0 22px}
+}
 </style>
   <link rel="stylesheet" href="css/typography.css">
   <link rel="stylesheet" href="css/blog-editorial.css">
@@ -1064,6 +1086,21 @@
         <p>El proyecto <a href="/cocinas/proyecto-katya.html">Casa Katya, en Puerto Varas</a>, presenta una cocina de concepto abierto con una isla central como elemento protagonista. Es una propuesta que busca integrar la cocina al día a día familiar, con una estética contemporánea y espacios para compartir.</p>
         <p>Su diseño es una referencia para quienes desean transformar la cocina en un ambiente integrado, donde distribución y almacenamiento resulten tan importantes como la apariencia.</p>
       </div>
+
+      <!-- Publicidad: unidad manual ubicada tras la introducción del artículo. -->
+      <div class="inspire-in-article-ad" aria-label="Espacio publicitario">
+        <span class="inspire-in-article-ad-label">Publicidad</span>
+        <ins class="adsbygoogle"
+             style="display:block; text-align:center;"
+             data-ad-layout="in-article"
+             data-ad-format="fluid"
+             data-ad-client="ca-pub-6260146848417815"
+             data-ad-slot="1740422579"></ins>
+        <script>
+          (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+      </div>
+
       <div class="inspire-chapter" id="consejos"><span class="inspire-section-label">02 · PLANIFICACIÓN Y CIRCULACIÓN</span>
         <h2>El equilibrio entre diseño y funcionalidad</h2>
         <p>Una isla puede sumar superficie de trabajo, almacenamiento o espacio de encuentro, pero no siempre es la mejor solución. Antes de elegirla hay que revisar las dimensiones del recinto, el espacio libre para desplazarse y la apertura de puertas y cajones.</p>
